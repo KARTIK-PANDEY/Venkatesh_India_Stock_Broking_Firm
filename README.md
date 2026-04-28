@@ -301,7 +301,7 @@ Raipur, Chhattisgarh, India
 
 ---
 
-## Developed By:- **##KARTIK PANDEY** 
+## Developed By:- **KARTIK PANDEY** 
 
 ---
 
