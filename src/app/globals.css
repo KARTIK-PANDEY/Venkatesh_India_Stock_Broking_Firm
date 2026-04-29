@@ -1,0 +1,256 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-brand-navy: #0B2545;
+  --color-brand-blue: #1E3A5F;
+  --color-brand-mid: #2E6DA4;
+  --color-brand-sky: #5B9BD5;
+  --color-brand-gold: #B8860B;
+  --color-brand-gold-pale: #FDF5DC;
+
+  --color-surface-bg: #F4F8FD;
+  --color-surface-card: #FFFFFF;
+  --color-surface-muted: #EDF2F8;
+  --color-surface-border: #C8D8EC;
+
+  --color-text-primary: #1A1A2E;
+  --color-text-secondary: #4A5568;
+  --color-text-muted: #718096;
+  --color-text-inverse: #FFFFFF;
+
+  --color-status-up: #16A34A;
+  --color-status-down: #DC2626;
+  --color-status-warn: #D97706;
+  --color-status-info: #2563EB;
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  --shadow-card: 0 2px 12px rgba(11, 37, 69, 0.08);
+  --shadow-hover: 0 8px 32px rgba(11, 37, 69, 0.14);
+  --shadow-nav: 0 2px 20px rgba(11, 37, 69, 0.10);
+
+  --radius-card: 12px;
+  --radius-btn: 8px;
+}
+
+:root {
+  --background: oklch(0.99 0.01 250);
+  --foreground: oklch(0.15 0.02 250);
+
+  --card: oklch(1 0 250);
+  --card-foreground: oklch(0.15 0.02 250);
+
+  --popover: oklch(1 0 250);
+  --popover-foreground: oklch(0.15 0.02 250);
+
+  --primary: oklch(0.45 0.18 260);
+  /* Vibrant Indigo */
+  --primary-foreground: oklch(0.98 0.01 260);
+
+  --secondary: oklch(0.94 0.05 250);
+  /* Soft Blue Tint */
+  --secondary-foreground: oklch(0.35 0.15 260);
+
+  --muted: oklch(0.96 0.02 250);
+  --muted-foreground: oklch(0.55 0.03 250);
+
+  --accent: oklch(0.65 0.2 200);
+  /* Cyan/Teal Accent */
+  --accent-foreground: oklch(0.98 0 0);
+
+  --destructive: oklch(0.57 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  --border: oklch(0.9 0.03 250);
+  --input: oklch(0.9 0.03 250);
+  --ring: oklch(0.45 0.18 260);
+
+  --chart-1: oklch(0.6 0.18 250);
+  --chart-2: oklch(0.55 0.15 200);
+  --chart-3: oklch(0.45 0.15 260);
+  --chart-4: oklch(0.7 0.18 300);
+  --chart-5: oklch(0.8 0.15 50);
+
+  --radius: 0.75rem;
+
+  --sidebar: oklch(0.98 0.01 250);
+  --sidebar-foreground: oklch(0.15 0.02 250);
+  --sidebar-primary: oklch(0.45 0.18 260);
+  --sidebar-primary-foreground: oklch(0.98 0.01 260);
+  --sidebar-accent: oklch(0.94 0.05 250);
+  --sidebar-accent-foreground: oklch(0.35 0.15 260);
+  --sidebar-border: oklch(0.9 0.03 250);
+  --sidebar-ring: oklch(0.45 0.18 260);
+}
+
+.dark {
+  --background: oklch(0.12 0.01 260);
+  /* Deep space blue-black */
+  --foreground: oklch(0.95 0.01 260);
+
+  --card: oklch(0.15 0.02 260);
+  /* Slightly elevated dark */
+  --card-foreground: oklch(0.95 0.01 260);
+
+  --popover: oklch(0.15 0.02 260);
+  --popover-foreground: oklch(0.95 0.01 260);
+
+  --primary: oklch(0.6 0.18 260);
+  /* Bright Indigo for Dark Mode */
+  --primary-foreground: oklch(0.1 0.02 260);
+
+  --secondary: oklch(0.2 0.05 260);
+  --secondary-foreground: oklch(0.9 0.05 260);
+
+  --muted: oklch(0.18 0.03 260);
+  --muted-foreground: oklch(0.65 0.04 260);
+
+  --accent: oklch(0.7 0.18 200);
+  /* Bright Cyan for Dark Mode */
+  --accent-foreground: oklch(0.1 0.02 260);
+
+  --destructive: oklch(0.65 0.22 25);
+  --border: oklch(0.22 0.04 260);
+  --input: oklch(0.22 0.04 260);
+  --ring: oklch(0.6 0.18 260);
+
+  --chart-1: oklch(0.7 0.18 250);
+  --chart-2: oklch(0.65 0.15 200);
+  --chart-3: oklch(0.55 0.15 260);
+  --chart-4: oklch(0.8 0.18 300);
+  --chart-5: oklch(0.9 0.15 50);
+
+  --sidebar: oklch(0.15 0.02 260);
+  --sidebar-foreground: oklch(0.95 0.01 260);
+  --sidebar-primary: oklch(0.6 0.18 260);
+  --sidebar-primary-foreground: oklch(0.1 0.02 260);
+  --sidebar-accent: oklch(0.2 0.05 260);
+  --sidebar-accent-foreground: oklch(0.9 0.05 260);
+  --sidebar-border: oklch(0.22 0.04 260);
+  --sidebar-ring: oklch(0.6 0.18 260);
+}
+
+@theme inline {
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@layer utilities {
+  .animate-marquee {
+    display: flex;
+    animation: marquee 40s linear infinite;
+  }
+
+  .pause {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    @apply font-sans;
+  }
+
+  /* Provide a clear, custom focus ring */
+  :focus-visible {
+    outline: 3px solid #2563EB;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Add scroll-margin-top to prevent sticky header overlap */
+  section,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  [id] {
+    scroll-margin-top: 90px;
+  }
+
+  /* Disable animations for users who request reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Minimum tap target size */
+  .btn,
+  a,
+  button,
+  input[type='checkbox'],
+  input[type='radio'] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
