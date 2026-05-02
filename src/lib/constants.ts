@@ -59,8 +59,7 @@ export const NAV_LINKS = [
 ];
 
 export const LOGIN_LINKS = [
-  { label: "Back Office 1", href: "/login/backoffice-1", target: "_blank" },
-  { label: "Back Office 2", href: "/login/backoffice-2", target: "_blank" },
+  { label: "Back Office Login", href: "http://backoffice.venkateshindia.com:8085/capexweb/capexweb/", target: "_blank" },
   { label: "Mutual Funds Login", href: "https://disafinancial.com", target: "_blank" },
 ];
 
