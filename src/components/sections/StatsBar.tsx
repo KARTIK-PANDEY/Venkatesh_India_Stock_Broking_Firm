@@ -15,12 +15,6 @@ export default function StatsBar() {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.5 });
 
-  useEffect(() => {
-    if (isInView) {
-      animateCounts();
-    }
-  }, [isInView]);
-
   const animateCounts = () => {
     STATS.forEach((stat, idx) => {
       if (typeof stat.value === "number") {
@@ -49,6 +43,12 @@ export default function StatsBar() {
       }
     });
   };
+
+  useEffect(() => {
+    if (isInView) {
+      animateCounts();
+    }
+  }, [isInView]);
 
   return (
     <div ref={containerRef} className="w-full bg-muted/30 backdrop-blur-md border-y border-border/50 py-16 relative overflow-hidden">

@@ -1,5 +1,5 @@
 import { ShieldCheck, TrendingUp, Users, Award } from "lucide-react";
-import { COMPANY_INFO, REGISTRATION_DETAILS } from "@/lib/constants";
+import { COMPANY_INFO } from "@/lib/constants";
 
 export default function CompanyIntro() {
   return (

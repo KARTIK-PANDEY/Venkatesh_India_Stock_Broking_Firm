@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { Bell, X } from "lucide-react";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 
 interface AnnouncementBarProps {
   message?: string;
@@ -23,7 +22,7 @@ export default function AnnouncementBar({
   useEffect(() => {
     const isDismissed = localStorage.getItem(dismissKey);
     if (!isDismissed) {
-      setIsVisible(true);
+      requestAnimationFrame(() => setIsVisible(true));
     }
   }, [dismissKey]);
 

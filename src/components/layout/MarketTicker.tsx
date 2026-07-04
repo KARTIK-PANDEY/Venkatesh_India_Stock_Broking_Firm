@@ -4,13 +4,13 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 const MOCK_DATA = [
-  { symbol: "NIFTY 50", value: "22,419.55", change: "+124.50", percent: "+0.56%", up: true },
-  { symbol: "SENSEX", value: "73,852.15", change: "+483.10", percent: "+0.66%", up: true },
-  { symbol: "BANKNIFTY", value: "48,115.30", change: "-215.40", percent: "-0.45%", up: false },
-  { symbol: "NIFTY IT", value: "35,120.45", change: "+310.20", percent: "+0.89%", up: true },
-  { symbol: "GOLD MCX", value: "72,450.00", change: "+150.00", percent: "+0.21%", up: true },
-  { symbol: "USD/INR", value: "83.45", change: "-0.02", percent: "-0.02%", up: false },
-  { symbol: "CRUDE OIL", value: "6,840.00", change: "-45.00", percent: "-0.65%", up: false },
+  { symbol: "NIFTY 50", value: "24,355.20", change: "+178.40", percent: "+0.74%", up: true },
+  { symbol: "SENSEX", value: "78,048.00", change: "+403.10", percent: "+0.52%", up: true },
+  { symbol: "BANKNIFTY", value: "52,450.50", change: "+210.30", percent: "+0.40%", up: true },
+  { symbol: "NIFTY IT", value: "38,205.45", change: "+320.15", percent: "+0.84%", up: true },
+  { symbol: "GOLD MCX", value: "73,520.00", change: "+125.00", percent: "+0.17%", up: true },
+  { symbol: "USD/INR", value: "83.52", change: "+0.05", percent: "+0.06%", up: true },
+  { symbol: "CRUDE OIL", value: "6,915.00", change: "-25.00", percent: "-0.36%", up: false },
 ];
 
 export default function MarketTicker() {

@@ -58,7 +58,7 @@ export default function Footer() {
               <li><Link href="/about/company-overview" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors"></span>About Us</Link></li>
               <li><Link href="/about/group-companies" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors"></span>Group Companies</Link></li>
               <li><Link href="/about/management" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors"></span>Top Management</Link></li>
-              <li><Link href="/about/bank-details" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors"></span>Bank Details</Link></li>
+              <li><Link href="/about/bank-and-demat-details" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors"></span>Bank & Demat Details</Link></li>
               <li><Link href="/careers" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors"></span>Careers</Link></li>
               <li><Link href="/partner-with-us" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors"></span>Partner With Us</Link></li>
             </ul>
@@ -127,7 +127,7 @@ export default function Footer() {
             SEBI Reg: {REGISTRATION_DETAILS.sebi_reg} | BSE Cash: {REGISTRATION_DETAILS.bse_cash} | BSE F&amp;O: {REGISTRATION_DETAILS.bse_fo} | CDSL DP ID: {REGISTRATION_DETAILS.cdsl_dp} | CIN: {REGISTRATION_DETAILS.cin}
           </p>
           <p>
-            Registered Office: {COMPANY_INFO.address} | SEBI Regional Office: SEBI Bhavan, Plot No. C4-A, 'G' Block, Bandra Kurla Complex, Bandra (East), Mumbai - 400051
+            Registered Office: {COMPANY_INFO.address} | SEBI Regional Office: SEBI Bhavan, Plot No. C4-A, &apos;G&apos; Block, Bandra Kurla Complex, Bandra (East), Mumbai - 400051
           </p>
           <p>
             Compliance Officer: {COMPANY_INFO.compliance.name} | Tel: {COMPANY_INFO.compliance.phone} | Email: {COMPANY_INFO.compliance.email}
@@ -136,7 +136,7 @@ export default function Footer() {
 
         {/* Mandatory Disclaimer */}
         <div className="bg-muted/50 border border-border/50 p-6 rounded-2xl text-[10px] md:text-xs leading-relaxed text-muted-foreground text-center mb-10 max-w-5xl mx-auto">
-          "Investment in securities market are subject to market risks. Read all the related documents carefully before investing. | Mutual fund investments are subject to market risks. Read all scheme related documents carefully. | Derivatives trading involves substantial risk and is not suitable for all investors. | Registration granted by SEBI, membership of BASL (in case of IAs) and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors."
+          &quot;Investment in securities market are subject to market risks. Read all the related documents carefully before investing. | Mutual fund investments are subject to market risks. Read all scheme related documents carefully. | Derivatives trading involves substantial risk and is not suitable for all investors. | Registration granted by SEBI, membership of BASL (in case of IAs) and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors.&quot;
         </div>
 
         {/* Bottom Strip */}

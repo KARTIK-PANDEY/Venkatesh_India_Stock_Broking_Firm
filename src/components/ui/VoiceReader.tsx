@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Play, Pause, Square, Volume2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -11,7 +11,7 @@ export default function VoiceReader() {
 
   useEffect(() => {
     if (typeof window !== "undefined" && "speechSynthesis" in window) {
-      setIsSupported(true);
+      requestAnimationFrame(() => setIsSupported(true));
     }
 
     // Stop reading when component unmounts

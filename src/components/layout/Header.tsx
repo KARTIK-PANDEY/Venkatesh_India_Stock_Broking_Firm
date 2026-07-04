@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, ChevronDown, ExternalLink, LogIn, Search } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, getFileUrl } from "@/lib/utils";
 import { NAV_LINKS, LOGIN_LINKS } from "@/lib/constants";
 import { buttonVariants } from "@/components/ui/button";
 import {
@@ -98,7 +98,9 @@ export default function Header() {
                             {link.children.map((child) => (
                               <li key={child.label}>
                                 <NavigationMenuLink
-                                  href={child.href}
+                                  href={getFileUrl(child.href)}
+                                  target={"target" in child ? child.target : undefined}
+                                  rel={"target" in child && child.target === "_blank" ? "noopener noreferrer" : undefined}
                                   className={cn(
                                     "flex rounded-xl px-4 py-2.5 no-underline outline-none transition-colors",
                                     "text-sm font-bold text-foreground/80",
@@ -249,7 +251,9 @@ export default function Header() {
                             {link.children.map((child) => (
                               <Link
                                 key={child.label}
-                                href={child.href}
+                                href={getFileUrl(child.href)}
+                                target={"target" in child ? child.target : undefined}
+                                rel={"target" in child && child.target === "_blank" ? "noopener noreferrer" : undefined}
                                 className="flex items-center gap-2.5 text-sm text-foreground/75 hover:text-primary hover:bg-primary/10 px-3 py-2.5 rounded-lg transition-colors font-medium"
                               >
                                 <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
