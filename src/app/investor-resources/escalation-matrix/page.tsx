@@ -67,10 +67,22 @@ export default function EscalationMatrixPage() {
           <nav className="text-accent text-sm font-bold uppercase tracking-widest mb-4">
             Home &gt; Investor Resources &gt; Escalation Matrix
           </nav>
-          <h1 className="text-4xl md:text-6xl font-display leading-tight mb-4">Escalation Matrix</h1>
-          <p className="text-accent text-lg max-w-2xl">
-            A structured approach to resolving your grievances in a timely and transparent manner.
-          </p>
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+            <div>
+              <h1 className="text-4xl md:text-6xl font-display leading-tight mb-4">Escalation Matrix</h1>
+              <p className="text-accent text-lg max-w-2xl">
+                A structured approach to resolving your grievances in a timely and transparent manner.
+              </p>
+            </div>
+            <a
+              href="http://cp-in-10.whb.tempwebhost.net/~venkakgl/escmatrix.php"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(buttonVariants({ variant: "outline" }), "rounded-full px-8 h-12 shadow-lg gap-2 font-bold border-white/20 hover:bg-white/10 text-white shrink-0")}
+            >
+              View Live Escalation Matrix
+            </a>
+          </div>
         </div>
       </div>
 
@@ -155,4 +167,4 @@ export default function EscalationMatrixPage() {
       </div>
     </div>
   );
-}
+} 

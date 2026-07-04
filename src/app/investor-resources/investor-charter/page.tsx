@@ -1,6 +1,6 @@
 import { Download, ShieldCheck, Clock, CheckCircle2, AlertCircle } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { cn, getFileUrl } from "@/lib/utils";
 
 export const metadata = {
   title: "Investor Charter (SEBI 2025) | Investor Resources | Shri Venkatesh Stock Broker Services",
@@ -22,13 +22,30 @@ export default function InvestorCharterPage() {
                 As mandated by SEBI Circular dated February 21, 2025
               </p>
             </div>
-            <a
-              href="/documents/investor-charter-feb-2025.pdf"
-              target="_blank"
-              className={cn(buttonVariants(), "rounded-full px-8 h-12 shadow-lg gap-2")}
-            >
-              <Download className="w-5 h-5" /> Download PDF Version
-            </a>
+            <div className="flex flex-col sm:flex-row gap-3 flex-wrap">
+              <a
+                href={getFileUrl("/Investor_Charter_SHRI_VSB.pdf")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(buttonVariants({ variant: "default" }), "rounded-full px-6 h-11 text-xs shadow-lg gap-2 font-bold")}
+              >
+                <Download className="w-4 h-4" /> SEBI Investor Charter
+              </a>
+              <a
+                href="http://cp-in-10.whb.tempwebhost.net/~venkakgl/investorchart2.php"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(buttonVariants({ variant: "outline" }), "rounded-full px-6 h-11 text-xs shadow-lg gap-2 font-bold border-white/20 hover:bg-white/10 text-white")}
+              >
+                <Download className="w-4 h-4" /> Charter for SVSBS
+              </a>
+              <a
+                href="/investor-resources/complaint-data?tab=dp"
+                className={cn(buttonVariants({ variant: "outline" }), "rounded-full px-6 h-11 text-xs shadow-lg gap-2 font-bold border-white/20 hover:bg-white/10 text-white")}
+              >
+                <Download className="w-4 h-4" /> DP Charter (Annexure C)
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -36,7 +53,7 @@ export default function InvestorCharterPage() {
       {/* Page Content */}
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-4xl mx-auto space-y-16">
-          
+
           {/* Section A: Vision */}
           <section className="bg-muted/40 p-8 md:p-12 rounded-3xl border border-border/50">
             <div className="flex items-center gap-3 mb-6">
@@ -46,7 +63,7 @@ export default function InvestorCharterPage() {
               </h2>
             </div>
             <p className="text-xl text-foreground leading-relaxed italic">
-              "To establish and maintain a relationship of trust and ethics with the investors. To observe highest standard of compliances and transparency in the interest of the investors and the securities market."
+              &quot;To establish and maintain a relationship of trust and ethics with the investors. To observe highest standard of compliances and transparency in the interest of the investors and the securities market.&quot;
             </p>
           </section>
 
@@ -131,7 +148,7 @@ export default function InvestorCharterPage() {
             </section>
 
             <section className="bg-red-50 p-8 rounded-3xl border border-red-200">
-              <h3 className="text-2xl font-display text-red-800 mb-6 uppercase tracking-wide">E. Don'ts for Investors</h3>
+              <h3 className="text-2xl font-display text-red-800 mb-6 uppercase tracking-wide">E. Don&apos;ts for Investors</h3>
               <ul className="space-y-4">
                 {[
                   "Don't deal with unregistered brokers",
