@@ -14,7 +14,7 @@ const SITEMAP_LINKS = [
       { label: "Company Overview", href: "/about/company-overview" },
       { label: "Group Companies", href: "/about/group-companies" },
       { label: "Top Management", href: "/about/management" },
-      { label: "Bank Details", href: "/about/bank-details" },
+      { label: "Bank & Demat Details", href: "/about/bank-and-demat-details" },
       { label: "Careers", href: "/careers" },
       { label: "Partner With Us", href: "/partner-with-us" },
       { label: "Contact Us", href: "/contact" },

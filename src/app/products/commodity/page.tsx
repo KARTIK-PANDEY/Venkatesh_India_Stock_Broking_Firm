@@ -1,4 +1,4 @@
-import { ArrowRight, Package, TrendingUp, LineChart, ShieldAlert } from "lucide-react";
+import { ArrowRight, TrendingUp, LineChart, ShieldAlert } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -109,7 +109,7 @@ export default function CommodityTradingPage() {
                 <h3 className="text-orange-800 font-bold uppercase tracking-wider text-xs">COMMODITY RISK DISCLOSURE</h3>
               </div>
               <p className="text-sm text-orange-700 leading-relaxed italic">
-                "Commodity trading involves significant risk of loss and is not suitable for all investors. The high degree of leverage that is often obtainable in commodity trading can work against you as well as for you."
+                &quot;Commodity trading involves significant risk of loss and is not suitable for all investors. The high degree of leverage that is often obtainable in commodity trading can work against you as well as for you.&quot;
               </p>
             </div>
 

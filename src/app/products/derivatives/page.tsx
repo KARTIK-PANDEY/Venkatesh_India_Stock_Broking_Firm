@@ -124,7 +124,7 @@ export default function DerivativesTradingPage() {
                 <h3 className="text-red-800 font-bold uppercase tracking-wider text-xs">MANDATORY DISCLOSURE</h3>
               </div>
               <p className="text-sm text-red-700 leading-relaxed italic mb-4">
-                "9 out of 10 individual traders in equity Cash and F&O segment incurred net losses. On an average, loss makers registered net loss close to ₹ 50,000. Over and above the net losses incurred, loss makers expended an additional 28% of net trading losses as transaction costs."
+                &quot;9 out of 10 individual traders in equity Cash and F&O segment incurred net losses. On an average, loss makers registered net loss close to ₹ 50,000. Over and above the net losses incurred, loss makers expended an additional 28% of net trading losses as transaction costs.&quot;
               </p>
               <p className="text-[10px] text-red-600 font-bold uppercase">Source: SEBI Study dated Jan 2023</p>
             </div>

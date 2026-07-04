@@ -12,8 +12,8 @@ export default function EquityTradingPage() {
     <div className="bg-background">
       {/* Product Hero */}
       <div className="bg-background py-16 md:py-24 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 pointer-events-none" 
-             style={{ backgroundImage: 'radial-gradient(white 1px, transparent 1px)', backgroundSize: '32px 32px' }}>
+        <div className="absolute inset-0 opacity-10 pointer-events-none"
+          style={{ backgroundImage: 'radial-gradient(white 1px, transparent 1px)', backgroundSize: '32px 32px' }}>
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
@@ -22,7 +22,7 @@ export default function EquityTradingPage() {
             </nav>
             <h1 className="text-4xl md:text-6xl font-display leading-tight mb-6">Equity Trading</h1>
             <p className="text-accent text-xl max-w-2xl">
-              Empowering you to own a share in India's growth story. Trade on BSE with confidence and expert guidance.
+              Empowering you to own a share in India&apos;s growth story. Trade on BSE with confidence and expert guidance.
             </p>
           </div>
         </div>
@@ -31,7 +31,7 @@ export default function EquityTradingPage() {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-          
+
           {/* Left: Product Details */}
           <div className="lg:col-span-2 space-y-16">
             <section>
@@ -121,10 +121,10 @@ export default function EquityTradingPage() {
             <div className="bg-red-50 border-2 border-red-100 rounded-3xl p-8">
               <h3 className="text-red-800 font-bold mb-4 uppercase tracking-wider text-xs">MANDATORY RISK WARNING</h3>
               <p className="text-sm text-red-700 leading-relaxed italic">
-                "Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Derivatives trading involves substantial risk and is not suitable for all investors. Ensure you understand the risks involved before trading."
+                &quot;Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Derivatives trading involves substantial risk and is not suitable for all investors. Ensure you understand the risks involved before trading.&quot;
               </p>
             </div>
-            
+
             <div className="p-8 bg-muted/40 rounded-3xl border border-border/50">
               <h4 className="font-bold text-foreground mb-4">Quick Links</h4>
               <ul className="space-y-3 text-sm font-medium">
