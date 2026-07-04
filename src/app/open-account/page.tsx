@@ -1,5 +1,4 @@
 import { CheckCircle2, FileText, Smartphone, UserPlus, ShieldAlert } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import OpenAccountForm from "./OpenAccountForm";
 
 export const metadata = {
@@ -67,7 +66,7 @@ export default function OpenAccountPage() {
               <ShieldAlert className="w-12 h-12 text-orange-600 shrink-0" />
               <div className="text-sm text-orange-800 leading-relaxed italic">
                 <p className="font-bold mb-2 uppercase">SEBI Mandated Risk Disclosure:</p>
-                "Investment in securities market are subject to market risks. Read all related documents carefully before investing. Please go through our Risk Disclosure document before proceeding."
+                &quot;Investment in securities market are subject to market risks. Read all related documents carefully before investing. Please go through our Risk Disclosure document before proceeding.&quot;
               </div>
             </div>
           </div>
