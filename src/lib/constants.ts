@@ -9,7 +9,7 @@ export const NAV_LINKS = [
       { label: "Mission & Vision", href: "/about/mission-vision" },
       { label: "Core Values", href: "/about/core-values" },
       { label: "Top Management", href: "/about/management" },
-      { label: "Bank Details", href: "/about/bank-details" },
+      { label: "Bank & Demat Details", href: "/about/bank-and-demat-details" },
     ],
   },
   {
@@ -22,6 +22,24 @@ export const NAV_LINKS = [
       { label: "Mutual Funds", href: "/products/mutual-funds" },
       { label: "IPO", href: "/products/ipo" },
       { label: "Depository Services", href: "/products/depository" },
+    ],
+  },
+  {
+    label: "SEBI Documents",
+    href: "#",
+    children: [
+      { label: "Investor Charter (SEBI)", href: "/Investor_Charter_SHRI_VSB.pdf", target: "_blank" },
+      { label: "Investor Charter (SVSBS)", href: "/investor-resources/investor-charter" },
+      { label: "Investor Charter (Annexure C)", href: "/investor-resources/complaint-data?tab=dp" },
+      { label: "Escalation Matrix (Live)", href: "/investor-resources/escalation-matrix" },
+      { label: "Risk Disclosure (Live)", href: "/investor-resources/risk-disclosure" },
+      { label: "eVoting (CDSL)", href: "https://www.evotingindia.com/", target: "_blank" },
+      { label: "KRA KYC Validation", href: "/kycvalidation.pdf", target: "_blank" },
+      { label: "Policy on Freezing & Blocking", href: "/Policy-on-FreezingBlocking-Client.pdf", target: "_blank" },
+      { label: "Mandatory Display Board", href: "/Mandatory-Display.pdf", target: "_blank" },
+      { label: "SARAL Account Opening Form", href: "/SARAL-ac-opening-Form-for-resident-individuals.pdf", target: "_blank" },
+      { label: "Rights and Obligations", href: "/DP-Operating-Instructions-Annexures-as-on-June-30-2025%20(1).pdf", target: "_blank" },
+      { label: "Complaints on SCORES", href: "/Filing_of_complaints_on_SCORES.pdf", target: "_blank" },
     ],
   },
   {
@@ -59,7 +77,9 @@ export const NAV_LINKS = [
 ];
 
 export const LOGIN_LINKS = [
-  { label: "Back Office Login", href: "http://backoffice.venkateshindia.com:8085/capexweb/capexweb/", target: "_blank" },
+  { label: "Back Office 1", href: "http://backoffice.venkateshindia.com:8085/capexweb/capexweb/", target: "_blank" },
+  { label: "Back Office 2", href: "http://backoffice2.venkateshindia.com:8085/capexweb/capexweb/", target: "_blank" },
+  { label: "Webmail Login", href: "http://webmail.venkateshindia.com:2095/", target: "_blank" },
   { label: "Mutual Funds Login", href: "https://disafinancial.com", target: "_blank" },
 ];
 
@@ -132,19 +152,17 @@ export const BANK_DETAILS = [
   {
     bankName: "ICICI BANK",
     accountName: "SHRI VENKATESH STOCK BROKER SERVICES INDIA PRIVATE LIMITED USCNB ACCOUNT",
-    accountNumber: "134705001588",
-    ifscCode: "ICIC0001347",
-    branch: "Pandri, Raipur",
-    type: "USCNB Account (For Client Funds)"
-  },
-  {
-    bankName: "ICICI BANK",
-    accountName: "SHRI VENKATESH STOCK BROKER SERVICES INDIA PRIVATE LIMITED USCNB ACCOUNT",
     accountNumber: "134705000211",
     ifscCode: "ICIC0001347",
     branch: "Pandri, Raipur",
     type: "USCNB Account (For Client Funds)"
   }
+];
+
+export const DEMAT_DETAILS = [
+  { accountNo: "1208060000000407", purpose: "Pool Account" },
+  { accountNo: "1208060000013393", purpose: "Client Securities Margin Pledge Account" },
+  { accountNo: "1208060000017647", purpose: "Client Unpaid Securities Pledge Account" }
 ];
 
 export const GROUP_COMPANIES = [
