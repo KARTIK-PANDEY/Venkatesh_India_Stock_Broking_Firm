@@ -49,7 +49,7 @@ export default function ManagementPage() {
                 <p>
                   Mr. Sanjiv Rathi is the visionary founder and Managing Director of the Shri Venkatesh Group.
                   With over 25 years of profound experience in the Indian capital markets, he has been instrumental
-                  in shaping the group's growth trajectory from a local firm to a regional powerhouse in eastern India.
+                  in shaping the group&apos;s growth trajectory from a local firm to a regional powerhouse in eastern India.
                 </p>
                 <p>
                   His deep understanding of financial instruments, commitment to transparency, and client-centric
@@ -62,8 +62,8 @@ export default function ManagementPage() {
               <div className="mt-10 p-8 bg-muted/40 border border-border/50 rounded-3xl italic relative">
                 <Quote className="absolute top-4 left-4 w-8 h-8 text-primary opacity-20" />
                 <p className="text-foreground text-lg leading-relaxed pl-4">
-                  "Our goal is not just to facilitate trades, but to empower every individual with the right
-                  knowledge and tools to build a secure financial future. Trust is our most valuable asset."
+                  &quot;Our goal is not just to facilitate trades, but to empower every individual with the right
+                  knowledge and tools to build a secure financial future. Trust is our most valuable asset.&quot;
                 </p>
               </div>
             </div>

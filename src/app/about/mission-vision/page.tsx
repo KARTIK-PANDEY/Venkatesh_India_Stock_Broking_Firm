@@ -28,7 +28,7 @@ export default function MissionVisionPage() {
               </div>
               <h2 className="text-3xl md:text-5xl font-display text-foreground mb-6">Our Mission</h2>
               <p className="text-xl text-muted-foreground leading-relaxed italic">
-                "{MISSION_VISION.mission}"
+                &quot;{MISSION_VISION.mission}&quot;
               </p>
             </div>
             <div className="lg:w-1/2 aspect-video bg-muted rounded-3xl border border-border/50 relative overflow-hidden flex items-center justify-center">
@@ -45,7 +45,7 @@ export default function MissionVisionPage() {
               </div>
               <h2 className="text-3xl md:text-5xl font-display text-foreground mb-6">Our Vision</h2>
               <p className="text-xl text-muted-foreground leading-relaxed italic">
-                "{MISSION_VISION.vision}"
+                &quot;{MISSION_VISION.vision}&quot;
               </p>
             </div>
             <div className="lg:w-1/2 aspect-video bg-muted rounded-3xl border border-border/50 relative overflow-hidden flex items-center justify-center">
