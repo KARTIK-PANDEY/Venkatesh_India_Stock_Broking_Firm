@@ -301,6 +301,9 @@ Raipur, Chhattisgarh, India
 
 ---
 
+## Project Developed by **KARTIK PANDEY** 
+
+
 ## 📄 License
 
 This is a proprietary website owned by Shri Venkatesh Stock Broker Services India Pvt. Ltd. All rights reserved.
