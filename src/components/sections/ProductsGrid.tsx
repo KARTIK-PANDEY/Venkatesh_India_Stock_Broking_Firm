@@ -4,7 +4,6 @@ import Link from "next/link";
 import {
   LineChart,
   TrendingUp,
-  Package,
   PieChart,
   Rocket,
   ShieldCheck,
@@ -25,12 +24,7 @@ const PRODUCTS = [
     icon: TrendingUp,
     href: "/products/derivatives",
   },
-  {
-    title: "Commodity",
-    description: "Trade Gold, Silver, Crude Oil and Agri commodities on MCX and NCDEX.",
-    icon: Package,
-    href: "/products/commodity",
-  },
+
   {
     title: "Mutual Funds",
     description: "Invest in equity, debt and hybrid mutual funds via SIP or lump sum.",

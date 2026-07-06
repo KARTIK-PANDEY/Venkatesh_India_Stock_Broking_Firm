@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 const POINTS = [
   {
     title: "Research-Backed Guidance",
-    description: "Our in-house research team provides timely market reports, currency updates and commodity insights to help you make informed decisions in a volatile market.",
+    description: "Our in-house research team provides timely market reports and currency updates to help you make informed decisions in a volatile market.",
     icon: FlaskConical,
     color: "text-blue-600",
     bg: "bg-blue-50"

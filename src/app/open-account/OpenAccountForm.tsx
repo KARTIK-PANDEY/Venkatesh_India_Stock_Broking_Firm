@@ -74,7 +74,7 @@ export default function OpenAccountForm() {
           <fieldset className="space-y-2">
             <legend className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Services Interested In</legend>
             <div className="grid grid-cols-2 gap-3 mt-2">
-              {["Equity Trading", "Derivatives", "Commodity", "Mutual Funds", "IPO", "Demat Account"].map((service) => (
+              {["Equity Trading", "Derivatives", "Mutual Funds", "IPO", "Demat Account"].map((service) => (
                 <label key={service} className="flex items-center gap-2 cursor-pointer p-3 bg-muted/40 border border-border/50 rounded-lg hover:bg-muted transition-colors">
                   <input type="checkbox" checked={formData.services.includes(service)} onChange={() => handleServiceChange(service)} className="w-4 h-4 text-primary" />
                   <span className="text-xs font-medium text-foreground">{service}</span>

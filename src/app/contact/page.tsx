@@ -48,8 +48,15 @@ export default function ContactPage() {
                 <div className="p-6 bg-muted/40 rounded-2xl border border-border/50 transition-all hover:shadow-md">
                   <Mail className="w-8 h-8 text-primary mb-4" />
                   <h3 className="font-bold text-foreground mb-2">Email Us</h3>
-                  <p className="text-sm text-muted-foreground mb-1">{COMPANY_INFO.email}</p>
-                  <p className="text-sm text-muted-foreground">Grievance: {COMPANY_INFO.grievance.email1}</p>
+                  <p className="text-sm text-muted-foreground mb-1">
+                    <a href={`mailto:${COMPANY_INFO.email}`} className="hover:underline">{COMPANY_INFO.email}</a>
+                  </p>
+                  <p className="text-sm text-muted-foreground mb-1">
+                    <a href={`mailto:${COMPANY_INFO.email2}`} className="hover:underline">{COMPANY_INFO.email2}</a>
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Grievance: <a href={`mailto:${COMPANY_INFO.grievance.email1}`} className="hover:underline">{COMPANY_INFO.grievance.email1}</a>
+                  </p>
                 </div>
                 <div className="p-6 bg-muted/40 rounded-2xl border border-border/50 transition-all hover:shadow-md">
                   <Clock className="w-8 h-8 text-primary mb-4" />

@@ -1,4 +1,4 @@
-import { Award, Quote, UserCircle2 } from "lucide-react";
+import { Award, Quote } from "lucide-react";
 import Image from "next/image";
 
 export const metadata = {
@@ -69,25 +69,6 @@ export default function ManagementPage() {
             </div>
           </div>
 
-          {/* Board of Directors */}
-          <div className="pt-16 border-t border-border/50 text-center">
-            <h3 className="text-2xl font-display font-bold text-foreground mb-12">Board of Directors</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-              {[
-                { name: "Executive Director", role: "Strategy & Growth" },
-                { name: "Director – Compliance", role: "Risk & Legal" },
-                { name: "Director – Operations", role: "Backoffice & Tech" },
-              ].map((member, i) => (
-                <div key={i} className="p-8 bg-muted/40 border border-border/50 rounded-3xl hover:border-primary/40 hover:shadow-md transition-all">
-                  <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
-                    <UserCircle2 className="w-8 h-8 text-muted-foreground/50" />
-                  </div>
-                  <h4 className="font-bold text-foreground mb-1">{member.name}</h4>
-                  <p className="text-xs text-primary font-semibold uppercase tracking-widest">{member.role}</p>
-                </div>
-              ))}
-            </div>
-          </div>
 
         </div>
       </div>

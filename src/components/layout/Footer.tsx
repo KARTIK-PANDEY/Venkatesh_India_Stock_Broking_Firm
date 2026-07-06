@@ -9,8 +9,6 @@ const REGULATORY_LINKS = [
   { label: "BSE", href: "https://www.bseindia.com" },
   { label: "NSE", href: "https://www.nseindia.com" },
   { label: "CDSL", href: "https://www.cdslindia.com" },
-  { label: "MCX", href: "https://www.mcxindia.com" },
-  { label: "NCDEX", href: "https://www.ncdex.com" },
   { label: "SCORES", href: "https://scores.sebi.gov.in" },
   { label: "SmartODR", href: "https://smartodr.in" },
 ];
@@ -70,7 +68,6 @@ export default function Footer() {
             <ul className="space-y-4 text-sm font-medium">
               <li><Link href="/products/equity" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors"></span>Equity Trading</Link></li>
               <li><Link href="/products/derivatives" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors"></span>Derivatives (F&O)</Link></li>
-              <li><Link href="/products/commodity" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors"></span>Commodity</Link></li>
               <li><Link href="/products/mutual-funds" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors"></span>Mutual Funds</Link></li>
               <li><Link href="/products/ipo" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors"></span>IPO Services</Link></li>
               <li><Link href="/products/depository" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors"></span>Depository Services</Link></li>
@@ -104,7 +101,10 @@ export default function Footer() {
               </li>
               <li className="flex gap-3 text-muted-foreground group">
                 <Mail className="w-5 h-5 shrink-0 text-primary group-hover:scale-110 transition-transform" />
-                <a href={`mailto:${COMPANY_INFO.email}`} className="hover:text-primary transition-colors">{COMPANY_INFO.email}</a>
+                <div className="flex flex-col">
+                  <a href={`mailto:${COMPANY_INFO.email}`} className="hover:text-primary transition-colors">{COMPANY_INFO.email}</a>
+                  <a href={`mailto:${COMPANY_INFO.email2}`} className="hover:text-primary transition-colors">{COMPANY_INFO.email2}</a>
+                </div>
               </li>
             </ul>
           </div>

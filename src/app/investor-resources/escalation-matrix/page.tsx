@@ -2,6 +2,7 @@ import { Mail, Phone, ExternalLink, ArrowDown } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { COMPANY_INFO } from "@/lib/constants";
+import Image from "next/image";
 
 export const metadata = {
   title: "Grievance Escalation Matrix | Investor Resources | Shri Venkatesh Stock Broker Services",
@@ -137,6 +138,26 @@ export default function EscalationMatrixPage() {
               )}
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Visual Matrix Chart */}
+      <div className="container mx-auto px-4 pb-16">
+        <div className="max-w-4xl mx-auto bg-muted/40 p-8 rounded-3xl border border-border/50 text-center space-y-6">
+          <h3 className="text-xl font-bold text-foreground">Official Escalation Flow Chart</h3>
+          <p className="text-xs text-muted-foreground max-w-xl mx-auto">
+            Refer to our visual compliance layout detailing escalation contact nodes, levels, and estimated resolution turnarounds.
+          </p>
+          <div className="relative overflow-hidden rounded-2xl border border-border bg-white shadow-xs max-w-2xl mx-auto group">
+            <Image
+              src="/escalation_matrix.jpg"
+              alt="Official Grievance Escalation Matrix Chart"
+              width={672}
+              height={400}
+              className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              priority
+            />
+          </div>
         </div>
       </div>
 

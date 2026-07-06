@@ -7,12 +7,12 @@ export const metadata = {
 
 const STEPS = [
   { title: "Fill the Form", desc: "Enter your basic contact details to start the process.", icon: FileText },
-  { title: "Complete eKYC", desc: "Submit PAN, Aadhaar, and Bank proof digitally.", icon: Smartphone },
+  { title: "Verify Documents", desc: "Submit PAN, Aadhaar, and Bank proof digitally.", icon: Smartphone },
   { title: "Start Trading", desc: "Once verified, your account will be activated within days.", icon: UserPlus },
 ];
 
 const REQUIREMENTS = [
-  "PAN Card", "Aadhaar Card (linked with Mobile)", "Cancelled Cheque / Bank Statement", "Digital Signature / Photo"
+  "PAN Card", "Aadhaar Card (linked with Mobile)", "Cancelled Cheque / Bank Statement", "Passport Size Photo"
 ];
 
 export default function OpenAccountPage() {

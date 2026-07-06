@@ -8,8 +8,8 @@ import { motion } from "framer-motion";
 
 const OPEN_POSITIONS = [
   {
-    title: "Equity & Commodity Dealer",
-    description: "Trade execution, client advisory, and market analysis for equity and commodity segments. NISM certifications preferred.",
+    title: "Equity Dealer",
+    description: "Trade execution, client advisory, and market analysis for the equity segment. NISM certifications preferred.",
     location: "Raipur Office",
     type: "Full-Time",
   },

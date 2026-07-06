@@ -85,7 +85,7 @@ export default function InvestorCharterPage() {
                 </thead>
                 <tbody className="divide-y divide-surface-border bg-background text-muted-foreground">
                   {[
-                    { s: "KYC Entry after account opening", t: "Within 3 working days" },
+                    { s: "Client details entry after account opening", t: "Within 3 working days" },
                     { s: "Client onboarding / account activation", t: "Within 1 week" },
                     { s: "Order execution", t: "Same day (subject to market conditions)" },
                     { s: "Issuance of contract notes", t: "Within 24 hours of trade" },

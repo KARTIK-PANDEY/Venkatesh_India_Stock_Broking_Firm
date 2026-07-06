@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { getFileUrl } from "@/lib/utils";
 
 const DOWNLOADS = [
-  { name: "KRA KYC Validation", category: "KYC", type: "PDF", size: "450 KB", href: "/kycvalidation.pdf" },
+  { name: "KRA Validation Instructions", category: "Verification", type: "PDF", size: "450 KB", href: "/kycvalidation.pdf" },
   { name: "SARAL Account Opening Form (Resident Individuals)", category: "Account Opening", type: "PDF", size: "1.2 MB", href: "/SARAL-ac-opening-Form-for-resident-individuals.pdf" },
   { name: "Policy on Freezing & Blocking Client Accounts", category: "Policy", type: "PDF", size: "320 KB", href: "/Policy-on-FreezingBlocking-Client.pdf" },
   { name: "Mandatory Display Board", category: "Compliance", type: "PDF", size: "280 KB", href: "/Mandatory-Display.pdf" },
@@ -27,7 +27,7 @@ export default function DownloadsPage() {
   const [activeTab, setActiveTab] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const categories = ["All", "KYC", "Account Opening", "Compliance", "Depository", "Policy"];
+  const categories = ["All", "Verification", "Account Opening", "Compliance", "Depository", "Policy"];
 
   const filteredDownloads = DOWNLOADS.filter(doc => {
     const matchesTab = activeTab === "All" || doc.category === activeTab;
@@ -39,7 +39,7 @@ export default function DownloadsPage() {
     <div className="bg-background min-h-screen">
       <PageHero
         title="Downloads & Forms"
-        subtitle="Access client registration kits, mandatory regulatory disclosures, KYC forms, policies, and operating instructions."
+        subtitle="Access client registration kits, mandatory regulatory disclosures, verification documents, policies, and operating instructions."
         breadcrumbs={[{ label: "Investor Resources" }, { label: "Downloads & Forms" }]}
       />
 
@@ -146,15 +146,16 @@ export default function DownloadsPage() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             {VERNACULAR_LANGUAGES.map((lang, idx) => (
-              <div
+              <a
                 key={idx}
-                className="p-5 bg-background border border-border/50 rounded-2xl hover:border-primary/30 transition-all hover:shadow-xs group text-center cursor-pointer"
-                onClick={() => alert(`Vernacular Kit for ${lang} is being prepared by our CDSL compliance team.`)}
+                href={getFileUrl("/Vernacular_Language.zip")}
+                download="Vernacular_Language.zip"
+                className="p-5 bg-background border border-border/50 rounded-2xl hover:border-primary/30 transition-all hover:shadow-xs group text-center block cursor-pointer"
               >
                 <Download className="mx-auto w-5 h-5 text-primary group-hover:scale-110 transition-transform mb-3" />
                 <h4 className="font-bold text-sm text-foreground">{lang}</h4>
-                <p className="text-[10px] text-muted-foreground mt-1">Download ZIP</p>
-              </div>
+                <p className="text-[10px] text-muted-foreground mt-1">Download Kit</p>
+              </a>
             ))}
           </div>
         </div>

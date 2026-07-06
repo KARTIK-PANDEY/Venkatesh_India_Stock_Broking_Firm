@@ -31,6 +31,15 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { ModeToggle } from "@/components/mode-toggle";
 
+function hasTarget(item: unknown): item is { target: string } {
+  return (
+    typeof item === "object" &&
+    item !== null &&
+    "target" in item &&
+    typeof (item as Record<string, unknown>).target === "string"
+  );
+}
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -80,7 +89,50 @@ export default function Header() {
               <NavigationMenuList className="gap-0">
                 {NAV_LINKS.map((link) => (
                   <NavigationMenuItem key={link.label}>
-                    {link.children ? (
+                    {link.isMegaMenu && "categories" in link ? (
+                      <>
+                        <NavigationMenuTrigger
+                          className={cn(
+                            "bg-transparent text-sm font-bold text-foreground/85",
+                            "hover:bg-primary/10 hover:text-primary",
+                            "focus:bg-primary/10 focus:text-primary",
+                            "data-[state=open]:bg-primary/10 data-[state=open]:text-primary",
+                            "h-9 px-3.5 rounded-lg transition-colors"
+                          )}
+                        >
+                          {link.label}
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                          <div className="grid w-[800px] gap-6 p-6 md:grid-cols-3 bg-background border border-border/70 rounded-3xl shadow-xl">
+                            {link.categories.map((category) => (
+                              <div key={category.title} className="space-y-3">
+                                <h4 className="text-xs font-black uppercase tracking-wider text-muted-foreground border-b border-border/40 pb-2">
+                                  {category.title}
+                                </h4>
+                                <ul className="space-y-1">
+                                  {category.links.map((child) => (
+                                    <li key={child.label}>
+                                      <NavigationMenuLink
+                                        href={getFileUrl(child.href)}
+                                        target={hasTarget(child) ? child.target : undefined}
+                                        rel={hasTarget(child) && child.target === "_blank" ? "noopener noreferrer" : undefined}
+                                        className={cn(
+                                          "flex rounded-lg px-2.5 py-1.5 no-underline outline-none transition-colors",
+                                          "text-xs font-bold text-foreground/80",
+                                          "hover:bg-primary/10 hover:text-primary"
+                                        )}
+                                      >
+                                        {child.label}
+                                      </NavigationMenuLink>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                        </NavigationMenuContent>
+                      </>
+                    ) : link.children ? (
                       <>
                         <NavigationMenuTrigger
                           className={cn(
@@ -99,8 +151,8 @@ export default function Header() {
                               <li key={child.label}>
                                 <NavigationMenuLink
                                   href={getFileUrl(child.href)}
-                                  target={"target" in child ? child.target : undefined}
-                                  rel={"target" in child && child.target === "_blank" ? "noopener noreferrer" : undefined}
+                                  target={hasTarget(child) ? child.target : undefined}
+                                  rel={hasTarget(child) && child.target === "_blank" ? "noopener noreferrer" : undefined}
                                   className={cn(
                                     "flex rounded-xl px-4 py-2.5 no-underline outline-none transition-colors",
                                     "text-sm font-bold text-foreground/80",
@@ -252,13 +304,39 @@ export default function Header() {
                               <Link
                                 key={child.label}
                                 href={getFileUrl(child.href)}
-                                target={"target" in child ? child.target : undefined}
-                                rel={"target" in child && child.target === "_blank" ? "noopener noreferrer" : undefined}
+                                target={hasTarget(child) ? child.target : undefined}
+                                rel={hasTarget(child) && child.target === "_blank" ? "noopener noreferrer" : undefined}
                                 className="flex items-center gap-2.5 text-sm text-foreground/75 hover:text-primary hover:bg-primary/10 px-3 py-2.5 rounded-lg transition-colors font-medium"
                               >
                                 <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
                                 {child.label}
                               </Link>
+                            ))}
+                          </div>
+                        ) : link.isMegaMenu && "categories" in link ? (
+                          <div className="mb-3">
+                            {/* Section label */}
+                            <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-muted-foreground px-3 py-2">
+                              {link.label}
+                            </p>
+                            {link.categories.map((cat) => (
+                              <div key={cat.title} className="pl-2 mb-2">
+                                <p className="text-[9px] font-extrabold uppercase text-primary px-3 py-1 bg-primary/5 rounded-md w-fit mb-1">
+                                  {cat.title}
+                                </p>
+                                {cat.links.map((child) => (
+                                  <Link
+                                    key={child.label}
+                                    href={getFileUrl(child.href)}
+                                    target={hasTarget(child) ? child.target : undefined}
+                                    rel={hasTarget(child) && child.target === "_blank" ? "noopener noreferrer" : undefined}
+                                    className="flex items-center gap-2.5 text-xs text-foreground/75 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors font-medium"
+                                  >
+                                    <span className="w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0" />
+                                    {child.label}
+                                  </Link>
+                                ))}
+                              </div>
                             ))}
                           </div>
                         ) : (

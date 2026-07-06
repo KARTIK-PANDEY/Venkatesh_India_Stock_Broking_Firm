@@ -37,7 +37,7 @@ export default function VoiceReader() {
       We are a SEBI Registered Intermediary based in Raipur.
       Invest with Clarity and Edge. Join thousands of investors from retail to HNI leveraging our 15 plus years of market expertise. Fast execution, robust technology, and transparent pricing.
       We are proud members of BSE and a CDSL Depository Participant.
-      Our core products and services include Equity Trading, Derivatives, Commodity trading, Mutual Funds, and IPO services.
+      Our core products and services include Equity Trading, Derivatives, Mutual Funds, and IPO services.
       Why choose us? We offer personalized advisory, robust secure platforms, and dedicated customer support.
       Important Information for Investors: Prevent unauthorized transactions in your account by updating your mobile numbers and email IDs with us.
       Ready to join the network? Open a trading account or partner with us today.

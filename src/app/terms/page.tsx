@@ -36,7 +36,7 @@ export default function TermsAndConditionsPage() {
               <Landmark className="w-5 h-5 text-primary" /> 1. Account Opening & Onboarding
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Trading and Demat accounts are opened subject to successful KYC verification and document checks. The applicant must provide accurate, up-to-date, and complete credentials. We reserve the right to reject account registration applications if details do not match KRA database values.
+              Trading and Demat accounts are opened subject to successful verification and document checks. The applicant must provide accurate, up-to-date, and complete credentials. We reserve the right to reject account registration applications if details do not match KRA database values.
             </p>
           </section>
 

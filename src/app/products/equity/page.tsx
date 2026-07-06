@@ -129,7 +129,6 @@ export default function EquityTradingPage() {
               <h4 className="font-bold text-foreground mb-4">Quick Links</h4>
               <ul className="space-y-3 text-sm font-medium">
                 <li><Link href="/products/derivatives" className="text-primary hover:underline">Derivatives Trading</Link></li>
-                <li><Link href="/products/commodity" className="text-primary hover:underline">Commodity Trading</Link></li>
                 <li><Link href="/investor-resources/downloads" className="text-primary hover:underline">Download Forms</Link></li>
               </ul>
             </div>

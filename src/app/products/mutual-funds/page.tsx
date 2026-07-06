@@ -232,7 +232,7 @@ export default function MutualFundsPage() {
               <ul className="space-y-3 text-sm font-medium">
                 <li><Link href="/products/ipo" className="text-primary hover:underline">IPO Application</Link></li>
                 <li><Link href="/products/equity" className="text-primary hover:underline">Equity Trading</Link></li>
-                <li><Link href="/investor-resources/downloads" className="text-primary hover:underline">Download KYC Forms</Link></li>
+                <li><Link href="/investor-resources/downloads" className="text-primary hover:underline">Download Registration Forms</Link></li>
               </ul>
             </div>
           </div>

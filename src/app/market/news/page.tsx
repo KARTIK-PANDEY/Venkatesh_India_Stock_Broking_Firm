@@ -43,7 +43,7 @@ const MOCK_NEWS = [
   },
   {
     title: "Metal Stocks Rally on Renewed Global Industrial Infrastructure Demand",
-    desc: "Steel and aluminum producers register sharp price increases as international commodity hubs report supply shortfalls and rising infrastructure construction volume.",
+    desc: "Steel and aluminum producers register sharp price increases as international metal markets report supply shortfalls and rising infrastructure construction volume.",
     category: "Markets",
     date: "June 20, 2026",
     readTime: "3 min read",

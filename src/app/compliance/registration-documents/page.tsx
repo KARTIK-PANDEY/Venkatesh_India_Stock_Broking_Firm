@@ -9,8 +9,6 @@ const REG_DOCS = [
   { segment: "BSE Cash", number: REGISTRATION_DETAILS.bse_cash, type: "SEBI Stock Broker Certificate" },
   { segment: "BSE F&O", number: REGISTRATION_DETAILS.bse_fo, type: "SEBI Stock Broker Certificate" },
   { segment: "CDSL (Depository Participant)", number: REGISTRATION_DETAILS.cdsl_dp, type: "CDSL DP Registration Certificate" },
-  { segment: "MCX Member ID", number: "28760", type: "MCX Membership Registry" },
-  { segment: "NCDEX Member ID", number: "823", type: "NCDEX Membership Registry" },
   { segment: "Corporate Identity Number (CIN)", number: REGISTRATION_DETAILS.cin, type: "Ministry of Corporate Affairs (MCA)" },
 ];
 
@@ -29,7 +27,7 @@ export default function RegistrationDocumentsPage() {
         <div>
           <h2 className="text-3xl font-display font-bold text-foreground mb-4">Official SEBI & Exchange Registrations</h2>
           <p className="text-muted-foreground text-base max-w-3xl mb-8 leading-relaxed">
-            We are registered with the Securities and Exchange Board of India (SEBI) and hold memberships of Bombay Stock Exchange (BSE) and Multi Commodity Exchange (MCX), along with depository participant status with CDSL.
+            We are registered with the Securities and Exchange Board of India (SEBI) and hold memberships of Bombay Stock Exchange (BSE), along with depository participant status with CDSL.
           </p>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

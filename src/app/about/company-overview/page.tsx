@@ -99,7 +99,7 @@ export default function CompanyOverviewPage() {
           <p className="text-muted-foreground text-lg">{COMPANY_INFO.address}</p>
           <div className="mt-4 flex flex-wrap gap-6 text-sm font-medium text-muted-foreground">
             <span>📞 {COMPANY_INFO.phones.join(" / ")}</span>
-            <span>✉️ {COMPANY_INFO.email}</span>
+            <span>✉️ {COMPANY_INFO.email} / {COMPANY_INFO.email2}</span>
           </div>
         </section>
       </div>

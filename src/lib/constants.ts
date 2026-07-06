@@ -18,7 +18,6 @@ export const NAV_LINKS = [
     children: [
       { label: "Equity Trading", href: "/products/equity" },
       { label: "Derivatives (F&O)", href: "/products/derivatives" },
-      { label: "Commodity", href: "/products/commodity" },
       { label: "Mutual Funds", href: "/products/mutual-funds" },
       { label: "IPO", href: "/products/ipo" },
       { label: "Depository Services", href: "/products/depository" },
@@ -27,41 +26,42 @@ export const NAV_LINKS = [
   {
     label: "SEBI Documents",
     href: "#",
-    children: [
-      { label: "Investor Charter (SEBI)", href: "/Investor_Charter_SHRI_VSB.pdf", target: "_blank" },
-      { label: "Investor Charter (SVSBS)", href: "/investor-resources/investor-charter" },
-      { label: "Investor Charter (Annexure C)", href: "/investor-resources/complaint-data?tab=dp" },
-      { label: "Escalation Matrix (Live)", href: "/investor-resources/escalation-matrix" },
-      { label: "Risk Disclosure (Live)", href: "/investor-resources/risk-disclosure" },
-      { label: "eVoting (CDSL)", href: "https://www.evotingindia.com/", target: "_blank" },
-      { label: "KRA KYC Validation", href: "/kycvalidation.pdf", target: "_blank" },
-      { label: "Policy on Freezing & Blocking", href: "/Policy-on-FreezingBlocking-Client.pdf", target: "_blank" },
-      { label: "Mandatory Display Board", href: "/Mandatory-Display.pdf", target: "_blank" },
-      { label: "SARAL Account Opening Form", href: "/SARAL-ac-opening-Form-for-resident-individuals.pdf", target: "_blank" },
-      { label: "Rights and Obligations", href: "/DP-Operating-Instructions-Annexures-as-on-June-30-2025%20(1).pdf", target: "_blank" },
-      { label: "Complaints on SCORES", href: "/Filing_of_complaints_on_SCORES.pdf", target: "_blank" },
-    ],
-  },
-  {
-    label: "Investor Resources",
-    href: "/investor-resources/investor-charter",
-    children: [
-      { label: "Investor Charter", href: "/investor-resources/investor-charter" },
-      { label: "Risk Disclosure", href: "/investor-resources/risk-disclosure" },
-      { label: "Escalation Matrix", href: "/investor-resources/escalation-matrix" },
-      { label: "Grievances (SCORES)", href: "/investor-resources/grievances" },
-      { label: "SmartODR", href: "/investor-resources/smartodr" },
-      { label: "Complaint Data", href: "/investor-resources/complaint-data" },
-      { label: "Downloads & Forms", href: "/investor-resources/downloads" },
-    ],
-  },
-  {
-    label: "Compliance",
-    href: "/compliance/registration-documents",
-    children: [
-      { label: "Registration Documents", href: "/compliance/registration-documents" },
-      { label: "Mandatory Disclosures", href: "/compliance/mandatory-disclosures" },
-      { label: "Policies", href: "/compliance/policies" },
+    isMegaMenu: true,
+    categories: [
+      {
+        title: "Charters & Compliance Data",
+        links: [
+          { label: "SEBI Investor Charter", href: "/Investor_Charter_SHRI_VSB.pdf", target: "_blank" },
+          { label: "SVSBS Investor Charter", href: "/investor-resources/investor-charter" },
+          { label: "Complaint Data (BSE & DP)", href: "/investor-resources/complaint-data" },
+          { label: "DP Charter (Annexure C)", href: "/investor-resources/complaint-data?tab=dp" },
+          { label: "Mandatory Disclosures", href: "/compliance/mandatory-disclosures" },
+        ],
+      },
+      {
+        title: "Grievances & Escalations",
+        links: [
+          { label: "Escalation Matrix", href: "/investor-resources/escalation-matrix" },
+          { label: "Risk Disclosure (Live)", href: "/investor-resources/risk-disclosure" },
+          { label: "Grievances Desk", href: "/investor-resources/grievances" },
+          { label: "SmartODR Portal", href: "/investor-resources/smartodr" },
+          { label: "Complaints on SCORES", href: "/Filing_of_complaints_on_SCORES.pdf", target: "_blank" },
+        ],
+      },
+      {
+        title: "Policies & Downloads",
+        links: [
+          { label: "SARAL Account Opening Form", href: "/SARAL-ac-opening-Form-for-resident-individuals.pdf", target: "_blank" },
+          { label: "Policy on Freezing & Blocking", href: "/Policy-on-FreezingBlocking-Client.pdf", target: "_blank" },
+          { label: "Policies Documents", href: "/compliance/policies" },
+          { label: "Mandatory Display Board", href: "/Mandatory-Display.pdf", target: "_blank" },
+          { label: "KRA Validation Instructions", href: "/kycvalidation.pdf", target: "_blank" },
+          { label: "CDSL Rights & Obligations", href: "/DP-Operating-Instructions-Annexures-as-on-June-30-2025%20(1).pdf", target: "_blank" },
+          { label: "Registration Documents", href: "/compliance/registration-documents" },
+          { label: "All Downloads & Forms", href: "/investor-resources/downloads" },
+          { label: "eVoting (CDSL)", href: "https://www.evotingindia.com/", target: "_blank" },
+        ],
+      },
     ],
   },
   {
@@ -89,6 +89,7 @@ export const COMPANY_INFO = {
   phones: ["0771-4059071", "0771-4059072"],
   fax: "0771-4059072",
   email: "info@venkateshindia.com",
+  email2: "shri_vsb@yahoo.in",
   compliance: {
     name: "Ms. Prashita Sheolikar",
     phone: "9522240016",
@@ -119,21 +120,6 @@ export const BRANCHES = [
     address: "Commercial Complex-6, Near SBI Personal Banking Branch, Nehru Nagar (E), Bhilai - 490020 (C.G.)",
     phone: "0788-4015665",
     email: "bhilai@venkateshindia.com"
-  },
-  {
-    city: "Raigarh",
-    address: "G-16, City Plaza, 1st Floor, Kotra Road, Raigarh - 496001 (C.G.)",
-    phone: "09893590000",
-  },
-  {
-    city: "Bilaspur",
-    address: "Shop No. 213, 1st Floor, V.R. Plaza, Link Road, Bilaspur - 495001 (C.G.)",
-    phone: "07752-228666",
-  },
-  {
-    city: "Odisha",
-    address: "C/o R.C. Mishra, Jamai Colony, Mahima Nagar, Navrangpur - 764063 (Orissa)",
-    phone: "7205391669",
   }
 ];
 

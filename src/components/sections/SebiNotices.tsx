@@ -2,7 +2,6 @@ import { Info } from "lucide-react";
 
 const NOTICES = [
   "Prevent Unauthorised transactions in your account — Update your mobile numbers/email IDs with your stock broker. Receive information of your transactions directly from Exchange on your mobile/email at end of day. — Issued in the interest of investors.",
-  "KYC is a one-time exercise while dealing in securities markets — once KYC is done through a SEBI registered intermediary (broker, DP, Mutual Fund etc.), you need not undergo the same process again when you approach another intermediary.",
   "No need to issue cheques by investors while subscribing to IPO. Just write the bank account number and sign in the application form to authorise your bank to make payment in case of allotment. No worries for refund as the money remains in investor's account.",
   "Stock Brokers can accept securities as margin from clients only by way of pledge in the depository system w.e.f. September 1, 2020.",
   "Update your mobile number & email Id with your stock broker/depository participant and receive OTP directly from depository on your email id and/or mobile number to create pledge.",

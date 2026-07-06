@@ -25,7 +25,6 @@ const SITEMAP_LINKS = [
     links: [
       { label: "Equity Trading", href: "/products/equity" },
       { label: "Derivatives (F&O)", href: "/products/derivatives" },
-      { label: "Commodity", href: "/products/commodity" },
       { label: "Mutual Funds", href: "/products/mutual-funds" },
       { label: "IPO Services", href: "/products/ipo" },
     ]
@@ -36,9 +35,9 @@ const SITEMAP_LINKS = [
       { label: "Investor Charter", href: "/investor-resources/investor-charter" },
       { label: "Escalation Matrix", href: "/investor-resources/escalation-matrix" },
       { label: "Complaint Data", href: "/investor-resources/complaint-data" },
-      { label: "SCORES Grievances", href: "/investor-resources/scores" },
+      { label: "SCORES Grievances", href: "/investor-resources/grievances" },
       { label: "SmartODR", href: "/investor-resources/smartodr" },
-      { label: "Downloads", href: "/downloads" },
+      { label: "Downloads", href: "/investor-resources/downloads" },
     ]
   },
 ];

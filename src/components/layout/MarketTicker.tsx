@@ -8,9 +8,7 @@ const MOCK_DATA = [
   { symbol: "SENSEX", value: "78,048.00", change: "+403.10", percent: "+0.52%", up: true },
   { symbol: "BANKNIFTY", value: "52,450.50", change: "+210.30", percent: "+0.40%", up: true },
   { symbol: "NIFTY IT", value: "38,205.45", change: "+320.15", percent: "+0.84%", up: true },
-  { symbol: "GOLD MCX", value: "73,520.00", change: "+125.00", percent: "+0.17%", up: true },
   { symbol: "USD/INR", value: "83.52", change: "+0.05", percent: "+0.06%", up: true },
-  { symbol: "CRUDE OIL", value: "6,915.00", change: "-25.00", percent: "-0.36%", up: false },
 ];
 
 export default function MarketTicker() {

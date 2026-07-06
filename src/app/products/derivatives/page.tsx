@@ -79,7 +79,7 @@ export default function DerivativesTradingPage() {
                         <MonitorSmartphone className="w-5 h-5" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-foreground mb-1">NEST Desktop Terminal</h4>
+                        <h4 className="font-bold text-foreground mb-1">Desktop Trading Terminal</h4>
                         <p className="text-sm text-muted-foreground">A robust, high-performance trading platform for professional traders requiring advanced charting and rapid execution.</p>
                       </div>
                     </div>
@@ -133,7 +133,6 @@ export default function DerivativesTradingPage() {
               <h4 className="font-bold text-foreground mb-4">Quick Links</h4>
               <ul className="space-y-3 text-sm font-medium">
                 <li><Link href="/products/equity" className="text-primary hover:underline">Equity Trading</Link></li>
-                <li><Link href="/products/commodity" className="text-primary hover:underline">Commodity Trading</Link></li>
                 <li><Link href="/investor-resources/risk-disclosure" className="text-primary hover:underline">Risk Disclosure</Link></li>
               </ul>
             </div>

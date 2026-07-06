@@ -32,7 +32,7 @@ export default function PartnerWithUsPage() {
           <h2 className="text-3xl font-display font-bold text-foreground mb-10 text-center">Why Partner with Venkatesh India?</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Attractive Revenue Share", desc: "Earn competitive brokerage commissions across Equity, F&O, Currency, and Commodity segments." },
+              { title: "Attractive Revenue Share", desc: "Earn competitive brokerage commissions across Equity, F&O, and Currency segments." },
               { title: "Strong Brand Support", desc: "Leverage 15+ years of established trust and credibility in eastern and central India." },
               { title: "Research & Advisory", desc: "Provide your clients with daily market research, technical reports, and personalized advisory support." },
               { title: "Technology Platform", desc: "Access to our robust trading terminals, back-office systems, and dedicated client portals." },
@@ -73,7 +73,7 @@ export default function PartnerWithUsPage() {
           <div className="grid sm:grid-cols-4 gap-4">
             {[
               { step: "01", title: "Enquire", desc: "Contact our partnership desk via phone or email" },
-              { step: "02", title: "Documentation", desc: "Submit KYC, educational & infrastructure documents" },
+              { step: "02", title: "Documentation", desc: "Submit identification, educational & infrastructure documents" },
               { step: "03", title: "Agreement", desc: "Sign the sub-broker / AP agreement and deposit registration fees" },
               { step: "04", title: "Go Live", desc: "Receive your login, terminal access, and start servicing clients" },
             ].map((item, i) => (

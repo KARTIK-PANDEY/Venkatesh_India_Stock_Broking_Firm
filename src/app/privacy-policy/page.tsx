@@ -39,7 +39,7 @@ export default function PrivacyPolicyPage() {
               To open and maintain your trading and depository accounts, and to comply with statutory mandates, we collect:
             </p>
             <ul className="list-disc pl-6 text-sm text-muted-foreground space-y-2 leading-relaxed">
-              <li><strong>KYC Details:</strong> Name, Address, PAN Card number, Aadhaar number, Mobile number, Email ID, Passport-sized photographs, and signature samples.</li>
+              <li><strong>Registration Details:</strong> Name, Address, PAN Card number, Aadhaar number, Mobile number, Email ID, Passport-sized photographs, and signature samples.</li>
               <li><strong>Financial Details:</strong> Bank account statements, cancelled cheques, income disclosures, and net worth certificates (for derivative segment registration).</li>
               <li><strong>Transactional Details:</strong> Records of stock trades, order details, ledger balances, DP pledge requests, and payment transactions.</li>
             </ul>
