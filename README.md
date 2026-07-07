@@ -1,6 +1,6 @@
-# Shri Venkatesh Stock Broker Services India Pvt. Ltd.
+# Shri Venkatesh Stock Broker Services India Pvt. Ltd. — Official Website
 
-> **Production-ready Corporate website** for Shri Venkatesh Stock Broker Services India Pvt. Ltd., a SEBI-registered Stock Broking Firm and CDSL Depository Participant headquartered in Raipur, Chhattisgarh.
+> **Production-ready corporate website** for Shri Venkatesh Stock Broker Services India Pvt. Ltd., a SEBI-registered stock broker and CDSL Depository Participant headquartered in Raipur, Chhattisgarh.
 
 ---
 
@@ -300,12 +300,6 @@ Raipur, Chhattisgarh, India
 - 🏛️ SEBI Registration: INZ000231135
 
 ---
-
-## Project Developed by **KARTIK PANDEY** 
-
-
----
-
 
 ## 📄 License
 
