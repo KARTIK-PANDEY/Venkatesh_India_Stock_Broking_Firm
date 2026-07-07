@@ -22,7 +22,7 @@ export default function PartnerCTA() {
               <div className="space-y-4 mb-10">
                 {[
                   "Earn attractive commissions across all product segments",
-                  "Full research & back-office support for your clients",
+                  "Full back-office and compliance support for your clients",
                   "Proven brand with 15+ years of trust in eastern India",
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3">

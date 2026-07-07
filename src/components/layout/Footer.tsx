@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin, ExternalLink, ShieldCheck } from "lucide-react";
 import { COMPANY_INFO, REGISTRATION_DETAILS } from "@/lib/constants";
+import AccessibilityWidget from "./AccessibilityWidget";
 
 const REGULATORY_LINKS = [
   { label: "SEBI", href: "https://www.sebi.gov.in" },
@@ -147,6 +148,7 @@ export default function Footer() {
             <Link href="/terms" className="hover:text-primary transition-colors">Terms & Conditions</Link>
             <Link href="/grievance-policy" className="hover:text-primary transition-colors">Grievance Policy</Link>
             <Link href="/sitemap" className="hover:text-primary transition-colors">Sitemap</Link>
+            <AccessibilityWidget />
           </div>
         </div>
       </div>

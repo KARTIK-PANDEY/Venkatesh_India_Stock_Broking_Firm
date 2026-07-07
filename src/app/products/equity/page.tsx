@@ -41,7 +41,7 @@ export default function EquityTradingPage() {
                   Equity trading involves buying and selling shares of publicly traded companies on the Bombay Stock Exchange (BSE). By trading in equities, you become a shareholder in the company, participating in its growth and success.
                 </p>
                 <p>
-                  At Shri Venkatesh Stock Broker Services, we provide you with the tools, technology, and research to navigate the equity markets effectively, whether you are a long-term investor or a short-term trader.
+                  At Shri Venkatesh Stock Broker Services, we provide you with the tools, technology, and market data to navigate the equity markets effectively, whether you are a long-term investor or a short-term trader.
                 </p>
               </div>
             </section>
@@ -84,7 +84,7 @@ export default function EquityTradingPage() {
               <h2 className="text-3xl font-display text-foreground mb-8">Why Trade Equity with Us?</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
-                  { title: "Expert Research", desc: "Timely market updates and technical reports from our experienced analysts.", icon: LineChart },
+                  { title: "Advisory Desk", desc: "Timely market updates and briefings from our experienced financial desk.", icon: LineChart },
                   { title: "Personalised Support", desc: "Dedicated relationship managers to guide you through your investment journey.", icon: Clock },
                   { title: "Low Latency Trading", desc: "Robust technology platforms for seamless order execution on BSE.", icon: Zap },
                   { title: "SEBI Compliant", desc: "Safe and transparent trading environment following all regulatory guidelines.", icon: ShieldCheck },

@@ -41,7 +41,7 @@ export default function DerivativesTradingPage() {
                   Derivatives are financial contracts whose value is derived from an underlying asset, such as a stock or an index. In the Indian markets, Futures and Options (F&O) are the most popular derivative instruments, offering traders the ability to speculate on price movements and hedge their portfolios against market volatility.
                 </p>
                 <p>
-                  At Shri Venkatesh Stock Broker Services, we provide sophisticated tools and research to help you navigate the complexities of F&O trading with precision and discipline.
+                  At Shri Venkatesh Stock Broker Services, we provide sophisticated tools and market tracking platforms to help you navigate the complexities of F&O trading with precision and discipline.
                 </p>
               </div>
             </section>

@@ -34,7 +34,7 @@ export default function PartnerWithUsPage() {
             {[
               { title: "Attractive Revenue Share", desc: "Earn competitive brokerage commissions across Equity, F&O, and Currency segments." },
               { title: "Strong Brand Support", desc: "Leverage 15+ years of established trust and credibility in eastern and central India." },
-              { title: "Research & Advisory", desc: "Provide your clients with daily market research, technical reports, and personalized advisory support." },
+              { title: "Insight & Advisory", desc: "Provide your clients with daily market insights, technical reviews, and personalized advisory support." },
               { title: "Technology Platform", desc: "Access to our robust trading terminals, back-office systems, and dedicated client portals." },
               { title: "Training & Development", desc: "Regular training programs, product knowledge sessions, and compliance guidance for your team." },
               { title: "Full Back-Office Support", desc: "Dedicated relationship manager, settlement support, and compliance assistance." },

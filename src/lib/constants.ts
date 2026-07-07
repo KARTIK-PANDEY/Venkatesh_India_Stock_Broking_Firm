@@ -51,7 +51,7 @@ export const NAV_LINKS = [
       {
         title: "Policies & Downloads",
         links: [
-          { label: "SARAL Account Opening Form", href: "/SARAL-ac-opening-Form-for-resident-individuals.pdf", target: "_blank" },
+          { label: "SARAL Account Opening Form (PDF)", href: "/SARAL-ac-opening-Form-for-resident-individuals.pdf", target: "_blank" },
           { label: "Policy on Freezing & Blocking", href: "/Policy-on-FreezingBlocking-Client.pdf", target: "_blank" },
           { label: "Policies Documents", href: "/compliance/policies" },
           { label: "Mandatory Display Board", href: "/Mandatory-Display.pdf", target: "_blank" },

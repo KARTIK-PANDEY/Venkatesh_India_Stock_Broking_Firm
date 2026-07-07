@@ -1,11 +1,11 @@
-import { CheckCircle2, FlaskConical, Gavel, UserCheck, Heart } from "lucide-react";
+import { CheckCircle2, Gavel, UserCheck, Heart, TrendingUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const POINTS = [
   {
-    title: "Research-Backed Guidance",
-    description: "Our in-house research team provides timely market reports and currency updates to help you make informed decisions in a volatile market.",
-    icon: FlaskConical,
+    title: "Expert Market Guidance",
+    description: "Our experienced desk provides timely market briefings and currency updates to help you make informed decisions in a volatile market.",
+    icon: TrendingUp,
     color: "text-blue-600",
     bg: "bg-blue-50"
   },

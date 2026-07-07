@@ -20,7 +20,7 @@ const PRODUCTS = [
   },
   {
     title: "Derivatives (F&O)",
-    description: "Trade Index and Stock Futures & Options with research-backed strategies.",
+    description: "Trade Index and Stock Futures & Options with advanced hedging strategies.",
     icon: TrendingUp,
     href: "/products/derivatives",
   },

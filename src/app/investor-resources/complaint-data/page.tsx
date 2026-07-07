@@ -9,10 +9,10 @@ import { cn } from "@/lib/utils";
 // Mock Stock Broker complaints data
 const MOCK_COMPLAINT_DATA = [
   { month: "March 2026", receivedClients: 0, receivedScores: 0, total: 0, resolved: 0, pending: 0, time: "N/A" },
-  { month: "February 2026", receivedClients: 1, receivedScores: 0, total: 1, resolved: 1, pending: 0, time: "2 days" },
+  { month: "February 2026", receivedClients: 0, receivedScores: 0, total: 0, resolved: 0, pending: 0, time: "N/A" },
   { month: "January 2026", receivedClients: 0, receivedScores: 0, total: 0, resolved: 0, pending: 0, time: "N/A" },
   { month: "December 2025", receivedClients: 0, receivedScores: 0, total: 0, resolved: 0, pending: 0, time: "N/A" },
-  { month: "November 2025", receivedClients: 1, receivedScores: 1, total: 2, resolved: 2, pending: 0, time: "5 days" },
+  { month: "November 2025", receivedClients: 0, receivedScores: 0, total: 0, resolved: 0, pending: 0, time: "N/A" },
   { month: "October 2025", receivedClients: 0, receivedScores: 0, total: 0, resolved: 0, pending: 0, time: "N/A" },
 ];
 
