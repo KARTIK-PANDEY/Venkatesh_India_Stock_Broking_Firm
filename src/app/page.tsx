@@ -3,6 +3,7 @@ import StatsBar from "@/components/sections/StatsBar";
 import WelcomeSection from "@/components/sections/WelcomeSection";
 import ProductsGrid from "@/components/sections/ProductsGrid";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
+import AccessibilityVideos from "@/components/sections/AccessibilityVideos";
 import SebiNotices from "@/components/sections/SebiNotices";
 import GrievanceQuickAccess from "@/components/sections/GrievanceQuickAccess";
 import PartnerCTA from "@/components/sections/PartnerCTA";
@@ -21,6 +22,7 @@ export default function Home() {
       <WelcomeSection />
       <ProductsGrid />
       <WhyChooseUs />
+      <AccessibilityVideos />
       <SebiNotices />
       <GrievanceQuickAccess />
       <PartnerCTA />

@@ -32,6 +32,14 @@ export default function InvestorCharterPage() {
                 <Download className="w-4 h-4" /> SEBI Investor Charter
               </a>
               <a
+                href={getFileUrl("/Investor_Charter_STOCK_BROKER-BSe-m.pdf")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(buttonVariants({ variant: "outline" }), "rounded-full px-6 h-11 text-xs shadow-lg gap-2 font-bold border-white/20 hover:bg-white/10 text-white")}
+              >
+                <Download className="w-4 h-4" /> Stock Broker Charter (BSE)
+              </a>
+              <a
                 href="http://cp-in-10.whb.tempwebhost.net/~venkakgl/investorchart2.php"
                 target="_blank"
                 rel="noopener noreferrer"
