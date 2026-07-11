@@ -299,9 +299,16 @@ Raipur, Chhattisgarh, India
 - 📧 Email: shri_vsb@yahoo.in
 - 🏛️ SEBI Registration: INZ000231135
 
+
 ---
 
-## Developed By **KARTIK PANDEY** 
+
+## Developed By **KARTIK PANDEY**
+
+
+---
+
+
 
 ## 📄 License
 
