@@ -36,23 +36,36 @@ export default function PageHero({ title, subtitle, breadcrumbs }: PageHeroProps
         >
           {/* Breadcrumbs */}
           {breadcrumbs && breadcrumbs.length > 0 && (
-            <nav className="flex items-center gap-1.5 text-xs md:text-sm font-bold uppercase tracking-wider text-accent mb-6" aria-label="Breadcrumb">
-              <Link href="/" className="hover:text-white transition-colors flex items-center gap-1 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-accent rounded-sm px-1 py-0.5">
-                <Home className="w-3.5 h-3.5" />
-                <span className="sr-only">Home</span>
-              </Link>
-              {breadcrumbs.map((item, idx) => (
-                <div key={idx} className="flex items-center gap-1.5">
-                  <ChevronRight className="w-3.5 h-3.5 text-white/40 shrink-0" />
-                  {item.href ? (
-                    <Link href={item.href} className="hover:text-white transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-accent rounded-sm px-1 py-0.5">
-                      {item.label}
-                    </Link>
-                  ) : (
-                    <span className="text-white/70 font-semibold">{item.label}</span>
-                  )}
-                </div>
-              ))}
+            <nav aria-label="Breadcrumb" className="mb-6">
+              <ol className="flex flex-wrap items-center gap-1.5 text-xs md:text-sm font-bold uppercase tracking-wider text-accent">
+                <li className="flex items-center gap-1.5">
+                  <Link 
+                    href="/" 
+                    className="hover:text-white transition-colors flex items-center gap-1 focus-visible:ring-2 focus-visible:ring-accent rounded-sm px-1 py-0.5"
+                  >
+                    <Home className="w-3.5 h-3.5" aria-hidden="true" />
+                    <span>Home</span>
+                  </Link>
+                </li>
+                {breadcrumbs.map((item, idx) => {
+                  const isLast = idx === breadcrumbs.length - 1;
+                  return (
+                    <li key={idx} className="flex items-center gap-1.5" aria-current={isLast ? "page" : undefined}>
+                      <ChevronRight className="w-3.5 h-3.5 text-white/40 shrink-0" aria-hidden="true" />
+                      {item.href && !isLast ? (
+                        <Link 
+                          href={item.href} 
+                          className="hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-accent rounded-sm px-1 py-0.5"
+                        >
+                          {item.label}
+                        </Link>
+                      ) : (
+                        <span className="text-white/80 font-semibold">{item.label}</span>
+                      )}
+                    </li>
+                  );
+                })}
+              </ol>
             </nav>
           )}
 

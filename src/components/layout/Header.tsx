@@ -74,7 +74,7 @@ export default function Header() {
             <div className="h-14 w-52 rounded-lg overflow-hidden group-hover:scale-[1.02] transition-transform shrink-0">
               <Image
                 src="/logo.jpg"
-                alt="Shri Venkatesh Stock Broker Services India Pvt. Ltd."
+                alt="Shri Venkatesh Stock Broker Services India Pvt. Ltd. Logo"
                 width={208}
                 height={56}
                 className="object-contain w-full h-full"
@@ -262,11 +262,14 @@ export default function Header() {
               Open
             </Link>
             <Sheet>
-              <SheetTrigger className={cn(
-                buttonVariants({ variant: "outline", size: "icon" }),
-                "rounded-lg border-border/60 h-8 w-8"
-              )}>
-                <Menu className="h-4 w-4" />
+              <SheetTrigger 
+                aria-label="Open navigation menu"
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "icon" }),
+                  "rounded-lg border-border/60 h-8 w-8"
+                )}
+              >
+                <Menu className="h-4 w-4" aria-hidden="true" />
               </SheetTrigger>
               <SheetContent side="right" className="w-[85vw] sm:w-[380px] p-0 bg-background border-l border-border/60">
 
@@ -276,7 +279,7 @@ export default function Header() {
                     <div className="h-10 w-28 rounded-lg overflow-hidden shrink-0">
                       <Image
                         src="/logo.jpg"
-                        alt="Shri Venkatesh Stock Broker Services India Pvt. Ltd."
+                        alt="Shri Venkatesh Stock Broker Services India Pvt. Ltd. Logo"
                         width={112}
                         height={40}
                         className="object-contain w-full h-full"

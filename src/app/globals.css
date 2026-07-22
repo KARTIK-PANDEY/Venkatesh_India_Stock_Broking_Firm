@@ -212,10 +212,16 @@
     @apply font-sans;
   }
 
-  /* Provide a clear, custom focus ring */
-  :focus-visible {
-    outline: 3px solid #2563EB;
-    outline-offset: 2px;
+  /* Provide a clear, high-contrast custom focus ring for all interactive elements (WCAG 2.4.7) */
+  :focus-visible,
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 3px solid #2563EB !important;
+    outline-offset: 2px !important;
     border-radius: 4px;
   }
 

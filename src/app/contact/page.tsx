@@ -16,14 +16,13 @@ export default function ContactPage() {
   const [success, setSuccess] = useState(false);
 
   const handleMobileChange = (val: string) => {
-    setMobile(val);
+    const digitsOnly = val.replace(/[^0-9]/g, "").slice(0, 10);
+    setMobile(digitsOnly);
 
-    if (/[a-zA-Z]/.test(val)) {
-      setMobileError("Mobile number cannot contain letters.");
-    } else if (val && !/^\+?[0-9\s\-()]*$/.test(val)) {
-      setMobileError("Invalid character in mobile number. Only numbers and +, -, spaces are allowed.");
-    } else if (val && val.replace(/[^0-9]/g, "").length < 10) {
-      setMobileError("Mobile number must be at least 10 digits.");
+    if (val && /[^0-9]/.test(val)) {
+      setMobileError("Mobile number can only contain numeric digits.");
+    } else if (digitsOnly && digitsOnly.length < 10) {
+      setMobileError("Mobile number must be exactly 10 numeric digits.");
     } else {
       setMobileError("");
     }
@@ -237,19 +236,23 @@ export default function ContactPage() {
                         id="contact-mobile" 
                         name="mobile" 
                         type="tel" 
+                        inputMode="numeric"
+                        pattern="[0-9]*"
+                        maxLength={10}
                         value={mobile}
                         onChange={(e) => handleMobileChange(e.target.value)}
-                        placeholder="+91 00000 00000" 
+                        placeholder="10-digit mobile number" 
                         autoComplete="tel" 
                         required 
                         aria-required="true" 
                         aria-describedby="mobile-error mobile-hint" 
-                        className={`w-full bg-background border rounded-lg h-12 px-4 focus:ring-2 focus:ring-brand-mid outline-hidden transition-all text-foreground ${
+                        aria-invalid={!!mobileError}
+                        className={`w-full bg-background border rounded-lg h-12 px-4 focus:ring-2 focus:ring-primary outline-hidden transition-all text-foreground font-medium ${
                           mobileError ? "border-red-500 focus:ring-red-500" : "border-border/50"
                         }`} 
                       />
                       {mobileError ? (
-                        <p id="mobile-error" className="text-xs text-red-500 font-semibold">{mobileError}</p>
+                        <p id="mobile-error" className="text-xs text-red-600 font-bold" aria-live="polite">{mobileError}</p>
                       ) : (
                         <p id="mobile-hint" className="text-[11px] text-muted-foreground">Please enter a valid 10-digit mobile number</p>
                       )}

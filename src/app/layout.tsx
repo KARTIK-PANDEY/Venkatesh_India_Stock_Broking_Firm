@@ -41,7 +41,12 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${outfit.variable} font-sans antialiased bg-background text-foreground min-h-screen flex flex-col selection:bg-primary/30 selection:text-primary`}
       >
-        <a href="#main-content" className="skip-link sr-only focus:not-sr-only absolute -top-[100px] left-4 bg-[#0B2545] text-white px-5 py-3 rounded-b-lg text-base font-semibold z-[9999] transition-[top] duration-200 focus:top-0">Skip to main content</a>
+        <a 
+          href="#main-content" 
+          className="skip-link sr-only focus:not-sr-only absolute -top-[100px] left-4 bg-primary text-primary-foreground px-6 py-3 rounded-b-xl text-sm font-bold z-[9999] transition-[top] duration-200 focus:top-0 shadow-2xl focus:ring-4 focus:ring-accent focus:outline-hidden"
+        >
+          Skip to main content
+        </a>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

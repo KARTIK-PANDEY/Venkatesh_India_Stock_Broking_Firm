@@ -1,14 +1,18 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Accessibility, Sliders, X, RotateCcw, Type, AlignLeft, Eye, EyeOff, Link2 } from "lucide-react";
 
 export default function AccessibilityWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  
+  const modalRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const previouslyFocusedElement = useRef<HTMLElement | null>(null);
 
   // Lazy state initializers to load preferences safely on client
-  const [fontSize, setFontSize] = useState<"normal" | "large" | "xlarge">(() => {
+  const [fontSize, setFontSize] = useState<"normal" | "large" | "xlarge">((): "normal" | "large" | "xlarge" => {
     if (typeof window !== "undefined") {
       const stored = localStorage.getItem("a11y-font-size");
       if (stored === "normal" || stored === "large" || stored === "xlarge") {
@@ -18,7 +22,7 @@ export default function AccessibilityWidget() {
     return "normal";
   });
 
-  const [letterSpacing, setLetterSpacing] = useState<"normal" | "wide" | "xwide">(() => {
+  const [letterSpacing, setLetterSpacing] = useState<"normal" | "wide" | "xwide">((): "normal" | "wide" | "xwide" => {
     if (typeof window !== "undefined") {
       const stored = localStorage.getItem("a11y-letter-spacing");
       if (stored === "normal" || stored === "wide" || stored === "xwide") {
@@ -28,7 +32,7 @@ export default function AccessibilityWidget() {
     return "normal";
   });
 
-  const [lineHeight, setLineHeight] = useState<"normal" | "comfortable" | "spacious">(() => {
+  const [lineHeight, setLineHeight] = useState<"normal" | "comfortable" | "spacious">((): "normal" | "comfortable" | "spacious" => {
     if (typeof window !== "undefined") {
       const stored = localStorage.getItem("a11y-line-height");
       if (stored === "normal" || stored === "comfortable" || stored === "spacious") {
@@ -86,6 +90,60 @@ export default function AccessibilityWidget() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
+
+  // Keyboard accessibility & focus trapping for dialog
+  useEffect(() => {
+    if (!isOpen) return;
+
+    previouslyFocusedElement.current = document.activeElement as HTMLElement;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsOpen(false);
+        return;
+      }
+
+      if (e.key === "Tab" && modalRef.current) {
+        const focusables = modalRef.current.querySelectorAll<HTMLElement>(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusables.length === 0) return;
+
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    
+    // Auto focus the close button or modal container
+    const timer = setTimeout(() => {
+      if (modalRef.current) {
+        const firstBtn = modalRef.current.querySelector<HTMLElement>("button");
+        if (firstBtn) firstBtn.focus();
+      }
+    }, 50);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      clearTimeout(timer);
+      if (previouslyFocusedElement.current) {
+        previouslyFocusedElement.current.focus();
+      }
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     if (!readingMask) return;
@@ -188,11 +246,11 @@ export default function AccessibilityWidget() {
   if (!mounted) {
     return (
       <button
-        className="text-xs font-semibold text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 cursor-pointer outline-hidden"
+        className="text-xs font-semibold text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 cursor-pointer"
         title="Open Accessibility Preferences"
         aria-label="Accessibility Preferences"
       >
-        <Accessibility className="w-3.5 h-3.5 text-primary shrink-0" />
+        <Accessibility className="w-3.5 h-3.5 text-primary shrink-0" aria-hidden="true" />
         Accessibility Preferences
       </button>
     );
@@ -202,12 +260,13 @@ export default function AccessibilityWidget() {
     <>
       {/* 1. Footer Trigger Text Link */}
       <button
+        ref={triggerRef}
         onClick={() => setIsOpen(true)}
-        className="text-xs font-semibold text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 cursor-pointer outline-hidden"
+        className="text-xs font-semibold text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5 cursor-pointer"
         title="Open Accessibility Preferences"
         aria-label="Accessibility Preferences"
       >
-        <Accessibility className="w-3.5 h-3.5 text-primary shrink-0" />
+        <Accessibility className="w-3.5 h-3.5 text-primary shrink-0" aria-hidden="true" />
         Accessibility Preferences
       </button>
 
@@ -216,11 +275,11 @@ export default function AccessibilityWidget() {
         <span className="absolute inset-0 rounded-full bg-primary/20 animate-ping pointer-events-none" />
         <button
           onClick={() => setIsOpen(true)}
-          className="relative w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-primary hover:bg-primary/95 text-primary-foreground shadow-2xl hover:scale-110 hover:-rotate-12 transition-all duration-300 border-2 border-primary-foreground/20 cursor-pointer outline-hidden group"
+          className="relative w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-primary hover:bg-primary/95 text-primary-foreground shadow-2xl hover:scale-110 transition-all duration-300 border-2 border-primary-foreground/20 cursor-pointer group"
           title="Open Accessibility Menu"
           aria-label="Accessibility Menu"
         >
-          <Accessibility className="w-7 h-7 md:w-8 md:h-8 group-hover:scale-105 transition-transform" />
+          <Accessibility className="w-7 h-7 md:w-8 md:h-8 group-hover:scale-105 transition-transform" aria-hidden="true" />
         </button>
       </div>
 
@@ -231,31 +290,43 @@ export default function AccessibilityWidget() {
           style={{
             background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 0px, rgba(0, 0, 0, 0.45) calc(${mouseY}px - 35px), transparent calc(${mouseY}px - 35px), transparent calc(${mouseY}px + 35px), rgba(0, 0, 0, 0.45) calc(${mouseY}px + 35px), rgba(0, 0, 0, 0.45) 100%)`,
           }}
+          aria-hidden="true"
         />
       )}
 
       {/* 4. Modal Preferences Panel */}
       {isOpen && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
+        <div 
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setIsOpen(false);
+          }}
+        >
           {/* Modal Card */}
-          <div className="relative w-full max-w-md bg-background border border-border/70 rounded-3xl shadow-2xl p-6 md:p-8 overflow-hidden max-h-[90vh] overflow-y-auto">
+          <div 
+            ref={modalRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="a11y-dialog-title"
+            className="relative w-full max-w-md bg-background border border-border/70 rounded-3xl shadow-2xl p-6 md:p-8 overflow-hidden max-h-[90vh] overflow-y-auto"
+          >
             {/* Header */}
             <div className="flex items-center justify-between border-b border-border/40 pb-4 mb-6">
               <div className="flex items-center gap-2.5">
                 <div className="bg-primary/10 text-primary p-2.5 rounded-2xl">
-                  <Accessibility className="w-6 h-6" />
+                  <Accessibility className="w-6 h-6" aria-hidden="true" />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-foreground text-lg">Accessibility Preferences</h3>
+                  <h3 id="a11y-dialog-title" className="font-display font-bold text-foreground text-lg">Accessibility Preferences</h3>
                   <p className="text-xs text-muted-foreground">Adjust formatting for easier reading</p>
                 </div>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-muted text-muted-foreground hover:text-foreground transition-colors cursor-pointer outline-hidden"
-                aria-label="Close panel"
+                className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-muted text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+                aria-label="Close accessibility panel (Press Escape)"
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5" aria-hidden="true" />
               </button>
             </div>
 
@@ -264,15 +335,16 @@ export default function AccessibilityWidget() {
               {/* Adjustment Group: Text Size */}
               <div className="space-y-2.5">
                 <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
-                  <Type className="w-3.5 h-3.5" /> Text Size
+                  <Type className="w-3.5 h-3.5" aria-hidden="true" /> Text Size
                 </label>
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-3 gap-2" role="group" aria-label="Text size options">
                   {(["normal", "large", "xlarge"] as const).map((size) => (
                     <button
                       key={size}
                       onClick={() => setFontSize(size)}
-                      className={`py-2 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer outline-hidden ${fontSize === size
-                        ? "bg-primary border-primary text-primary-foreground shadow-sm"
+                      aria-pressed={fontSize === size}
+                      className={`py-2 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${fontSize === size
+                        ? "bg-primary border-primary text-primary-foreground shadow-xs"
                         : "bg-muted/30 border-border/50 text-foreground/80 hover:bg-muted"
                         }`}
                     >
@@ -285,15 +357,16 @@ export default function AccessibilityWidget() {
               {/* Adjustment Group: Letter Spacing */}
               <div className="space-y-2.5">
                 <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
-                  <AlignLeft className="w-3.5 h-3.5 rotate-90" /> Letter Spacing
+                  <AlignLeft className="w-3.5 h-3.5 rotate-90" aria-hidden="true" /> Letter Spacing
                 </label>
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-3 gap-2" role="group" aria-label="Letter spacing options">
                   {(["normal", "wide", "xwide"] as const).map((space) => (
                     <button
                       key={space}
                       onClick={() => setLetterSpacing(space)}
-                      className={`py-2 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer outline-hidden ${letterSpacing === space
-                        ? "bg-primary border-primary text-primary-foreground shadow-sm"
+                      aria-pressed={letterSpacing === space}
+                      className={`py-2 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${letterSpacing === space
+                        ? "bg-primary border-primary text-primary-foreground shadow-xs"
                         : "bg-muted/30 border-border/50 text-foreground/80 hover:bg-muted"
                         }`}
                     >
@@ -306,15 +379,16 @@ export default function AccessibilityWidget() {
               {/* Adjustment Group: Line Height */}
               <div className="space-y-2.5">
                 <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
-                  <AlignLeft className="w-3.5 h-3.5" /> Line Spacing
+                  <AlignLeft className="w-3.5 h-3.5" aria-hidden="true" /> Line Spacing
                 </label>
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-3 gap-2" role="group" aria-label="Line spacing options">
                   {(["normal", "comfortable", "spacious"] as const).map((height) => (
                     <button
                       key={height}
                       onClick={() => setLineHeight(height)}
-                      className={`py-2 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer outline-hidden ${lineHeight === height
-                        ? "bg-primary border-primary text-primary-foreground shadow-sm"
+                      aria-pressed={lineHeight === height}
+                      className={`py-2 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${lineHeight === height
+                        ? "bg-primary border-primary text-primary-foreground shadow-xs"
                         : "bg-muted/30 border-border/50 text-foreground/80 hover:bg-muted"
                         }`}
                     >
@@ -330,7 +404,7 @@ export default function AccessibilityWidget() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
                     <div className="text-muted-foreground">
-                      <Eye className="w-4 h-4" />
+                      <Eye className="w-4 h-4" aria-hidden="true" />
                     </div>
                     <div>
                       <p className="text-sm font-bold text-foreground">High Contrast</p>
@@ -339,7 +413,10 @@ export default function AccessibilityWidget() {
                   </div>
                   <button
                     onClick={() => setHighContrast(!highContrast)}
-                    className={`relative w-11 h-6 rounded-full transition-all cursor-pointer outline-hidden ${highContrast ? "bg-primary" : "bg-muted border border-border"
+                    role="switch"
+                    aria-checked={highContrast}
+                    aria-label="High Contrast Mode"
+                    className={`relative w-11 h-6 rounded-full transition-all cursor-pointer ${highContrast ? "bg-primary" : "bg-muted border border-border"
                       }`}
                   >
                     <span
@@ -353,7 +430,7 @@ export default function AccessibilityWidget() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
                     <div className="text-muted-foreground">
-                      <EyeOff className="w-4 h-4" />
+                      <EyeOff className="w-4 h-4" aria-hidden="true" />
                     </div>
                     <div>
                       <p className="text-sm font-bold text-foreground">Monochrome Mode</p>
@@ -362,7 +439,10 @@ export default function AccessibilityWidget() {
                   </div>
                   <button
                     onClick={() => setMonochrome(!monochrome)}
-                    className={`relative w-11 h-6 rounded-full transition-all cursor-pointer outline-hidden ${monochrome ? "bg-primary" : "bg-muted border border-border"
+                    role="switch"
+                    aria-checked={monochrome}
+                    aria-label="Monochrome Mode"
+                    className={`relative w-11 h-6 rounded-full transition-all cursor-pointer ${monochrome ? "bg-primary" : "bg-muted border border-border"
                       }`}
                   >
                     <span
@@ -376,7 +456,7 @@ export default function AccessibilityWidget() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
                     <div className="text-muted-foreground">
-                      <Type className="w-4 h-4" />
+                      <Type className="w-4 h-4" aria-hidden="true" />
                     </div>
                     <div>
                       <p className="text-sm font-bold text-foreground">Dyslexic Font</p>
@@ -385,7 +465,10 @@ export default function AccessibilityWidget() {
                   </div>
                   <button
                     onClick={() => setDyslexicFont(!dyslexicFont)}
-                    className={`relative w-11 h-6 rounded-full transition-all cursor-pointer outline-hidden ${dyslexicFont ? "bg-primary" : "bg-muted border border-border"
+                    role="switch"
+                    aria-checked={dyslexicFont}
+                    aria-label="Dyslexic Font Mode"
+                    className={`relative w-11 h-6 rounded-full transition-all cursor-pointer ${dyslexicFont ? "bg-primary" : "bg-muted border border-border"
                       }`}
                   >
                     <span
@@ -399,7 +482,7 @@ export default function AccessibilityWidget() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
                     <div className="text-muted-foreground">
-                      <Sliders className="w-4 h-4" />
+                      <Sliders className="w-4 h-4" aria-hidden="true" />
                     </div>
                     <div>
                       <p className="text-sm font-bold text-foreground">Reading Mask</p>
@@ -408,7 +491,10 @@ export default function AccessibilityWidget() {
                   </div>
                   <button
                     onClick={() => setReadingMask(!readingMask)}
-                    className={`relative w-11 h-6 rounded-full transition-all cursor-pointer outline-hidden ${readingMask ? "bg-primary" : "bg-muted border border-border"
+                    role="switch"
+                    aria-checked={readingMask}
+                    aria-label="Reading Mask Mode"
+                    className={`relative w-11 h-6 rounded-full transition-all cursor-pointer ${readingMask ? "bg-primary" : "bg-muted border border-border"
                       }`}
                   >
                     <span
@@ -422,7 +508,7 @@ export default function AccessibilityWidget() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
                     <div className="text-muted-foreground">
-                      <Link2 className="w-4 h-4" />
+                      <Link2 className="w-4 h-4" aria-hidden="true" />
                     </div>
                     <div>
                       <p className="text-sm font-bold text-foreground">Highlight Links</p>
@@ -431,7 +517,10 @@ export default function AccessibilityWidget() {
                   </div>
                   <button
                     onClick={() => setLinksHighlight(!linksHighlight)}
-                    className={`relative w-11 h-6 rounded-full transition-all cursor-pointer outline-hidden ${linksHighlight ? "bg-primary" : "bg-muted border border-border"
+                    role="switch"
+                    aria-checked={linksHighlight}
+                    aria-label="Highlight Links Mode"
+                    className={`relative w-11 h-6 rounded-full transition-all cursor-pointer ${linksHighlight ? "bg-primary" : "bg-muted border border-border"
                       }`}
                   >
                     <span
@@ -447,14 +536,14 @@ export default function AccessibilityWidget() {
             <div className="flex items-center justify-between border-t border-border/40 pt-5 mt-6">
               <button
                 onClick={handleReset}
-                className="flex items-center gap-1 text-xs font-bold text-red-600 hover:text-red-500 transition-colors cursor-pointer outline-hidden"
+                className="flex items-center gap-1 text-xs font-bold text-red-600 hover:text-red-500 transition-colors cursor-pointer"
               >
-                <RotateCcw className="w-3.5 h-3.5" />
+                <RotateCcw className="w-3.5 h-3.5" aria-hidden="true" />
                 Reset Defaults
               </button>
               <button
                 onClick={() => setIsOpen(false)}
-                className="bg-primary text-primary-foreground py-2 px-5 text-xs font-bold rounded-xl hover:bg-primary/95 transition-all shadow-md cursor-pointer outline-hidden"
+                className="bg-primary text-primary-foreground py-2 px-5 text-xs font-bold rounded-xl hover:bg-primary/95 transition-all shadow-md cursor-pointer"
               >
                 Apply Preferences
               </button>

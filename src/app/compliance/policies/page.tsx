@@ -135,15 +135,26 @@ export default function PoliciesPage() {
             </div>
             {/* Search Input */}
             <div className="relative w-full md:w-80">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+              <label htmlFor="policy-search" className="sr-only">Search statutory policies</label>
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" aria-hidden="true" />
               <input
+                id="policy-search"
                 type="text"
                 placeholder="Search policies..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-muted/40 border border-border/50 rounded-full h-11 pl-11 pr-4 focus:ring-2 focus:ring-primary outline-hidden text-sm font-medium"
+                aria-label="Search statutory policies"
+                aria-describedby="policy-search-status"
+                className="w-full bg-muted/40 border border-border/50 rounded-full h-11 pl-11 pr-4 focus:ring-2 focus:ring-primary outline-hidden text-sm font-medium text-foreground"
               />
             </div>
+          </div>
+
+          {/* ARIA Live Region for Search Results */}
+          <div id="policy-search-status" className="sr-only" aria-live="polite" aria-atomic="true">
+            {filteredPolicies.length === 1
+              ? "1 policy document found."
+              : `${filteredPolicies.length} policy documents found.`}
           </div>
 
           {/* Filter Tabs */}

@@ -34,7 +34,7 @@ export default function Footer() {
               <div className="h-16 w-52 rounded-lg overflow-hidden group-hover:scale-[1.02] transition-transform shrink-0">
                 <Image
                   src="/logo.jpg"
-                  alt="Shri Venkatesh Stock Broker Services India Pvt. Ltd."
+                  alt="Shri Venkatesh Stock Broker Services India Pvt. Ltd. Logo"
                   width={208}
                   height={64}
                   className="object-contain w-full h-full"
