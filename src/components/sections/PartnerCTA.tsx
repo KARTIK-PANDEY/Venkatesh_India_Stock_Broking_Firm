@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 export default function PartnerCTA() {
   return (
-    <section className="py-20">
+    <section aria-labelledby="partner-cta-heading" className="py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="relative bg-gradient-to-br from-primary via-primary/90 to-accent rounded-3xl overflow-hidden p-10 md:p-16 shadow-2xl shadow-primary/20">
           {/* Decorative Blobs */}
@@ -14,23 +14,23 @@ export default function PartnerCTA() {
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-5xl font-display font-bold leading-tight mb-8 text-white">
+              <h2 id="partner-cta-heading" className="text-3xl md:text-5xl font-display font-bold leading-tight mb-8 text-white">
                 Grow Your Business as a{" "}
                 <span className="text-white/70 italic">Venkatesh India</span>{" "}
                 Partner
               </h2>
-              <div className="space-y-4 mb-10">
+              <ul className="space-y-4 mb-10 list-none p-0 m-0">
                 {[
                   "Earn attractive commissions across all product segments",
                   "Full back-office and compliance support for your clients",
                   "Proven brand with 15+ years of trust in eastern India",
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-6 h-6 text-white shrink-0" />
+                  <li key={idx} className="flex items-center gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-white shrink-0" aria-hidden="true" />
                     <span className="text-lg md:text-xl font-medium text-white/90">{item}</span>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
 
             <div className="flex justify-center lg:justify-end">

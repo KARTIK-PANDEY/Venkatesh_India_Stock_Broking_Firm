@@ -13,6 +13,7 @@ export function ModeToggle() {
     <Button
       variant="outline"
       size="icon"
+      aria-label="Toggle theme"
       className="rounded-full bg-background/50 backdrop-blur-md border-border/50 hover:bg-accent hover:text-accent-foreground transition-all duration-300"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >

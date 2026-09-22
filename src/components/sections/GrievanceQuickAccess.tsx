@@ -34,10 +34,10 @@ const GRIEVANCES = [
 
 export default function GrievanceQuickAccess() {
   return (
-    <section className="py-24 bg-muted">
+    <section aria-labelledby="grievance-quick-heading" className="py-24 bg-muted">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl font-display text-foreground mb-4">
+          <h2 id="grievance-quick-heading" className="text-3xl font-display text-foreground mb-4">
             Investor Grievances
           </h2>
           <p className="text-muted-foreground">
@@ -45,13 +45,13 @@ export default function GrievanceQuickAccess() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <ul className="grid grid-cols-1 md:grid-cols-3 gap-8 list-none p-0 m-0">
           {GRIEVANCES.map((item, idx) => (
-            <div 
+            <li 
               key={idx} 
               className={`p-8 rounded-2xl border-2 shadow-sm flex flex-col items-center text-center transition-transform hover:-translate-y-1 ${item.color}`}
             >
-              <div className="mb-6 p-4 rounded-full bg-background shadow-sm text-foreground">
+              <div className="mb-6 p-4 rounded-full bg-background shadow-sm text-foreground" aria-hidden="true">
                 <item.icon className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold text-foreground mb-1">{item.title}</h3>
@@ -62,13 +62,14 @@ export default function GrievanceQuickAccess() {
               <a
                 href={item.href}
                 target="_blank"
+                rel="noopener noreferrer"
                 className={cn(buttonVariants(), "w-full rounded-full bg-background text-foreground hover:bg-muted justify-center gap-2")}
               >
-                {item.btnText} <ExternalLink className="w-4 h-4" />
+                {item.btnText} <ExternalLink className="w-4 h-4" aria-hidden="true" />
               </a>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

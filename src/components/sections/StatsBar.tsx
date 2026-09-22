@@ -51,14 +51,15 @@ export default function StatsBar() {
   }, [isInView]);
 
   return (
-    <div ref={containerRef} className="w-full bg-muted/30 backdrop-blur-md border-y border-border/50 py-16 relative overflow-hidden">
+    <section aria-labelledby="stats-bar-heading" ref={containerRef} className="w-full bg-muted/30 backdrop-blur-md border-y border-border/50 py-16 relative overflow-hidden">
       {/* Decorative Blur */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-32 bg-primary/5 blur-[100px] -z-10 rounded-full"></div>
       
       <div className="container mx-auto px-4 relative z-10 max-w-7xl">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-0">
+        <h2 id="stats-bar-heading" className="sr-only">Key Statistics & Credentials</h2>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-0 list-none p-0 m-0">
           {STATS.map((stat, idx) => (
-            <motion.div 
+            <motion.li 
               key={idx} 
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -75,10 +76,10 @@ export default function StatsBar() {
               <div className="text-xs uppercase font-bold tracking-[0.2em] text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                 {stat.label}
               </div>
-            </motion.div>
+            </motion.li>
           ))}
-        </div>
+        </ul>
       </div>
-    </div>
+    </section>
   );
 }

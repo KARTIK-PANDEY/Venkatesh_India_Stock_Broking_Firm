@@ -75,7 +75,7 @@ export default function WelcomeSection() {
   const fillD = `${pathD} L${(currentWidget.points.length - 1) * 30},150 L0,150 Z`;
 
   return (
-    <section className="py-24 bg-background w-full border-t border-border/40 relative overflow-hidden">
+    <section aria-labelledby="welcome-heading" className="py-24 bg-background w-full border-t border-border/40 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-10 w-[250px] h-[250px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
 
@@ -85,11 +85,11 @@ export default function WelcomeSection() {
           {/* Welcome Text Box */}
           <div className="lg:col-span-7 space-y-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs uppercase tracking-widest">
-              <Sparkles className="w-3.5 h-3.5" />
+              <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
               Welcome to Shri Venkatesh
             </div>
             
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground leading-tight tracking-tight">
+            <h2 id="welcome-heading" className="text-3xl md:text-5xl font-display font-bold text-foreground leading-tight tracking-tight">
               Leading the Way in <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
                 Wealth Creation & Security.
@@ -129,24 +129,27 @@ export default function WelcomeSection() {
               </div>
 
               {/* Index selector buttons */}
-              <div className="flex gap-2 mb-6">
-                {tickerData.map((item, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveWidget(idx)}
-                    className={cn(
-                      "px-3.5 py-2 rounded-xl text-xs font-bold transition-all",
-                      activeWidget === idx
-                        ? item.up
-                          ? "bg-green-600 text-white shadow-md shadow-green-600/10"
-                          : "bg-red-600 text-white shadow-md shadow-red-600/10"
-                        : "bg-muted border border-border/55 text-muted-foreground hover:bg-muted/70 hover:text-foreground"
-                    )}
-                  >
-                    {item.name.split(" ")[0]}
-                  </button>
-                ))}
-              </div>
+<div className="flex gap-2 mb-6">
+  {tickerData.map((item, idx) => (
+    <button
+      key={idx}
+      type="button"
+      onClick={() => setActiveWidget(idx)}
+      aria-pressed={activeWidget === idx}
+      aria-label={`Show ${item.name} market data`}
+      className={cn(
+        "px-3.5 py-2 rounded-xl text-xs font-bold transition-all",
+        activeWidget === idx
+          ? item.up
+            ? "bg-green-600 text-white shadow-md shadow-green-600/10"
+            : "bg-red-600 text-white shadow-md shadow-red-600/10"
+          : "bg-muted border border-border/55 text-muted-foreground hover:bg-muted/70 hover:text-foreground"
+      )}
+    >
+      {item.name.split(" ")[0]}
+    </button>
+  ))}
+</div>
 
               {/* Chart Value Header */}
               <div className="mb-6 flex justify-between items-end">
@@ -175,35 +178,50 @@ export default function WelcomeSection() {
 
               {/* SVG Sparkline Graph */}
               <div className="w-full h-36 bg-background/50 border border-border/40 rounded-2xl relative overflow-hidden flex items-end p-2 mb-4 group-hover:border-primary/20 transition-all">
-                <svg className="w-full h-full" viewBox="0 0 270 150" preserveAspectRatio="none">
-                  <defs>
-                    <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop
-                        offset="0%"
-                        stopColor={currentWidget.up ? "rgb(34, 197, 94)" : "rgb(239, 68, 68)"}
-                        stopOpacity="0.2"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor={currentWidget.up ? "rgb(34, 197, 94)" : "rgb(239, 68, 68)"}
-                        stopOpacity="0.0"
-                      />
-                    </linearGradient>
-                  </defs>
-                  
-                  {/* Fill path */}
-                  <path d={fillD} fill="url(#chartGradient)" />
-                  
-                  {/* Line path */}
-                  <path
-                    d={pathD}
-                    fill="none"
-                    stroke={currentWidget.up ? "rgb(34, 197, 94)" : "rgb(239, 68, 68)"}
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <svg
+  className="w-full h-full"
+  viewBox="0 0 270 150"
+  preserveAspectRatio="none"
+  role="img"
+  aria-labelledby="market-chart-title market-chart-desc"
+>
+  {/* Accessible title & description for screen readers */}
+  <title id="market-chart-title">
+  {`${currentWidget.name} Market Trend Chart`}
+</title>
+
+  <desc id="market-chart-desc">
+    {`This chart shows the recent market trend for ${currentWidget.name}.`}
+  </desc>
+
+  <defs>
+    <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop
+        offset="0%"
+        stopColor={currentWidget.up ? "rgb(34, 197, 94)" : "rgb(239, 68, 68)"}
+        stopOpacity="0.2"
+      />
+      <stop
+        offset="100%"
+        stopColor={currentWidget.up ? "rgb(34, 197, 94)" : "rgb(239, 68, 68)"}
+        stopOpacity="0.0"
+      />
+    </linearGradient>
+  </defs>
+
+  {/* Fill Area */}
+  <path d={fillD} fill="url(#chartGradient)" />
+
+  {/* Trend Line */}
+  <path
+    d={pathD}
+    fill="none"
+    stroke={currentWidget.up ? "rgb(34, 197, 94)" : "rgb(239, 68, 68)"}
+    strokeWidth="3"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+</svg>
                 
                 {/* Floating tooltip overlay */}
                 <div className="absolute top-2 left-2 text-[9px] font-bold text-muted-foreground bg-muted/65 px-1.5 py-0.5 rounded border border-border/40 uppercase tracking-widest font-mono">

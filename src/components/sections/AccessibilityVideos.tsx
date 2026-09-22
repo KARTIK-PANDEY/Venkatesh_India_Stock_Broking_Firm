@@ -229,7 +229,7 @@ export default function AccessibilityVideos() {
   );
 
   return (
-    <section className="bg-muted/30 border-y border-border/50 py-20 md:py-28 overflow-hidden" aria-label="Web Accessibility Videos">
+    <section className="bg-muted/30 border-y border-border/50 py-20 md:py-28 overflow-hidden" aria-labelledby="a11y-videos-heading">
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Screen Reader Live Region for Announcements */}
@@ -242,7 +242,7 @@ export default function AccessibilityVideos() {
           <span className="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 rounded-full px-4 py-1.5 inline-block">
             Universal Design
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground">
+          <h2 id="a11y-videos-heading" className="text-4xl md:text-5xl font-display font-bold text-foreground">
             Web Accessibility Perspectives
           </h2>
           <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
@@ -265,13 +265,15 @@ export default function AccessibilityVideos() {
                     className="absolute inset-0 w-full h-full cursor-pointer flex items-center justify-center"
                     onClick={() => setIsPlaying(true)}
                   >
+                
                     {/* YouTube Video Thumbnail */}
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img 
-                      src={`https://img.youtube.com/vi/${activeVideo.youtubeId}/hqdefault.jpg`}
-                      alt={`Play ${activeVideo.title}`}
-                      className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
-                    />
+{/* eslint-disable-next-line @next/next/no-img-element */}
+<img
+  src={`https://img.youtube.com/vi/${activeVideo.youtubeId}/hqdefault.jpg`}
+  alt={`Thumbnail preview for ${activeVideo.title}`}
+  loading="lazy"
+  className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
+/>
                     
                     {/* Decorative Radial Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
@@ -372,18 +374,31 @@ export default function AccessibilityVideos() {
                   </div>
 
                   {/* Search Input for Transcript */}
-                  <div className="relative w-full sm:w-64">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-muted-foreground" aria-hidden="true" />
-                    <input
-                      type="text"
-                      placeholder="Search transcript..."
-                      value={transcriptSearch}
-                      onChange={(e) => setTranscriptSearch(e.target.value)}
-                      aria-label="Search within video transcript"
-                      className="w-full bg-muted/40 border border-border/50 rounded-lg h-9 pl-9 pr-3 text-xs font-medium focus:ring-2 focus:ring-primary outline-hidden"
-                    />
-                  </div>
-                </div>
+<div className="relative w-full sm:w-64">
+  <Search
+    className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-muted-foreground"
+    aria-hidden="true"
+  />
+
+  <label htmlFor="transcript-search-input" className="sr-only">
+    Search within video transcript
+  </label>
+
+  <input
+    id="transcript-search-input"
+    type="search"
+    placeholder="Search transcript..."
+    value={transcriptSearch}
+    onChange={(e) => setTranscriptSearch(e.target.value)}
+    aria-describedby="transcript-search-help"
+    className="w-full bg-muted/40 border border-border/50 rounded-lg h-9 pl-9 pr-3 text-xs font-medium focus:ring-2 focus:ring-primary outline-none"
+  />
+
+  <p id="transcript-search-help" className="sr-only">
+    Search the transcript by spoken audio or visual description.
+  </p>
+</div>
+</div>
 
                 {/* Transcript List */}
                 <div className="space-y-3 max-h-[350px] overflow-y-auto pr-2 custom-scrollbar">
@@ -410,53 +425,54 @@ export default function AccessibilityVideos() {
 
           {/* Right Block: Scrollable Sidebar List */}
           <div className="lg:col-span-5 space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">
               Select Accessibility Topic
-            </h4>
+            </h3>
             
-            <div className="space-y-2 max-h-[520px] overflow-y-auto pr-2 custom-scrollbar" role="list">
+            <ul className="space-y-2 max-h-[520px] overflow-y-auto pr-2 custom-scrollbar list-none p-0 m-0">
               {VIDEOS.map((video) => {
                 const IconComponent = video.icon;
                 const isActive = activeVideo.id === video.id;
                 
                 return (
-                  <button
-                    key={video.id}
-                    onClick={() => {
-                      setActiveVideo(video);
-                      setIsPlaying(false);
-                    }}
-                    role="listitem"
-                    aria-current={isActive ? "true" : undefined}
-                    className={`w-full flex items-start gap-4 p-4 rounded-2xl text-left border transition-all cursor-pointer ${
-                      isActive 
-                        ? "bg-primary border-primary text-primary-foreground shadow-lg shadow-primary/10" 
-                        : "bg-background border-border/40 hover:border-border text-foreground hover:bg-muted/40"
-                    }`}
-                  >
-                    <div className={`p-2.5 rounded-xl shrink-0 ${
-                      isActive ? "bg-white/20 text-white" : "bg-muted text-primary"
-                    }`}>
-                      <IconComponent className="w-5 h-5" aria-hidden="true" />
-                    </div>
-                    
-                    <div className="space-y-1">
-                      <h5 className="text-sm font-bold leading-tight font-display">
-                        {video.title}
-                      </h5>
-                      <p className={`text-[11px] leading-relaxed line-clamp-2 ${
-                        isActive ? "text-white/80" : "text-muted-foreground"
+                  <li key={video.id}>
+                    <button
+                      onClick={() => {
+                        setActiveVideo(video);
+                        setIsPlaying(false);
+                      }}
+                      aria-current={isActive ? "true" : undefined}
+                      className={`w-full flex items-start gap-4 p-4 rounded-2xl text-left border transition-all cursor-pointer ${
+                        isActive 
+                          ? "bg-primary border-primary text-primary-foreground shadow-lg shadow-primary/10" 
+                          : "bg-background border-border/40 hover:border-border text-foreground hover:bg-muted/40"
+                      }`}
+                    >
+                      <div className={`p-2.5 rounded-xl shrink-0 ${
+                        isActive ? "bg-white/20 text-white" : "bg-muted text-primary"
                       }`}>
-                        {video.description}
-                      </p>
-                    </div>
-                  </button>
+                        <IconComponent className="w-5 h-5" aria-hidden="true" />
+                      </div>
+                      
+                      <div className="space-y-1">
+                        <h4 className="text-sm font-bold leading-tight font-display">
+                          {video.title}
+                        </h4>
+                        <p className={`text-[11px] leading-relaxed line-clamp-2 ${
+                          isActive ? "text-white/80" : "text-muted-foreground"
+                        }`}>
+                          {video.description}
+                        </p>
+                      </div>
+                    </button>
+                  </li>
                 );
               })}
-            </div>
+            </ul>
           </div>
         </div>
       </div>
     </section>
   );
 }
+

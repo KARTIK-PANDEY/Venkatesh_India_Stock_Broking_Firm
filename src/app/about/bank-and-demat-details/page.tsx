@@ -7,15 +7,33 @@ import PageHero from "@/components/layout/PageHero";
 
 export default function BankAndDematDetailsPage() {
   const [copiedText, setCopiedText] = useState<string | null>(null);
+  const [copyMessage, setCopyMessage] = useState("");
 
-  const handleCopy = (text: string) => {
-    navigator.clipboard.writeText(text);
+  const handleCopy = async (text: string) => {
+  try {
+    await navigator.clipboard.writeText(text);
+
     setCopiedText(text);
-    setTimeout(() => setCopiedText(null), 2000);
-  };
+    setCopyMessage("Copied successfully");
+
+    setTimeout(() => {
+      setCopiedText(null);
+      setCopyMessage("");
+    }, 2000);
+  } catch {
+    setCopyMessage("Copy failed");
+  }
+};
 
   return (
     <div className="bg-background min-h-screen">
+      <div
+        className="sr-only"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        {copyMessage}
+      </div>
       <PageHero
         title="Bank & Demat Details"
         subtitle="Official bank and depository accounts of Shri Venkatesh Stock Broker Services India Pvt. Ltd."
@@ -42,15 +60,15 @@ export default function BankAndDematDetailsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           
           {/* Bank Accounts Column */}
-          <div className="space-y-8">
+          <section aria-labelledby="designated-banks-heading" className="space-y-8">
             <div className="border-b border-border/40 pb-4 flex items-center gap-3">
-              <Landmark className="w-6 h-6 text-primary" />
-              <h2 className="text-2xl font-display font-bold text-foreground">Designated Bank Accounts</h2>
+              <Landmark className="w-6 h-6 text-primary" aria-hidden="true" />
+              <h2 id="designated-banks-heading" className="text-2xl font-display font-bold text-foreground">Designated Bank Accounts</h2>
             </div>
 
-            <div className="space-y-6">
+            <ul className="space-y-6 list-none p-0 m-0">
               {BANK_DETAILS.map((bank, idx) => (
-                <div key={idx} className="bg-muted/40 border border-border/50 rounded-3xl p-6 md:p-8 hover:shadow-md transition-shadow relative overflow-hidden group">
+                <li key={idx} className="bg-muted/40 border border-border/50 rounded-3xl p-6 md:p-8 hover:shadow-md transition-shadow relative overflow-hidden group">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-xl group-hover:bg-primary/10 transition-colors"></div>
                   
                   <div className="flex justify-between items-start mb-6">
@@ -71,12 +89,12 @@ export default function BankAndDematDetailsPage() {
                           <button
                             onClick={() => handleCopy(bank.accountNumber)}
                             className="p-1 hover:bg-muted rounded transition-colors text-muted-foreground hover:text-primary"
-                            title="Copy Account Number"
+                            aria-label={`Copy Account Number ${bank.accountNumber}`}
                           >
                             {copiedText === bank.accountNumber ? (
-                              <BadgeCheck className="w-4 h-4 text-green-500" />
+                              <BadgeCheck className="w-4 h-4 text-green-500" aria-hidden="true" />
                             ) : (
-                              <Copy className="w-4 h-4" />
+                              <Copy className="w-4 h-4" aria-hidden="true" />
                             )}
                           </button>
                         </div>
@@ -88,12 +106,12 @@ export default function BankAndDematDetailsPage() {
                           <button
                             onClick={() => handleCopy(bank.ifscCode)}
                             className="p-1 hover:bg-muted rounded transition-colors text-muted-foreground hover:text-primary"
-                            title="Copy IFSC Code"
+                            aria-label={`Copy IFSC Code ${bank.ifscCode}`}
                           >
                             {copiedText === bank.ifscCode ? (
-                              <BadgeCheck className="w-4 h-4 text-green-500" />
+                              <BadgeCheck className="w-4 h-4 text-green-500" aria-hidden="true" />
                             ) : (
-                              <Copy className="w-4 h-4" />
+                              <Copy className="w-4 h-4" aria-hidden="true" />
                             )}
                           </button>
                         </div>
@@ -111,46 +129,47 @@ export default function BankAndDematDetailsPage() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </li>
               ))}
-            </div>
-          </div>
+            </ul>
+          </section>
 
           {/* Demat Accounts Column */}
-          <div className="space-y-8">
+          <section aria-labelledby="demat-accounts-heading" className="space-y-8">
             <div className="border-b border-border/40 pb-4 flex items-center gap-3">
-              <BadgeCheck className="w-6 h-6 text-primary" />
-              <h2 className="text-2xl font-display font-bold text-foreground">Demat Account Details</h2>
+              <BadgeCheck className="w-6 h-6 text-primary" aria-hidden="true" />
+              <h2 id="demat-accounts-heading" className="text-2xl font-display font-bold text-foreground">Demat Account Details</h2>
             </div>
 
             <div className="bg-muted/40 border border-border/50 rounded-3xl overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
+                  <caption className="sr-only">Official Demat Account Numbers and Purposes</caption>
                   <thead>
                     <tr className="bg-muted text-[10px] font-bold text-muted-foreground uppercase tracking-[0.1em] border-b border-border/40">
-                      <th className="px-6 py-4">Demat Account Number</th>
-                      <th className="px-6 py-4">Account Purpose</th>
+                      <th scope="col" className="px-6 py-4">Demat Account Number</th>
+                      <th scope="col" className="px-6 py-4">Account Purpose</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border/30 text-sm font-medium">
                     {DEMAT_DETAILS.map((demat, idx) => (
                       <tr key={idx} className="hover:bg-muted/50 transition-colors">
-                        <td className="px-6 py-4">
+                        <th scope="row" className="px-6 py-4 font-normal text-left">
                           <div className="flex items-center gap-2">
                             <span className="font-mono font-bold text-foreground text-xs">{demat.accountNo}</span>
                             <button
                               onClick={() => handleCopy(demat.accountNo)}
                               className="p-1 hover:bg-muted rounded transition-colors text-muted-foreground hover:text-primary"
-                              title="Copy Demat Account Number"
+                              aria-label={`Copy Demat Account Number ${demat.accountNo}`}
                             >
                               {copiedText === demat.accountNo ? (
-                                <BadgeCheck className="w-3.5 h-3.5 text-green-500" />
+                                <BadgeCheck className="w-3.5 h-3.5 text-green-500" aria-hidden="true" />
                               ) : (
-                                <Copy className="w-3.5 h-3.5" />
+                                <Copy className="w-3.5 h-3.5" aria-hidden="true" />
                               )}
                             </button>
                           </div>
-                        </td>
+                        </th>
                         <td className="px-6 py-4 text-xs text-muted-foreground font-semibold">
                           {demat.purpose}
                         </td>
@@ -160,7 +179,7 @@ export default function BankAndDematDetailsPage() {
                 </table>
               </div>
             </div>
-          </div>
+          </section>
 
         </div>
 

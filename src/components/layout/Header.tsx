@@ -74,7 +74,7 @@ export default function Header() {
             <div className="h-14 w-52 rounded-lg overflow-hidden group-hover:scale-[1.02] transition-transform shrink-0">
               <Image
                 src="/logo.jpg"
-                alt="Shri Venkatesh Stock Broker Services India Pvt. Ltd. Logo"
+                alt="Shri Venkatesh Stock Broker Services India Pvt. Ltd. company logo"
                 width={208}
                 height={56}
                 className="object-contain w-full h-full"
@@ -84,7 +84,7 @@ export default function Header() {
           </Link>
 
           {/* ── Desktop Nav · centers itself in remaining space ── */}
-          <nav className="hidden lg:flex flex-1 items-center justify-center">
+          <nav className="hidden lg:flex flex-1 items-center justify-center" aria-label="Primary Navigation">
             <NavigationMenu>
               <NavigationMenuList className="gap-0">
                 {NAV_LINKS.map((link) => (
@@ -106,9 +106,9 @@ export default function Header() {
                           <div className="grid w-[800px] gap-6 p-6 md:grid-cols-3 bg-background border border-border/70 rounded-3xl shadow-xl">
                             {link.categories.map((category) => (
                               <div key={category.title} className="space-y-3">
-                                <h4 className="text-xs font-black uppercase tracking-wider text-muted-foreground border-b border-border/40 pb-2">
+                                <h3 className="text-xs font-black uppercase tracking-wider text-muted-foreground border-b border-border/40 pb-2">
                                   {category.title}
-                                </h4>
+                                </h3>
                                 <ul className="space-y-1">
                                   {category.links.map((child) => (
                                     <li key={child.label}>
@@ -219,21 +219,42 @@ export default function Header() {
             <div className="h-5 w-px bg-border/70 mx-1" />
 
             {/* Search box */}
-            <form role="search" action="/search" method="GET" className="hidden lg:flex items-center mr-2 border border-border/70 rounded-lg px-2 h-9 bg-muted/20">
-              <label htmlFor="site-search" className="sr-only">Search</label>
-              <input
-                type="search"
-                id="site-search"
-                name="q"
-                placeholder="Search..."
-                autoComplete="off"
-                aria-label="Search this website"
-                className="bg-transparent border-none outline-none text-sm w-24 focus:w-40 transition-all px-1 text-foreground"
-              />
-              <button type="submit" aria-label="Submit search" className="text-muted-foreground hover:text-primary">
-                <Search className="w-4 h-4" />
-              </button>
-            </form>
+            <form
+  role="search"
+  action="/search"
+  method="GET"
+  aria-label="Site search"
+  className="hidden lg:flex items-center mr-2 border border-border/70 rounded-lg px-2 h-9 bg-muted/20"
+>
+  {/* Accessible label for screen readers */}
+  <label htmlFor="site-search" className="sr-only">
+    Search Venkatesh India website
+  </label>
+
+  <input
+    id="site-search"
+    name="q"
+    type="search"
+    placeholder="Search..."
+    autoComplete="off"
+    aria-describedby="search-help"
+    className="bg-transparent border-none outline-none text-sm w-24 focus:w-40 transition-all px-1 text-foreground"
+  />
+
+  {/* Hidden helper text for screen readers */}
+  <span id="search-help" className="sr-only">
+    Enter keywords to search pages, products, investor resources, and services on the website.
+  </span>
+
+  <button
+    type="submit"
+    aria-label="Submit site search"
+    title="Search"
+    className="text-muted-foreground hover:text-primary"
+  >
+    <Search className="w-4 h-4" aria-hidden="true" />
+  </button>
+</form>
 
             <div className="h-5 w-px bg-border/70 mx-1" />
 
@@ -263,7 +284,7 @@ export default function Header() {
             </Link>
             <Sheet>
               <SheetTrigger 
-                aria-label="Open navigation menu"
+                aria-label="Open mobile navigation menu"
                 className={cn(
                   buttonVariants({ variant: "outline", size: "icon" }),
                   "rounded-lg border-border/60 h-8 w-8"
@@ -274,104 +295,121 @@ export default function Header() {
               <SheetContent side="right" className="w-[85vw] sm:w-[380px] p-0 bg-background border-l border-border/60">
 
                 {/* Mobile Sheet Header */}
-                <SheetHeader className="p-4 border-b border-border/50">
-                  <div className="flex items-center gap-3">
-                    <div className="h-10 w-28 rounded-lg overflow-hidden shrink-0">
-                      <Image
-                        src="/logo.jpg"
-                        alt="Shri Venkatesh Stock Broker Services India Pvt. Ltd. Logo"
-                        width={112}
-                        height={40}
-                        className="object-contain w-full h-full"
-                      />
-                    </div>
-                    <SheetTitle className="leading-tight text-left">
-                      <span className="text-xs font-bold text-muted-foreground block leading-relaxed">
-                        Shri Venkatesh Stock Broker<br />Services India Pvt. Ltd.
-                      </span>
-                    </SheetTitle>
-                  </div>
-                </SheetHeader>
+<SheetHeader className="p-4 border-b border-border/50">
+  <div className="flex items-center gap-3">
+    
+    <div className="h-10 w-28 rounded-lg overflow-hidden shrink-0">
+      <Image
+        src="/logo.jpg"
+        alt="Shri Venkatesh Stock Broker Services India Pvt. Ltd. company logo"
+        width={208}
+        height={56}
+        className="object-contain w-full h-full"
+        priority
+      />
+    </div>
+
+    <SheetTitle className="leading-tight text-left">
+      <span className="text-xs font-bold text-muted-foreground block leading-relaxed">
+        Shri Venkatesh Stock Broker
+        <br />
+        Services India Pvt. Ltd.
+      </span>
+    </SheetTitle>
+
+  </div>
+</SheetHeader>
 
                 <div className="flex flex-col h-[calc(100vh-73px)]">
-                  <div className="flex-1 overflow-y-auto p-4 space-y-1">
-                    {NAV_LINKS.map((link) => (
-                      <div key={link.label}>
-                        {link.children ? (
-                          <div className="mb-3">
-                            {/* Section label */}
-                            <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-muted-foreground px-3 py-2">
-                              {link.label}
-                            </p>
-                            {link.children.map((child) => (
-                              <Link
-                                key={child.label}
-                                href={getFileUrl(child.href)}
-                                target={hasTarget(child) ? child.target : undefined}
-                                rel={hasTarget(child) && child.target === "_blank" ? "noopener noreferrer" : undefined}
-                                className="flex items-center gap-2.5 text-sm text-foreground/75 hover:text-primary hover:bg-primary/10 px-3 py-2.5 rounded-lg transition-colors font-medium"
-                              >
-                                <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
-                                {child.label}
-                              </Link>
-                            ))}
-                          </div>
-                        ) : link.isMegaMenu && "categories" in link ? (
-                          <div className="mb-3">
-                            {/* Section label */}
-                            <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-muted-foreground px-3 py-2">
-                              {link.label}
-                            </p>
-                            {link.categories.map((cat) => (
-                              <div key={cat.title} className="pl-2 mb-2">
-                                <p className="text-[9px] font-extrabold uppercase text-primary px-3 py-1 bg-primary/5 rounded-md w-fit mb-1">
-                                  {cat.title}
-                                </p>
-                                {cat.links.map((child) => (
-                                  <Link
-                                    key={child.label}
-                                    href={getFileUrl(child.href)}
-                                    target={hasTarget(child) ? child.target : undefined}
-                                    rel={hasTarget(child) && child.target === "_blank" ? "noopener noreferrer" : undefined}
-                                    className="flex items-center gap-2.5 text-xs text-foreground/75 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors font-medium"
-                                  >
-                                    <span className="w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0" />
-                                    {child.label}
-                                  </Link>
+                  <nav className="flex-1 overflow-y-auto p-4 space-y-1" aria-label="Mobile Navigation">
+                    <ul className="space-y-1 list-none p-0 m-0">
+                      {NAV_LINKS.map((link) => (
+                        <li key={link.label}>
+                          {link.children ? (
+                            <div className="mb-3">
+                              {/* Section label */}
+                              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-muted-foreground px-3 py-2">
+                                {link.label}
+                              </p>
+                              <ul className="space-y-1 list-none p-0 m-0">
+                                {link.children.map((child) => (
+                                  <li key={child.label}>
+                                    <Link
+                                      href={getFileUrl(child.href)}
+                                      target={hasTarget(child) ? child.target : undefined}
+                                      rel={hasTarget(child) && child.target === "_blank" ? "noopener noreferrer" : undefined}
+                                      className="flex items-center gap-2.5 text-sm text-foreground/75 hover:text-primary hover:bg-primary/10 px-3 py-2.5 rounded-lg transition-colors font-medium"
+                                    >
+                                      <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" aria-hidden="true" />
+                                      {child.label}
+                                    </Link>
+                                  </li>
                                 ))}
-                              </div>
-                            ))}
-                          </div>
-                        ) : (
-                          <Link
-                            href={link.href}
-                            className="flex items-center text-[15px] font-semibold text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2.5 rounded-lg transition-colors"
-                          >
-                            {link.label}
-                          </Link>
-                        )}
-                      </div>
-                    ))}
+                              </ul>
+                            </div>
+                          ) : link.isMegaMenu && "categories" in link ? (
+                            <div className="mb-3">
+                              {/* Section label */}
+                              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-muted-foreground px-3 py-2">
+                                {link.label}
+                              </p>
+                              {link.categories.map((cat) => (
+                                <div key={cat.title} className="pl-2 mb-2">
+                                  <p className="text-[9px] font-extrabold uppercase text-primary px-3 py-1 bg-primary/5 rounded-md w-fit mb-1">
+                                    {cat.title}
+                                  </p>
+                                  <ul className="space-y-1 list-none p-0 m-0">
+                                    {cat.links.map((child) => (
+                                      <li key={child.label}>
+                                        <Link
+                                          href={getFileUrl(child.href)}
+                                          target={hasTarget(child) ? child.target : undefined}
+                                          rel={hasTarget(child) && child.target === "_blank" ? "noopener noreferrer" : undefined}
+                                          className="flex items-center gap-2.5 text-xs text-foreground/75 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors font-medium"
+                                        >
+                                          <span className="w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0" aria-hidden="true" />
+                                          {child.label}
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              ))}
+                            </div>
+                          ) : (
+                            <Link
+                              href={link.href}
+                              className="flex items-center text-[15px] font-semibold text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2.5 rounded-lg transition-colors"
+                            >
+                              {link.label}
+                            </Link>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
 
                     {/* Login section */}
                     <div className="pt-2 border-t border-border/50 mt-3">
                       <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-muted-foreground px-3 py-2">
                         Portal Logins
                       </p>
-                      {LOGIN_LINKS.map((link) => (
-                        <a
-                          key={link.label}
-                          href={link.href}
-                          target={link.target}
-                          className="flex items-center justify-between text-sm text-foreground/75 hover:text-primary hover:bg-primary/10 px-3 py-2.5 rounded-lg transition-colors font-medium"
-                        >
-                          {link.label}
-                          <span className="sr-only">(opens in new tab)</span>
-                          <ExternalLink aria-hidden="true" className="h-3.5 w-3.5 text-muted-foreground" />
-                        </a>
-                      ))}
+                      <ul className="space-y-1 list-none p-0 m-0">
+                        {LOGIN_LINKS.map((link) => (
+                          <li key={link.label}>
+                            <a
+                              href={link.href}
+                              target={link.target}
+                              className="flex items-center justify-between text-sm text-foreground/75 hover:text-primary hover:bg-primary/10 px-3 py-2.5 rounded-lg transition-colors font-medium"
+                            >
+                              {link.label}
+                              <span className="sr-only">(opens in new tab)</span>
+                              <ExternalLink aria-hidden="true" className="h-3.5 w-3.5 text-muted-foreground" />
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  </div>
+                  </nav>
 
                   <div className="p-4 border-t border-border/50">
                     <Link
