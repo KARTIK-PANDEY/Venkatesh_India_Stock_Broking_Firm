@@ -304,7 +304,7 @@ export default function Header() {
         alt="Shri Venkatesh Stock Broker Services India Pvt. Ltd. company logo"
         width={208}
         height={56}
-        className="object-contain w-full h-full"
+        className="h-12 w-auto"
         priority
       />
     </div>
