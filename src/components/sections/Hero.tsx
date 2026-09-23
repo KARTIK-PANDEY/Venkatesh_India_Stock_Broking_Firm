@@ -4,22 +4,40 @@ import Link from "next/link";
 import { ArrowRight, Shield, Award, Users, MapPin, TrendingUp, BarChart3, Activity } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { motion, type Variants } from "framer-motion";
+import {
+  motion,
+  type Variants,
+  useReducedMotion,
+} from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+  let animationFrame = 0;
+
+  const handleMouseMove = (e: MouseEvent) => {
+    cancelAnimationFrame(animationFrame);
+
+    animationFrame = requestAnimationFrame(() => {
       setMousePosition({
         x: e.clientX,
         y: e.clientY,
       });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+    });
+  };
+
+  window.addEventListener("mousemove", handleMouseMove, {
+    passive: true,
+  });
+
+  return () => {
+    cancelAnimationFrame(animationFrame);
+    window.removeEventListener("mousemove", handleMouseMove);
+  };
+}, []);
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -38,7 +56,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden min-h-[90vh] flex items-center pt-16 pb-20 w-full">
+    <section aria-labelledby="hero-heading" className="relative overflow-hidden min-h-[90vh] flex items-center pt-16 pb-20 w-full">
       {/* Interactive Ambient Background */}
       <div 
         className="absolute inset-0 z-0 opacity-30 dark:opacity-40 transition-transform duration-1000 ease-out pointer-events-none"
@@ -64,11 +82,11 @@ export default function Hero() {
             animate="visible"
           >
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs uppercase tracking-widest mb-8 backdrop-blur-md">
-              <Shield className="w-3.5 h-3.5" />
+              <Shield className="w-3.5 h-3.5" aria-hidden="true" />
               SEBI Registered Intermediary
             </motion.div>
             
-            <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-foreground leading-[1.1] mb-6 tracking-tight">
+            <motion.h1 id="hero-heading" variants={itemVariants} className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-foreground leading-[1.1] mb-6 tracking-tight">
               Invest with <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary animate-gradient-x">
                 Clarity & Edge.
@@ -84,7 +102,7 @@ export default function Hero() {
                 href="/open-account"
                 className={cn(buttonVariants({ size: "lg" }), "h-14 px-8 rounded-full text-lg font-semibold shadow-[0_0_40px_-10px_var(--color-primary)] hover:shadow-[0_0_60px_-15px_var(--color-primary)] transition-all duration-300 hover:scale-105 w-full sm:w-auto inline-flex items-center gap-2")}
               >
-                Start Trading Now <ArrowRight className="ml-1 w-5 h-5" />
+                Start Trading Now <ArrowRight className="ml-1 w-5 h-5" aria-hidden="true" />
               </Link>
               <Link
                 href="/about/company-overview"
@@ -94,22 +112,22 @@ export default function Hero() {
               </Link>
             </motion.div>
             
-            <motion.div variants={itemVariants} className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full pt-8 border-t border-border/40">
+            <motion.ul variants={itemVariants} className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full pt-8 border-t border-border/40 list-none p-0 m-0">
               {[
                 { icon: Award, text: "15+ Years", sub: "Experience" },
                 { icon: Shield, text: "SEBI", sub: "Registered" },
                 { icon: Users, text: "BSE", sub: "Member" },
                 { icon: MapPin, text: "CDSL", sub: "Depository" }
               ].map((badge, idx) => (
-                <div key={idx} className="flex flex-col gap-1 items-start group cursor-default">
-                  <div className="p-2.5 rounded-xl bg-primary/5 text-primary mb-2 group-hover:scale-110 group-hover:bg-primary/10 transition-all duration-300">
+                <li key={idx} className="flex flex-col gap-1 items-start group cursor-default">
+                  <div className="p-2.5 rounded-xl bg-primary/5 text-primary mb-2 group-hover:scale-110 group-hover:bg-primary/10 transition-all duration-300" aria-hidden="true">
                     <badge.icon className="w-5 h-5" />
                   </div>
                   <span className="text-foreground font-bold text-lg leading-tight">{badge.text}</span>
                   <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{badge.sub}</span>
-                </div>
+                </li>
               ))}
-            </motion.div>
+            </motion.ul>
           </motion.div>
 
           {/* Right Content: Premium Glass Card / Dashboard Mockup */}
@@ -181,11 +199,23 @@ export default function Hero() {
             </div>
 
             {/* Floating Decorative Elements */}
-            <motion.div 
-              className="absolute -right-8 top-12 p-4 bg-background/60 backdrop-blur-xl border border-border/50 rounded-2xl shadow-xl z-20"
-              animate={{ y: [0, -15, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            >
+            <motion.div
+  className="absolute -right-8 top-12 p-4 bg-background/60 backdrop-blur-xl border border-border/50 rounded-2xl shadow-xl z-20"
+  animate={
+    shouldReduceMotion
+      ? {}
+      : { y: [0, -15, 0] }
+  }
+  transition={
+    shouldReduceMotion
+      ? {}
+      : {
+          duration: 5,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }
+  }
+>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
                   <TrendingUp className="w-5 h-5 text-accent" />

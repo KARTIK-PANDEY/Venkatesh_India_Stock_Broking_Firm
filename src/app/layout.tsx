@@ -43,9 +43,9 @@ export default function RootLayout({
       >
         <a 
           href="#main-content" 
-          className="skip-link sr-only focus:not-sr-only absolute -top-[100px] left-4 bg-primary text-primary-foreground px-6 py-3 rounded-b-xl text-sm font-bold z-[9999] transition-[top] duration-200 focus:top-0 shadow-2xl focus:ring-4 focus:ring-accent focus:outline-hidden"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 bg-primary text-primary-foreground px-6 py-3 rounded-md text-sm font-bold shadow-2xl focus:ring-4 focus:ring-accent focus:outline-none"
         >
-          Skip to main content
+          Skip to Main Content
         </a>
         <ThemeProvider
           attribute="class"

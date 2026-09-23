@@ -204,13 +204,19 @@
     @apply border-border outline-ring/50;
   }
 
-  body {
-    @apply bg-background text-foreground;
-  }
-
   html {
-    @apply font-sans;
-  }
+  @apply font-sans;
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-foreground;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
   /* Provide a clear, high-contrast custom focus ring for all interactive elements (WCAG 2.4.7) */
   :focus-visible,
@@ -316,4 +322,49 @@ body {
   font-weight: 800 !important;
   outline: 2px dashed oklch(0.45 0.18 260) !important;
   outline-offset: 2px !important;
+}
+/* =======================================================
+   WCAG 1.3.4 / GIGW 5.2.10 — Orientation Support
+   ======================================================= */
+
+@media screen and (orientation: portrait) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  img,
+  svg,
+  video,
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  img,
+  svg,
+  video,
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Responsive tables for portrait mode */
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive table {
+  min-width: 600px;
 }

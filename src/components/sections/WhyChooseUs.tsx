@@ -34,10 +34,10 @@ const POINTS = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 md:py-32 bg-muted/40 overflow-hidden">
+    <section aria-labelledby="why-choose-heading" className="py-24 md:py-32 bg-muted/40 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-3xl md:text-5xl font-display text-foreground mb-6">
+          <h2 id="why-choose-heading" className="text-3xl md:text-5xl font-display text-foreground mb-6">
             The <span className="text-primary italic">Venkatesh India</span> Advantage
           </h2>
           <p className="text-lg text-muted-foreground">
@@ -45,9 +45,9 @@ export default function WhyChooseUs() {
           </p>
         </div>
 
-        <div className="space-y-24">
+        <ul className="space-y-24 list-none p-0 m-0">
           {POINTS.map((point, idx) => (
-            <div 
+            <li 
               key={idx} 
               className={cn(
                 "flex flex-col gap-12 items-center",
@@ -86,9 +86,9 @@ export default function WhyChooseUs() {
                   </div>
                 </div>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

@@ -7,8 +7,14 @@ export default function BankDetailsPage() {
       {/* Header */}
       <div className="bg-background py-16 md:py-24 text-white">
         <div className="container mx-auto px-4">
-          <nav className="text-accent text-sm font-bold uppercase tracking-widest mb-4">
-            Home &gt; About Us &gt; Bank Details
+          <nav aria-label="Breadcrumb" className="text-accent text-sm font-bold uppercase tracking-widest mb-4">
+            <ol className="flex items-center gap-2 list-none p-0 m-0">
+              <li>Home</li>
+              <li aria-hidden="true">&gt;</li>
+              <li>About Us</li>
+              <li aria-hidden="true">&gt;</li>
+              <li aria-current="page">Bank Details</li>
+            </ol>
           </nav>
           <h1 className="text-4xl md:text-6xl font-display leading-tight mb-4">Bank Details</h1>
           <p className="text-accent text-lg max-w-2xl italic">
@@ -20,77 +26,86 @@ export default function BankDetailsPage() {
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-4xl mx-auto space-y-12">
           
-          <div className="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-r-2xl flex gap-4 items-start shadow-sm">
-            <ShieldAlert className="w-8 h-8 text-orange-600 shrink-0" />
+          <section aria-labelledby="bank-security-notice" className="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-r-2xl flex gap-4 items-start shadow-sm">
+            <ShieldAlert className="w-8 h-8 text-orange-600 shrink-0" aria-hidden="true" />
             <div>
-              <h3 className="font-bold text-orange-900 mb-2 uppercase text-sm tracking-wider">Important Security Notice</h3>
+              <h2 id="bank-security-notice" className="font-bold text-orange-900 mb-2 uppercase text-sm tracking-wider">Important Security Notice</h2>
               <p className="text-sm text-orange-800 leading-relaxed">
-                "Investors are requested to note that Shri Venkatesh Stock Broker Services India Pvt. Ltd. does not accept cash. Please transfer funds only to the official bank accounts mentioned below. Always ensure that the payment is made from your registered bank account only."
+                &quot;Investors are requested to note that Shri Venkatesh Stock Broker Services India Pvt. Ltd. does not accept cash. Please transfer funds only to the official bank accounts mentioned below. Always ensure that the payment is made from your registered bank account only.&quot;
               </p>
             </div>
-          </div>
+          </section>
 
-          <div className="grid grid-cols-1 gap-8">
-            {BANK_DETAILS.map((bank, idx) => (
-              <div key={idx} className="bg-background rounded-3xl border border-border/50 shadow-sm overflow-hidden transition-all hover:shadow-lg">
-                <div className="bg-muted p-6 border-b border-border/50 flex justify-between items-center">
-                  <div className="flex items-center gap-3">
-                    <Landmark className="w-6 h-6 text-primary" />
-                    <span className="font-bold text-foreground uppercase tracking-widest text-sm">{bank.bankName}</span>
+          <section aria-labelledby="accounts-list-heading">
+            <h2 id="accounts-list-heading" className="sr-only">Bank Accounts List</h2>
+            <ul className="grid grid-cols-1 gap-8 list-none p-0 m-0">
+              {BANK_DETAILS.map((bank, idx) => (
+                <li key={idx} className="bg-background rounded-3xl border border-border/50 shadow-sm overflow-hidden transition-all hover:shadow-lg">
+                  <div className="bg-muted p-6 border-b border-border/50 flex justify-between items-center">
+                    <div className="flex items-center gap-3">
+                      <Landmark className="w-6 h-6 text-primary" aria-hidden="true" />
+                      <h3 className="font-bold text-foreground uppercase tracking-widest text-sm">{bank.bankName}</h3>
+                    </div>
+                    <span className="text-[10px] font-extrabold bg-muted text-primary px-3 py-1 rounded-full uppercase tracking-tighter">
+                      {bank.type}
+                    </span>
                   </div>
-                  <span className="text-[10px] font-extrabold bg-muted text-primary px-3 py-1 rounded-full uppercase tracking-tighter">
-                    {bank.type}
-                  </span>
-                </div>
-                
-                <div className="p-8 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12">
-                  <div className="space-y-1">
-                    <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Account Name</p>
-                    <p className="text-lg font-bold text-foreground leading-tight">{bank.accountName}</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Account Number</p>
-                    <div className="flex items-center gap-2">
-                      <p className="text-2xl font-display text-primary tracking-tight">{bank.accountNumber}</p>
-                      <button className="p-1 hover:bg-muted/40 rounded transition-colors text-muted-foreground hover:text-primary">
-                        <Copy className="w-4 h-4" />
-                      </button>
+                  
+                  <div className="p-8 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12">
+                    <div className="space-y-1">
+                      <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Account Name</p>
+                      <p className="text-lg font-bold text-foreground leading-tight">{bank.accountName}</p>
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Account Number</p>
+                      <div className="flex items-center gap-2">
+                        <p className="text-2xl font-display text-primary tracking-tight">{bank.accountNumber}</p>
+                        <button
+                          className="p-1 hover:bg-muted/40 rounded transition-colors text-muted-foreground hover:text-primary"
+                          aria-label={`Copy Account Number ${bank.accountNumber}`}
+                        >
+                          <Copy className="w-4 h-4" aria-hidden="true" />
+                        </button>
+                      </div>
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">IFSC Code</p>
+                      <div className="flex items-center gap-2">
+                        <p className="text-xl font-bold text-foreground">{bank.ifscCode}</p>
+                        <button
+                          className="p-1 hover:bg-muted/40 rounded transition-colors text-muted-foreground hover:text-primary"
+                          aria-label={`Copy IFSC Code ${bank.ifscCode}`}
+                        >
+                          <Copy className="w-4 h-4" aria-hidden="true" />
+                        </button>
+                      </div>
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Branch</p>
+                      <p className="text-lg font-bold text-foreground">{bank.branch}</p>
                     </div>
                   </div>
-                  <div className="space-y-1">
-                    <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">IFSC Code</p>
-                    <div className="flex items-center gap-2">
-                      <p className="text-xl font-bold text-foreground">{bank.ifscCode}</p>
-                      <button className="p-1 hover:bg-muted/40 rounded transition-colors text-muted-foreground hover:text-primary">
-                        <Copy className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Branch</p>
-                    <p className="text-lg font-bold text-foreground">{bank.branch}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+                </li>
+              ))}
+            </ul>
+          </section>
 
-          <div className="bg-muted/40 rounded-3xl p-8 md:p-12 border border-border/50">
-            <h3 className="text-2xl font-display text-foreground mb-6">Payment Methods</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <section aria-labelledby="payment-methods-heading" className="bg-muted/40 rounded-3xl p-8 md:p-12 border border-border/50">
+            <h2 id="payment-methods-heading" className="text-2xl font-display text-foreground mb-6">Payment Methods</h2>
+            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 list-none p-0 m-0">
               {[
                 { title: "NEFT / RTGS", desc: "Standard bank transfers." },
                 { title: "IMPS", desc: "Instant fund transfers." },
                 { title: "UPI", desc: "Available via linked accounts." }
               ].map((method, i) => (
-                <div key={i} className="flex flex-col items-center text-center p-6 bg-background rounded-2xl border border-border/50 shadow-sm">
-                  <CheckCircle2 className="w-8 h-8 text-green-600 mb-4" />
-                  <h4 className="font-bold text-foreground mb-2">{method.title}</h4>
+                <li key={i} className="flex flex-col items-center text-center p-6 bg-background rounded-2xl border border-border/50 shadow-sm">
+                  <CheckCircle2 className="w-8 h-8 text-green-600 mb-4" aria-hidden="true" />
+                  <h3 className="font-bold text-foreground mb-2">{method.title}</h3>
                   <p className="text-xs text-muted-foreground">{method.desc}</p>
-                </div>
+                </li>
               ))}
-            </div>
-          </div>
+            </ul>
+          </section>
         </div>
       </div>
     </div>
