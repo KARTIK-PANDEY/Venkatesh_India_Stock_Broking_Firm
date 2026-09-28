@@ -41,6 +41,12 @@ export default function AccessibilityWidget() {
     }
     return "normal";
   });
+  const [textSpacing, setTextSpacing] = useState<boolean>(() => {
+  if (typeof window !== "undefined") {
+    return localStorage.getItem("a11y-text-spacing") === "true";
+  }
+  return false;
+});
 
   const [highContrast, setHighContrast] = useState<boolean>(() => {
     if (typeof window !== "undefined") {
@@ -225,16 +231,37 @@ export default function AccessibilityWidget() {
     }
     localStorage.setItem("a11y-links-highlight", String(linksHighlight));
 
+    // Apply WCAG Text Spacing
+if (textSpacing) {
+  root.classList.add("accessibility-text-spacing");
+} else {
+  root.classList.remove("accessibility-text-spacing");
+}
+
+localStorage.setItem("a11y-text-spacing", String(textSpacing));
+
     // Save Reading Mask setting
     localStorage.setItem("a11y-reading-mask", String(readingMask));
 
-  }, [fontSize, letterSpacing, lineHeight, highContrast, monochrome, dyslexicFont, linksHighlight, readingMask, mounted]);
+  }, [
+  fontSize,
+  letterSpacing,
+  lineHeight,
+  textSpacing,
+  highContrast,
+  monochrome,
+  dyslexicFont,
+  linksHighlight,
+  readingMask,
+  mounted,
+]);
 
   // Reset to default settings
   const handleReset = () => {
     setFontSize("normal");
     setLetterSpacing("normal");
     setLineHeight("normal");
+    setTextSpacing(false);
     setHighContrast(false);
     setMonochrome(false);
     setDyslexicFont(false);
@@ -400,6 +427,41 @@ export default function AccessibilityWidget() {
 
               {/* Toggles Group */}
               <div className="grid grid-cols-1 gap-4 border-t border-border/40 pt-5">
+              {/* Text Spacing Toggle (WCAG 1.4.12) */}
+<div className="flex items-center justify-between">
+  <div className="flex items-center gap-2.5">
+    <div className="text-muted-foreground">
+      <AlignLeft className="w-4 h-4" aria-hidden="true" />
+    </div>
+
+    <div>
+      <p className="text-sm font-bold text-foreground">
+        Text Spacing
+      </p>
+      <p className="text-[11px] text-muted-foreground">
+        Increase line, paragraph, letter and word spacing
+      </p>
+    </div>
+  </div>
+
+  <button
+    onClick={() => setTextSpacing(!textSpacing)}
+    role="switch"
+    aria-checked={textSpacing}
+    aria-label="Enable WCAG text spacing"
+    className={`relative w-11 h-6 rounded-full transition-all cursor-pointer ${
+      textSpacing
+        ? "bg-primary"
+        : "bg-muted border border-border"
+    }`}
+  >
+    <span
+      className={`absolute top-0.5 w-4 h-4 rounded-full bg-white transition-all shadow-xs ${
+        textSpacing ? "right-1" : "left-1"
+      }`}
+    />
+  </button>
+</div>
                 {/* Contrast Toggle */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
