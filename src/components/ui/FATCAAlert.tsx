@@ -13,7 +13,6 @@ export default function FATCAAlert() {
     // Check local storage for dismissal state
     const isDismissed = localStorage.getItem("v-fatca-dismissed");
     if (!isDismissed) {
-      // Delay showing the popup slightly for a premium feel
       const timer = setTimeout(() => {
         setIsVisible(true);
       }, 1500);
@@ -35,30 +34,30 @@ export default function FATCAAlert() {
           exit={{ opacity: 0, y: 30, scale: 0.95 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
           className="fixed bottom-6 right-6 z-50 max-w-sm w-full bg-background/95 dark:bg-background/90 backdrop-blur-md border border-border/80 shadow-2xl rounded-3xl p-6 overflow-hidden"
-          role="alert"
-          aria-live="assertive"
+          role="region"
+          aria-labelledby="fatca-alert-heading"
         >
           {/* Top colored accent line */}
-          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-500 to-amber-600"></div>
+          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-500 to-amber-600" aria-hidden="true" />
 
           {/* Dismiss button */}
           <button
             onClick={handleDismiss}
-            className="absolute top-4 right-4 p-1.5 hover:bg-muted rounded-full transition-colors text-muted-foreground hover:text-foreground"
-            aria-label="Dismiss FATCA notice"
+            className="absolute top-4 right-4 p-1.5 hover:bg-muted rounded-full transition-colors text-muted-foreground hover:text-foreground cursor-pointer"
+            aria-label="Dismiss FATCA self certification notice"
           >
-            <X className="w-4 h-4" />
+            <X className="w-4 h-4" aria-hidden="true" />
           </button>
 
           <div className="flex gap-4 items-start pr-6 mt-1">
-            <div className="p-3 bg-amber-500/10 text-amber-600 rounded-2xl shrink-0">
+            <div className="p-3 bg-amber-500/10 text-amber-600 rounded-2xl shrink-0" aria-hidden="true">
               <ShieldAlert className="w-6 h-6 animate-pulse" />
             </div>
             <div>
-              <h3 className="font-display font-bold text-foreground text-base mb-1">
+              <h2 id="fatca-alert-heading" className="font-display font-bold text-foreground text-base mb-1">
                 FATCA Self Certification
-              </h3>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+              </h2>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-4 font-medium">
                 If your Demat account was opened between <strong>July 1, 2014</strong> and <strong>August 31, 2015</strong>, submit your FATCA declaration urgently.
               </p>
             </div>
@@ -74,7 +73,9 @@ export default function FATCAAlert() {
                 "w-full rounded-xl text-xs font-bold gap-2 py-2.5 h-auto justify-start border-border/60 hover:bg-amber-500/10 hover:text-amber-600 hover:border-amber-500/30 transition-all"
               )}
             >
-              <Download className="w-3.5 h-3.5" /> Corporate Self-Certificate Form
+              <Download className="w-3.5 h-3.5" aria-hidden="true" />
+              <span>Corporate Self-Certificate Form</span>
+              <span className="sr-only">(opens in new tab)</span>
             </a>
             <a
               href={getFileUrl("/download/Individual Self declaration.pdf")}
@@ -85,7 +86,9 @@ export default function FATCAAlert() {
                 "w-full rounded-xl text-xs font-bold gap-2 py-2.5 h-auto justify-start border-border/60 hover:bg-amber-500/10 hover:text-amber-600 hover:border-amber-500/30 transition-all"
               )}
             >
-              <Download className="w-3.5 h-3.5" /> Individual Self-Declaration Form
+              <Download className="w-3.5 h-3.5" aria-hidden="true" />
+              <span>Individual Self-Declaration Form</span>
+              <span className="sr-only">(opens in new tab)</span>
             </a>
           </div>
         </motion.div>

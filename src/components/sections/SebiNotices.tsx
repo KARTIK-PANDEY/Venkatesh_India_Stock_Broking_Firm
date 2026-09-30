@@ -14,12 +14,12 @@ export default function SebiNotices() {
   return (
     <section aria-labelledby="sebi-notices-heading" className="py-24 bg-background border-y border-border/50">
       <div className="container mx-auto px-4">
-        <div className="bg-blue-50 border-l-4 border-blue-700 rounded-r-xl p-8 md:p-12 shadow-sm">
+        <div className="bg-muted/40 border-l-4 border-primary rounded-r-2xl p-8 md:p-12 shadow-xs" role="region" aria-labelledby="sebi-notices-heading">
           <div className="flex items-center gap-3 mb-8">
-            <div className="bg-primary text-white p-2 rounded-full" aria-hidden="true">
-              <Info className="w-6 h-6" />
+            <div className="bg-primary text-primary-foreground p-2 rounded-full shrink-0" aria-hidden="true">
+              <Info className="w-5 h-5" />
             </div>
-            <h2 id="sebi-notices-heading" className="text-2xl md:text-3xl font-display text-foreground">
+            <h2 id="sebi-notices-heading" className="text-2xl md:text-3xl font-display font-bold text-foreground">
               Important Information for Investors
             </h2>
           </div>
@@ -27,18 +27,18 @@ export default function SebiNotices() {
           <ol className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 mb-10 list-none p-0 m-0">
             {NOTICES.map((notice, idx) => (
               <li key={idx} className="flex gap-4 items-start">
-                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-background border border-primary/20 flex items-center justify-center text-primary font-bold text-sm shadow-sm" aria-hidden="true">
+                <span className="shrink-0 w-8 h-8 rounded-full bg-background border border-primary/30 flex items-center justify-center text-primary font-bold text-sm shadow-xs" aria-hidden="true">
                   {idx + 1}
                 </span>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  {notice}
+                  <span className="sr-only">Notice {idx + 1}: </span>{notice}
                 </p>
               </li>
             ))}
           </ol>
 
-          <div className="pt-8 border-t border-primary/10">
-            <div className="inline-block bg-background text-white px-6 py-4 rounded-lg font-bold text-center w-full md:w-auto uppercase tracking-wider text-sm shadow-lg">
+          <div className="pt-8 border-t border-border/50">
+            <div className="inline-block bg-primary text-primary-foreground px-6 py-4 rounded-xl font-bold text-center w-full md:w-auto uppercase tracking-wider text-xs md:text-sm shadow-md">
               WE, REGENT COMTRADE PVT LTD IS DOING PROPRIETARY TRADING.
             </div>
           </div>

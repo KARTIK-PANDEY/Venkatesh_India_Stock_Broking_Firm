@@ -63,6 +63,7 @@ export default function Footer() {
                 <li><Link href="/about/bank-and-demat-details" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors" aria-hidden="true"></span>Bank & Demat Details</Link></li>
                 <li><Link href="/careers" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors" aria-hidden="true"></span>Careers</Link></li>
                 <li><Link href="/partner-with-us" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors" aria-hidden="true"></span>Partner With Us</Link></li>
+                <li><Link href="/sitemap" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors" aria-hidden="true"></span>Website Sitemap</Link></li>
               </ul>
             </section>
 

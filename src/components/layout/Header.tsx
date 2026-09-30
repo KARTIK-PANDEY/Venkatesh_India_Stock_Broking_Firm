@@ -331,16 +331,30 @@ export default function Header() {
                     action="/search"
                     method="GET"
                     onSubmit={() => setMobileOpen(false)}
+                    aria-label="Site search"
                     className="flex items-center border border-border/70 rounded-md px-2.5 h-8 bg-muted/40 focus-within:border-primary/50 focus-within:bg-background transition-all"
                   >
+                    <label htmlFor="mobile-site-search" className="sr-only">
+                      Search
+                    </label>
                     <Search className="size-3.5 text-muted-foreground mr-1.5 shrink-0" aria-hidden="true" />
                     <input
+                      id="mobile-site-search"
                       name="q"
                       type="search"
                       placeholder="Search pages, reports, forms..."
                       autoComplete="off"
                       className="bg-transparent border-none outline-none text-xs w-full text-foreground placeholder:text-muted-foreground/70"
                     />
+                    <button
+                      type="submit"
+                      aria-label="Submit site search"
+                      title="Search"
+                      className="text-muted-foreground hover:text-primary transition-colors cursor-pointer shrink-0 ml-1"
+                    >
+                      <span className="sr-only">Search</span>
+                      <ChevronRight className="size-3.5" aria-hidden="true" />
+                    </button>
                   </form>
                 </div>
 
