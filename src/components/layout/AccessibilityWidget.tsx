@@ -345,7 +345,7 @@ localStorage.setItem("a11y-text-spacing", String(textSpacing));
                 </div>
                 <div>
                   <h3 id="a11y-dialog-title" className="font-display font-bold text-foreground text-lg">Accessibility Preferences</h3>
-                  <p className="text-xs text-muted-foreground">Adjust formatting for easier reading</p>
+                  <p className="text-foreground/75 dark:text-foreground/80 text-sm">Adjust formatting for easier reading</p>
                 </div>
               </div>
               <button

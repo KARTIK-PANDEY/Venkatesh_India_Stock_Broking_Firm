@@ -153,12 +153,13 @@ export default function ProductsGrid() {
                 </h3>
 
                 {/* Product Description */}
-                <p
-                  id={`product-desc-${idx}`}
-                  className="text-muted-foreground leading-relaxed mb-8 flex-1 font-medium"
-                >
-                  {product.description}
-                </p>
+                {/* Product Description */}
+<p
+  id={`product-desc-${idx}`}
+  className="text-foreground/80 dark:text-foreground/85 leading-relaxed mb-8 flex-1 font-medium"
+>
+  {product.description}
+</p>
 
                 {/* Decorative CTA */}
                 <div
