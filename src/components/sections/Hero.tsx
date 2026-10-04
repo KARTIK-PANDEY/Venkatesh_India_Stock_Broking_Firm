@@ -93,9 +93,12 @@ export default function Hero() {
               </span>
             </motion.h1>
             
-            <motion.p variants={itemVariants} className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10 max-w-2xl font-medium">
-              Join thousands of investors from retail to HNI leveraging our 15+ years of market expertise. Fast execution, robust technology, and transparent pricing.
-            </motion.p>
+            <motion.p
+  variants={itemVariants}
+  className="text-lg md:text-xl text-foreground/80 dark:text-foreground/85 leading-relaxed mb-10 max-w-2xl font-medium"
+>
+  Join thousands of investors from retail to HNI leveraging our 15+ years of market expertise. Fast execution, robust technology, and transparent pricing.
+</motion.p>
             
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-16">
               <Link
@@ -124,7 +127,9 @@ export default function Hero() {
                     <badge.icon className="w-5 h-5" />
                   </div>
                   <span className="text-foreground font-bold text-lg leading-tight">{badge.text}</span>
-                  <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{badge.sub}</span>
+                  <span className="text-xs font-semibold text-foreground/75 dark:text-foreground/80 uppercase tracking-wider">
+  {badge.sub}
+</span>
                 </li>
               ))}
             </motion.ul>
@@ -146,7 +151,9 @@ export default function Hero() {
               {/* Header */}
               <div className="flex justify-between items-center mb-8">
                 <div>
-                  <h3 className="text-muted-foreground font-semibold text-sm">Portfolio Value</h3>
+                  <p className="text-foreground/80 dark:text-foreground/85 font-semibold text-sm uppercase tracking-wide">
+  Portfolio Value
+</p>
                   <div className="text-3xl font-display font-bold text-foreground">₹24,59,200.50</div>
                 </div>
                 <div className="flex items-center gap-1 text-emerald-500 bg-emerald-500/10 px-3 py-1.5 rounded-full text-sm font-bold border border-emerald-500/20">
@@ -186,7 +193,9 @@ export default function Hero() {
                 <div className="bg-muted/30 border border-border/40 rounded-xl p-4 hover:bg-muted/50 transition-colors cursor-pointer">
                   <BarChart3 className="w-6 h-6 text-primary mb-2" />
                   <div className="font-bold text-sm text-foreground">Analytics</div>
-                  <div className="text-xs text-muted-foreground mt-1">Deep insights</div>
+                  <div className="text-xs text-foreground/80 dark:text-foreground/85 mt-1">
+  Deep insights
+</div>
                 </div>
                 <div className="bg-primary text-primary-foreground rounded-xl p-4 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 cursor-pointer flex flex-col justify-between">
                   <TrendingUp className="w-6 h-6 mb-2" />
@@ -221,7 +230,9 @@ export default function Hero() {
                   <TrendingUp className="w-5 h-5 text-accent" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-muted-foreground">NIFTY 50</div>
+                  <div className="text-xs font-bold text-foreground/80 dark:text-foreground/85">
+  NIFTY 50
+</div>
                   <div className="text-sm font-bold text-foreground">22,514.65 <span className="text-emerald-500">+0.8%</span></div>
                 </div>
               </div>

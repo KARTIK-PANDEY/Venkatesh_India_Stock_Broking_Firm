@@ -28,12 +28,12 @@ export default function MarketTicker() {
   }, []);
 
   return (
-    <div className="w-full bg-muted/60 border-b border-border/50 h-9 flex items-center overflow-hidden select-none" role="region" aria-label="Live market data">
+    <div className="w-full bg-muted/50 border-b border-border/50 h-8 flex items-center overflow-hidden select-none" role="region" aria-label="Live market data">
       <button 
         onClick={() => setIsPaused(!isPaused)} 
         aria-label={isPaused ? "Play market ticker" : "Pause market ticker"}
         aria-pressed={isPaused}
-        className="px-3 h-full flex items-center justify-center bg-muted border-r border-border/50 hover:bg-muted/80 focus-visible:z-10"
+        className="px-2.5 h-full flex items-center justify-center bg-muted/80 border-r border-border/50 hover:bg-muted text-[11px] text-muted-foreground hover:text-foreground focus-visible:z-10 cursor-pointer transition-colors"
       >
         <span aria-hidden="true">{isPaused ? "▶" : "⏸"}</span>
       </button>
@@ -46,17 +46,18 @@ export default function MarketTicker() {
           {data.map(item => `${item.symbol}: ${item.value} (${item.up ? 'Up' : 'Down'} ${item.percent})`).join(" | ")}
         </div>
         
-        {/* Visual scrolling content, hidden from screen readers to prevent noise */}
+        {/* Visual scrolling content */}
         <div aria-hidden="true" className="flex">
           {[...data, ...data].map((item, idx) => (
-            <div key={idx} className="flex items-center gap-2 px-6 border-r border-border/30 h-full">
-              <span className="text-foreground font-bold text-xs uppercase tracking-wider">{item.symbol}</span>
-              <span className="text-foreground font-mono text-sm">{item.value}</span>
+            <div key={idx} className="flex items-center gap-1.5 px-4 sm:px-6 border-r border-border/30 h-full">
+              <span className="text-foreground font-bold text-[11px] uppercase tracking-wider">{item.symbol}</span>
+              <span className="text-foreground font-mono text-xs">{item.value}</span>
               <span className={cn(
-                "text-xs font-bold font-mono",
+                "text-[11px] font-semibold font-mono flex items-center gap-0.5",
                 item.up ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"
               )}>
-                {item.up ? "▲" : "▼"} {item.change} ({item.percent})
+                <span>{item.up ? "▲" : "▼"}</span>
+                <span>{item.change} ({item.percent})</span>
               </span>
             </div>
           ))}

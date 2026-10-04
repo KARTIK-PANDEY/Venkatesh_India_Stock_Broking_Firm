@@ -34,23 +34,23 @@ export default function AnnouncementBar({
   if (!isVisible) return null;
 
   return (
-    <div className="relative w-full bg-gradient-to-r from-primary to-accent text-primary-foreground py-2 px-4 flex items-center justify-center text-sm md:text-base transition-all duration-300 z-50">
-      <div className="flex items-center gap-3">
-        <Bell className="w-4 h-4 animate-bounce" />
-        <span className="font-medium text-primary-foreground/90">{message}</span>
+    <div className="relative w-full bg-gradient-to-r from-primary via-primary/95 to-accent text-primary-foreground py-1.5 px-8 sm:px-10 flex items-center justify-center text-xs sm:text-[13px] transition-all duration-200 z-50 shadow-xs">
+      <div className="flex items-center justify-center flex-wrap gap-1.5 sm:gap-2 text-center">
+        <Bell className="size-3.5 animate-bounce shrink-0" aria-hidden="true" />
+        <span className="font-medium text-primary-foreground/95">{message}</span>
         <Link
           href={ctaHref}
-          className="ml-2 font-bold underline hover:text-primary-foreground transition-colors"
+          className="font-bold underline decoration-primary-foreground/60 underline-offset-2 hover:decoration-primary-foreground transition-colors ml-1"
         >
           {ctaText}
         </Link>
       </div>
       <button
         onClick={handleDismiss}
-        className="absolute right-4 p-1 hover:bg-black/10 rounded-full transition-colors focus:outline-none"
+        className="absolute right-2 sm:right-3 p-1 hover:bg-white/20 rounded-full transition-colors focus:outline-none cursor-pointer"
         aria-label="Dismiss announcement"
       >
-        <X className="w-4 h-4" />
+        <X className="size-3.5" />
       </button>
     </div>
   );
