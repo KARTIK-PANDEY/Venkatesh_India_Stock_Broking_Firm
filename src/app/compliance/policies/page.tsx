@@ -98,6 +98,13 @@ const POLICIES = [
     size: "6 KB",
     category: "Governance",
   },
+  {
+    title: "Most Important Terms and Conditions (MITC)",
+    desc: "For non-custodial settled trading accounts (BSE Annexure A)",
+    href: "/policies/MITC.pdf",
+    size: "610 KB",
+    category: "Trading Controls",
+  },
 ];
 
 const CATEGORIES = ["All", "Trading Controls", "IT & Security", "Surveillance & AML", "Governance"];
