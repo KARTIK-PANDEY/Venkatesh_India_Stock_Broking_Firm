@@ -163,8 +163,7 @@ function SearchContent() {
             <ul className="space-y-4 list-none p-0 m-0">
               {filteredResults.map((item) => (
                 <li key={item.id}>
-                  <Link
-                    href={item.href}
+                  <div
                     className="group block p-6 bg-muted/30 hover:bg-muted/60 border border-border/60 hover:border-primary/40 rounded-2xl transition-all shadow-xs hover:shadow-md relative overflow-hidden"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
@@ -177,10 +176,12 @@ function SearchContent() {
                             {item.href}
                           </span>
                         </div>
-                        <h4 className="text-lg md:text-xl font-bold font-display text-foreground group-hover:text-primary transition-colors flex items-center gap-1.5">
-                          {item.title}
+                        <h3 className="text-lg md:text-xl font-bold font-display text-foreground group-hover:text-primary transition-colors flex items-center gap-1.5">
+                          <Link href={item.href} className="focus:outline-none after:absolute after:inset-0">
+                            {item.title}
+                          </Link>
                           <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all opacity-0 group-hover:opacity-100 shrink-0" aria-hidden="true" />
-                        </h4>
+                        </h3>
                         <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
                           {item.description}
                         </p>
@@ -192,7 +193,7 @@ function SearchContent() {
                         </span>
                       </div>
                     </div>
-                  </Link>
+                  </div>
                 </li>
               ))}
             </ul>

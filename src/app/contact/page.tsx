@@ -164,12 +164,12 @@ export default function ContactPage() {
             {/* Branch Offices */}
             <div>
               <h2 className="text-2xl font-display text-foreground mb-6">Our Branch Network</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 list-none p-0 m-0">
                 {BRANCHES.map((branch, i) => (
-                  <div key={i} className="p-6 bg-background border border-border/50 rounded-xl shadow-sm hover:border-primary transition-colors">
+                  <li key={i} className="p-6 bg-background border border-border/50 rounded-xl shadow-sm hover:border-primary transition-colors">
                     <div className="flex items-center gap-2 mb-3 text-foreground">
                       <Building2 className="w-5 h-5" aria-hidden="true" />
-                      <h4 className="font-bold">{branch.city} Branch</h4>
+                      <h3 className="font-bold">{branch.city} Branch</h3>
                     </div>
                     <p className="text-xs text-muted-foreground leading-relaxed mb-3">{branch.address}</p>
                     <div className="flex flex-col gap-1 text-xs font-bold text-primary">
@@ -182,9 +182,9 @@ export default function ContactPage() {
                         </a>
                       )}
                     </div>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
 

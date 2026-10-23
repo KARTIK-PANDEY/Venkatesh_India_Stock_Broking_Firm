@@ -174,20 +174,27 @@ export default function DownloadsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 list-none p-0 m-0">
             {VERNACULAR_LANGUAGES.map((lang, idx) => (
-              <a
-                key={idx}
-                href={getFileUrl("/Vernacular_Language.zip")}
-                download="Vernacular_Language.zip"
-                className="p-5 bg-background border border-border/50 rounded-2xl hover:border-primary/30 transition-all hover:shadow-xs group text-center block cursor-pointer"
-              >
-                <Download className="mx-auto w-5 h-5 text-primary group-hover:scale-110 transition-transform mb-3"  aria-hidden="true"/>
-                <h4 className="font-bold text-sm text-foreground">{lang}</h4>
-                <p className="text-[10px] text-muted-foreground mt-1">Download Kit</p>
-              </a>
+              <li key={idx}>
+                <div
+                  className="p-5 bg-background border border-border/50 rounded-2xl hover:border-primary/30 transition-all hover:shadow-xs group text-center block relative"
+                >
+                  <Download className="mx-auto w-5 h-5 text-primary group-hover:scale-110 transition-transform mb-3"  aria-hidden="true"/>
+                  <h3 className="font-bold text-sm text-foreground">
+                    <a
+                      href={getFileUrl("/Vernacular_Language.zip")}
+                      download="Vernacular_Language.zip"
+                      className="focus:outline-none after:absolute after:inset-0"
+                    >
+                      {lang}
+                    </a>
+                  </h3>
+                  <p className="text-[10px] text-muted-foreground mt-1">Download Kit</p>
+                </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
 
       </div>

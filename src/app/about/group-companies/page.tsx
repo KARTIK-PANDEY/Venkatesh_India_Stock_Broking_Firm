@@ -22,9 +22,9 @@ export default function GroupCompaniesPage() {
       </div>
 
       <div className="container mx-auto px-4 py-16 md:py-24 max-w-5xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 list-none p-0 m-0">
           {GROUP_COMPANIES.map((company, i) => (
-            <div
+            <li
               key={i}
               className="group flex flex-col p-8 md:p-10 rounded-3xl bg-muted/40 border border-border/50 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1"
             >
@@ -69,9 +69,9 @@ export default function GroupCompaniesPage() {
                   </span>
                 </div>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
 
         {/* Bottom CTA Banner */}
         <div className="mt-20 bg-gradient-to-br from-primary to-accent rounded-3xl p-10 md:p-14 text-center relative overflow-hidden">

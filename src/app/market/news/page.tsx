@@ -96,9 +96,11 @@ export default function FinancialNewsPage() {
         </div>
 
         {/* News Grid */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredNews.map((article, idx) => (
-            <motion.div
+        <section aria-labelledby="market-news-heading">
+          <h2 id="market-news-heading" className="sr-only">Market News Articles</h2>
+          <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 list-none p-0 m-0">
+            {filteredNews.map((article, idx) => (
+              <motion.li
               key={idx}
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -137,9 +139,10 @@ export default function FinancialNewsPage() {
                   Read <ArrowRight className="w-3.5 h-3.5"  aria-hidden="true"/>
                 </span>
               </div>
-            </motion.div>
-          ))}
-        </div>
+              </motion.li>
+            ))}
+          </ul>
+        </section>
 
       </div>
     </div>

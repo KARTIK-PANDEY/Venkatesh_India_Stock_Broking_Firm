@@ -441,6 +441,7 @@ export default function AccessibilityVideos() {
                 return (
                   <li key={video.id}>
                     <button
+                      type="button"
                       onClick={() => {
                         setActiveVideo(video);
                         setIsPlaying(false);
@@ -452,22 +453,22 @@ export default function AccessibilityVideos() {
                           : "bg-background border-border/40 hover:border-border text-foreground hover:bg-muted/40"
                       }`}
                     >
-                      <div className={`p-2.5 rounded-xl shrink-0 ${
+                      <span className={`p-2.5 rounded-xl shrink-0 inline-flex items-center justify-center ${
                         isActive ? "bg-white/20 text-white" : "bg-muted text-primary"
                       }`}>
                         <IconComponent className="w-5 h-5" aria-hidden="true" />
-                      </div>
+                      </span>
                       
-                      <div className="space-y-1">
-                        <h4 className="text-sm font-bold leading-tight font-display">
+                      <span className="space-y-1 block">
+                        <span className="text-sm font-bold leading-tight font-display block">
                           {video.title}
-                        </h4>
-                        <p className={`text-[11px] leading-relaxed line-clamp-2 ${
+                        </span>
+                        <span className={`text-[11px] leading-relaxed line-clamp-2 block ${
                           isActive ? "text-white/80" : "text-muted-foreground"
                         }`}>
                           {video.description}
-                        </p>
-                      </div>
+                        </span>
+                      </span>
                     </button>
                   </li>
                 );

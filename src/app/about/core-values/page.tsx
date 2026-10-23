@@ -24,21 +24,22 @@ export default function CoreValuesPage() {
 
       <div className="container mx-auto px-4 max-w-5xl py-16 md:py-24 space-y-16">
         {/* Values Grid */}
-        <section>
-          <div className="grid sm:grid-cols-2 gap-8">
+        <section aria-labelledby="core-values-grid-heading">
+          <h2 id="core-values-grid-heading" className="sr-only">Our Core Values</h2>
+          <ul className="grid sm:grid-cols-2 gap-8 list-none p-0 m-0">
             {MISSION_VISION.values.map((value, i) => {
               const Icon = icons[i % icons.length];
               return (
-                <div key={i} className="bg-muted/40 border border-border/50 rounded-2xl p-8 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all">
+                <li key={i} className="bg-muted/40 border border-border/50 rounded-2xl p-8 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all">
                   <div className="inline-flex p-3 rounded-xl bg-primary/10 mb-6">
-                    <Icon className="w-7 h-7 text-primary" />
+                    <Icon className="w-7 h-7 text-primary" aria-hidden="true" />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-3">{value.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{value.desc}</p>
-                </div>
+                </li>
               );
             })}
-          </div>
+          </ul>
         </section>
 
         {/* Mission & Vision Summary */}

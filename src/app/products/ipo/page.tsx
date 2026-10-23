@@ -99,7 +99,7 @@ export default function IpoPage() {
                   >
                     <div>
                       <div className="flex items-center gap-3 mb-2 flex-wrap">
-                        <h4 className="font-bold text-lg text-foreground">{ipo.company}</h4>
+                        <h3 className="font-bold text-lg text-foreground">{ipo.company}</h3>
                         <span className={cn(
                           "text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border",
                           ipo.status === "Open" && "bg-green-50 text-green-700 border-green-200 dark:bg-green-950/20 dark:text-green-400 dark:border-green-800",

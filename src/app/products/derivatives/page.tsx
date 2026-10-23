@@ -79,7 +79,7 @@ export default function DerivativesTradingPage() {
                         <MonitorSmartphone className="w-5 h-5"  aria-hidden="true"/>
                       </div>
                       <div>
-                        <h4 className="font-bold text-foreground mb-1">Desktop Trading Terminal</h4>
+                        <h3 className="font-bold text-foreground mb-1">Desktop Trading Terminal</h3>
                         <p className="text-sm text-muted-foreground">A robust, high-performance trading platform for professional traders requiring advanced charting and rapid execution.</p>
                       </div>
                     </div>
@@ -88,7 +88,7 @@ export default function DerivativesTradingPage() {
                         <LineChart className="w-5 h-5"  aria-hidden="true"/>
                       </div>
                       <div>
-                        <h4 className="font-bold text-foreground mb-1">Advanced Options Chain</h4>
+                        <h3 className="font-bold text-foreground mb-1">Advanced Options Chain</h3>
                         <p className="text-sm text-muted-foreground">Analyze Greeks, implied volatility, and open interest in real-time to make informed options trading decisions.</p>
                       </div>
                     </div>

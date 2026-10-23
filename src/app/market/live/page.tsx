@@ -80,18 +80,20 @@ export default function LiveMarketWatchPage() {
         </div>
 
         {/* Indices Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {indices.map((ind, idx) => (
-            <motion.div
-              key={idx}
-              className="p-6 bg-muted/40 border border-border/50 rounded-2xl flex flex-col justify-between hover:shadow-xs transition-shadow"
-            >
-              <div>
-                <span className="text-xs font-bold text-muted-foreground">{ind.name}</span>
-                <h3 className="text-2xl font-display font-bold text-foreground mt-2 tracking-tight">
-                  {ind.value.toLocaleString()}
-                </h3>
-              </div>
+        <section aria-labelledby="live-indices-heading">
+          <h2 id="live-indices-heading" className="sr-only">Live Market Indices</h2>
+          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 list-none p-0 m-0">
+            {indices.map((ind, idx) => (
+              <motion.li
+                key={idx}
+                className="p-6 bg-muted/40 border border-border/50 rounded-2xl flex flex-col justify-between hover:shadow-xs transition-shadow"
+              >
+                <div>
+                  <h3 className="text-xs font-bold text-muted-foreground">{ind.name}</h3>
+                  <p className="text-2xl font-display font-bold text-foreground mt-2 tracking-tight">
+                    {ind.value.toLocaleString()}
+                  </p>
+                </div>
 
               <div className="flex items-center gap-2 mt-4">
                 {ind.up ? (
@@ -103,9 +105,10 @@ export default function LiveMarketWatchPage() {
                   {ind.change > 0 ? "+" : ""}{ind.change} ({ind.change > 0 ? "+" : ""}{ind.pctChange}%)
                 </span>
               </div>
-            </motion.div>
-          ))}
-        </div>
+              </motion.li>
+            ))}
+          </ul>
+        </section>
 
         {/* Gainers / Losers Tabs */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">

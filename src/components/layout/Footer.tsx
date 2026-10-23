@@ -34,7 +34,7 @@ export default function Footer() {
             {/* Col 1: Brand */}
             <div className="lg:col-span-1">
               <Link href="/" className="flex items-center mb-6 group">
-                <div className="h-16 w-52 rounded-lg overflow-hidden group-hover:scale-[1.02] transition-transform shrink-0">
+                <span className="block h-16 w-52 rounded-lg overflow-hidden group-hover:scale-[1.02] transition-transform shrink-0">
                   <Image
                     src="/logo.jpg"
                     alt="Graphic Shri Venkatesh Stock Broker Services India Pvt Ltd logo"
@@ -42,7 +42,7 @@ export default function Footer() {
                     height={64}
                     className="object-contain w-full h-full"
                   />
-                </div>
+                </span>
               </Link>
               <p className="text-sm text-muted-foreground leading-relaxed mb-6 font-medium">
                 Shri Venkatesh Stock Broker Services India Pvt. Ltd. is a premier financial services firm based in Raipur, Chhattisgarh, providing comprehensive Trading solutions since 2010.

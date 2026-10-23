@@ -78,7 +78,7 @@ export default function Header() {
 
           {/* ── Logo ──────────────────────────────────────────────── */}
           <Link href="/" className="flex items-center group shrink-0" aria-label="Shri Venkatesh Stock Broker Services India Pvt Ltd Logo">
-            <div className="h-7.5 w-28 min-[380px]:h-8 min-[380px]:w-32 sm:h-8.5 sm:w-36 lg:h-9 lg:w-40 rounded overflow-hidden group-hover:opacity-90 transition-opacity shrink-0 flex items-center">
+            <span className="h-7.5 w-28 min-[380px]:h-8 min-[380px]:w-32 sm:h-8.5 sm:w-36 lg:h-9 lg:w-40 rounded overflow-hidden group-hover:opacity-90 transition-opacity shrink-0 flex items-center">
               <Image
                 src="/logo.jpg"
                 alt="Shri Venkatesh Stock Broker Services India Pvt Ltd Logo"
@@ -87,7 +87,7 @@ export default function Header() {
                 className="object-contain w-full h-full max-h-full"
                 priority
               />
-            </div>
+            </span>
           </Link>
 
           {/* ── Desktop Navigation ────────────────────────────────── */}
@@ -310,7 +310,7 @@ export default function Header() {
                       aria-label="Shri Venkatesh Stock Broker Services India Pvt Ltd Logo"
                       onClick={() => setMobileOpen(false)}
                     >
-                      <div className="h-7 w-24 rounded overflow-hidden shrink-0 flex items-center">
+                      <span className="h-7 w-24 rounded overflow-hidden shrink-0 flex items-center">
                         <Image
                           src="/logo.jpg"
                           alt="Shri Venkatesh Stock Broker Services India Pvt Ltd Logo"
@@ -319,7 +319,7 @@ export default function Header() {
                           className="object-contain w-full h-full"
                           priority
                         />
-                      </div>
+                      </span>
                     </Link>
                     <SheetTitle className="leading-tight text-left">
                       <span className="text-[10px] font-semibold text-muted-foreground block leading-tight">

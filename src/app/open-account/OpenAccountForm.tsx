@@ -143,8 +143,9 @@ export default function OpenAccountForm() {
             <legend className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Services Interested In</legend>
             <div className="grid grid-cols-2 gap-3 mt-2">
               {["Equity Trading", "Derivatives", "Mutual Funds", "IPO", "Demat Account"].map((service) => (
-                <label key={service} className="flex items-center gap-2 cursor-pointer p-3 bg-muted/40 border border-border/50 rounded-lg hover:bg-muted transition-colors">
+                <label key={service} htmlFor={`service-${service.toLowerCase().replace(/\s+/g, '-')}`} className="flex items-center gap-2 cursor-pointer p-3 bg-muted/40 border border-border/50 rounded-lg hover:bg-muted transition-colors">
                   <input 
+                    id={`service-${service.toLowerCase().replace(/\s+/g, '-')}`}
                     type="checkbox" 
                     checked={formData.services.includes(service)} 
                     onChange={() => handleServiceChange(service)} 

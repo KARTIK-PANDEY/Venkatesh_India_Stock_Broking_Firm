@@ -185,20 +185,20 @@ export default function InvestorCharterPage() {
             <p className="text-muted-foreground mb-10 leading-relaxed">
               Investors should follow the below-mentioned 4-step escalation process for resolution of grievances:
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <ul className="grid grid-cols-1 md:grid-cols-4 gap-4 list-none p-0 m-0">
               {[
                 { s: "Step 1", t: "Stock Broker", d: "Internal redressal within 5-7 days" },
                 { s: "Step 2", t: "Stock Exchange", d: "If not resolved by broker" },
                 { s: "Step 3", t: "SEBI SCORES 2.0", d: "Regulator's online portal" },
                 { s: "Step 4", t: "SmartODR", d: "Online Dispute Resolution" },
               ].map((step, i) => (
-                <div key={i} className="flex flex-col items-center text-center p-6 bg-muted rounded-2xl border border-border/50">
+                <li key={i} className="flex flex-col items-center text-center p-6 bg-muted rounded-2xl border border-border/50">
                   <span className="text-xs font-extrabold text-primary uppercase mb-2">{step.s}</span>
-                  <h4 className="text-lg font-bold text-foreground mb-2">{step.t}</h4>
+                  <h3 className="text-lg font-bold text-foreground mb-2">{step.t}</h3>
                   <p className="text-xs text-muted-foreground">{step.d}</p>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </section>
 
         </div>

@@ -46,7 +46,7 @@ export default function BankAndDematDetailsPage() {
         <div className="bg-amber-500/10 border border-amber-500/30 p-6 md:p-8 rounded-3xl flex gap-4 items-start shadow-xs max-w-4xl mx-auto">
           <ShieldAlert className="w-8 h-8 text-amber-600 shrink-0 mt-0.5"  aria-hidden="true"/>
           <div className="space-y-2">
-            <h3 className="font-display font-bold text-foreground text-base uppercase tracking-wider">Upstreaming Client Nodal Bank Accounts (USCNBA)</h3>
+            <h2 className="font-display font-bold text-foreground text-base uppercase tracking-wider">Upstreaming Client Nodal Bank Accounts (USCNBA)</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Investors are requested to note that Stock broker – Shri Venkatesh Stock Broker Services India Pvt Ltd is permitted to receive money from investors through designated bank accounts only, named as <strong>Up streaming Client Nodal Bank Account (USCNBA)</strong>. Stock broker - Shri Venkatesh Stock Broker Services India Pvt Ltd is also required to disclose these USCNB accounts to the Stock Exchange.
             </p>

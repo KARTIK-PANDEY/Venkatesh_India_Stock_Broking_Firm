@@ -71,7 +71,7 @@ export default function CommodityTradingPage() {
                     <TrendingUp className="w-5 h-5"  aria-hidden="true"/>
                   </div>
                   <div>
-                    <h4 className="font-bold text-foreground mb-1">Daily Commodity Reports</h4>
+                    <h3 className="font-bold text-foreground mb-1">Daily Commodity Reports</h3>
                     <p className="text-sm text-muted-foreground">Comprehensive analysis of global trends, inventory levels, and technical levels for major commodities.</p>
                   </div>
                 </div>
@@ -80,7 +80,7 @@ export default function CommodityTradingPage() {
                     <LineChart className="w-5 h-5"  aria-hidden="true"/>
                   </div>
                   <div>
-                    <h4 className="font-bold text-foreground mb-1">Low Latency Execution</h4>
+                    <h3 className="font-bold text-foreground mb-1">Low Latency Execution</h3>
                     <p className="text-sm text-muted-foreground">Trade seamlessly on the MCX and NCDEX platforms with rapid order placement and confirmation.</p>
                   </div>
                 </div>

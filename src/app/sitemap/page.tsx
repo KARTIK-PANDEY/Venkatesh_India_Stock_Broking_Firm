@@ -156,7 +156,7 @@ export default function SitemapPage() {
                       rel={link.isExternal ? "noopener noreferrer" : undefined}
                       className="group flex flex-col p-2.5 rounded-xl hover:bg-muted/60 transition-colors border border-transparent hover:border-border/40"
                     >
-                      <div className="flex items-center justify-between gap-2">
+                      <span className="flex items-center justify-between gap-2">
                         <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors flex items-center gap-1.5">
                           <span className="w-1.5 h-1.5 rounded-full bg-primary/60 group-hover:bg-primary transition-colors" aria-hidden="true" />
                           {link.label}
@@ -167,7 +167,7 @@ export default function SitemapPage() {
                             <ExternalLink className="w-3 h-3 opacity-60" aria-hidden="true" />
                           </span>
                         )}
-                      </div>
+                      </span>
                       {link.description && (
                         <span className="text-[11px] text-muted-foreground pl-3 pt-0.5 line-clamp-1">
                           {link.description}

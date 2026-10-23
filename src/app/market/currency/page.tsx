@@ -64,26 +64,28 @@ export default function CurrencyReportPage() {
         </div>
 
         {/* Currency Cards Grid */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {currencies.map((curr, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="p-6 bg-muted/40 border border-border/50 rounded-3xl flex flex-col justify-between hover:shadow-xs transition-shadow group"
-            >
-              <div className="flex justify-between items-start mb-6">
-                <span className="text-xs font-bold text-muted-foreground">{curr.pair}</span>
-                <div className="p-3 bg-primary/10 rounded-xl text-primary group-hover:scale-110 transition-transform">
-                  <curr.icon className="w-5 h-5" />
+        <section aria-labelledby="currency-pairs-heading">
+          <h2 id="currency-pairs-heading" className="sr-only">Currency Pairs Exchange Rates</h2>
+          <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 list-none p-0 m-0">
+            {currencies.map((curr, idx) => (
+              <motion.li
+                key={idx}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                className="p-6 bg-muted/40 border border-border/50 rounded-3xl flex flex-col justify-between hover:shadow-xs transition-shadow group"
+              >
+                <div className="flex justify-between items-start mb-6">
+                  <h3 className="text-xs font-bold text-muted-foreground">{curr.pair}</h3>
+                  <div className="p-3 bg-primary/10 rounded-xl text-primary group-hover:scale-110 transition-transform">
+                    <curr.icon className="w-5 h-5" aria-hidden="true" />
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <h3 className="text-3xl font-display font-bold text-foreground tracking-tight">
-                  ₹{curr.value.toFixed(2)}
-                </h3>
+                <div>
+                  <p className="text-3xl font-display font-bold text-foreground tracking-tight">
+                    ₹{curr.value.toFixed(2)}
+                  </p>
                 <div className="flex items-center gap-2 mt-3">
                   {curr.up ? (
                     <TrendingUp className="w-4 h-4 text-emerald-500 shrink-0"  aria-hidden="true"/>
@@ -95,9 +97,10 @@ export default function CurrencyReportPage() {
                   </span>
                 </div>
               </div>
-            </motion.div>
-          ))}
-        </div>
+              </motion.li>
+            ))}
+          </ul>
+        </section>
 
         {/* Informational Advisory */}
         <div className="p-8 bg-muted/30 border border-border/50 rounded-3xl space-y-4 max-w-4xl">

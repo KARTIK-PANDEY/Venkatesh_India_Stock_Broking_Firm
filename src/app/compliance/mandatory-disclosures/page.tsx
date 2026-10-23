@@ -31,6 +31,7 @@ export default function MandatoryDisclosuresPage() {
 
             <div className="bg-muted/40 border border-border/50 rounded-2xl overflow-hidden">
               <table className="w-full text-sm text-left">
+                <caption className="sr-only">SEBI and Stock Exchange Registration Credentials</caption>
                 <tbody>
                   {[
                     ["SEBI Registration Number", REGISTRATION_DETAILS.sebi_reg],
@@ -40,7 +41,7 @@ export default function MandatoryDisclosuresPage() {
                     ["Company Identification Number (CIN)", REGISTRATION_DETAILS.cin],
                   ].map(([label, val], idx) => (
                     <tr key={idx} className="border-b border-border/50 last:border-0 hover:bg-muted/50 transition-colors">
-                      <td className="px-6 py-4 font-semibold text-muted-foreground w-1/2">{label}</td>
+                      <th scope="row" className="px-6 py-4 font-semibold text-muted-foreground w-1/2 text-left font-normal">{label}</th>
                       <td className="px-6 py-4 font-mono font-bold text-foreground">{val}</td>
                     </tr>
                   ))}
@@ -84,7 +85,7 @@ export default function MandatoryDisclosuresPage() {
                 <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 rounded-full px-2.5 py-0.5">
                   Compliance Officer
                 </span>
-                <h4 className="font-bold text-foreground text-base mt-2">{COMPANY_INFO.compliance.name}</h4>
+                <h3 className="font-bold text-foreground text-base mt-2">{COMPANY_INFO.compliance.name}</h3>
                 <div className="text-xs font-semibold text-muted-foreground space-y-1">
                   <p className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5"  aria-hidden="true"/> {COMPANY_INFO.compliance.phone}</p>
                   <p className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5"  aria-hidden="true"/> {COMPANY_INFO.compliance.email}</p>
@@ -96,7 +97,7 @@ export default function MandatoryDisclosuresPage() {
                 <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 rounded-full px-2.5 py-0.5">
                   CEO / Managing Director
                 </span>
-                <h4 className="font-bold text-foreground text-base mt-2">{COMPANY_INFO.ceo.name}</h4>
+                <h3 className="font-bold text-foreground text-base mt-2">{COMPANY_INFO.ceo.name}</h3>
                 <div className="text-xs font-semibold text-muted-foreground space-y-1">
                   <p className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5"  aria-hidden="true"/> {COMPANY_INFO.ceo.phone}</p>
                   <p className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5"  aria-hidden="true"/> {COMPANY_INFO.ceo.email}</p>

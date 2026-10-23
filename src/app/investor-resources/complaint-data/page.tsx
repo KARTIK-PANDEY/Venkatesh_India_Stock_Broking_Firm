@@ -161,7 +161,7 @@ export default function ComplaintDataPage() {
               <div className="p-6 border-b border-border/50 flex justify-between items-center bg-muted/20">
                 <div className="flex items-center gap-2">
                   <TableIcon className="w-5 h-5 text-primary" />
-                  <h3 className="text-sm font-bold text-foreground uppercase tracking-wider">Monthly Complaint Statistics (Stock Broker)</h3>
+                  <h2 className="text-sm font-bold text-foreground uppercase tracking-wider">Monthly Complaint Statistics (Stock Broker)</h2>
                 </div>
                 <button
                   onClick={() => window.print()}
@@ -210,7 +210,7 @@ export default function ComplaintDataPage() {
               <div className="p-6 border-b border-border/50 bg-muted/20 flex justify-between items-center">
                 <div className="flex items-center gap-2">
                   <TableIcon className="w-5 h-5 text-primary" />
-                  <h3 className="text-sm font-bold text-foreground uppercase tracking-wider">Monthly Complaints Disclosures (Depository Participant)</h3>
+                  <h2 className="text-sm font-bold text-foreground uppercase tracking-wider">Monthly Complaints Disclosures (Depository Participant)</h2>
                 </div>
               </div>
 

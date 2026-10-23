@@ -83,7 +83,7 @@ export default function Hero() {
           >
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs uppercase tracking-widest mb-8 backdrop-blur-md">
               <Shield className="w-3.5 h-3.5" aria-hidden="true" />
-              SEBI Registered Intermediary
+              SEBI Registered Intermediary.
             </motion.div>
             
             <motion.h1 id="hero-heading" variants={itemVariants} className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-foreground leading-[1.1] mb-6 tracking-tight">

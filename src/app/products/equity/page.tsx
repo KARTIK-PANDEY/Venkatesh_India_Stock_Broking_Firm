@@ -94,7 +94,7 @@ export default function EquityTradingPage() {
                       <item.icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-foreground mb-1">{item.title}</h4>
+                      <h3 className="font-bold text-foreground mb-1">{item.title}</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                     </div>
                   </div>

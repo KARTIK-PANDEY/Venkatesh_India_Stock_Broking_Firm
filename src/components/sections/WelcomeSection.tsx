@@ -86,7 +86,7 @@ export default function WelcomeSection() {
           <div className="lg:col-span-7 space-y-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs uppercase tracking-widest">
               <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
-              Welcome to Shri Venkatesh
+              Welcome to Shri Venkatesh.
             </div>
             
             <h2 id="welcome-heading" className="text-3xl md:text-5xl font-display font-bold text-foreground leading-tight tracking-tight">

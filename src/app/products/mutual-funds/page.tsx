@@ -118,6 +118,8 @@ export default function MutualFundsPage() {
                       <span className="text-primary">₹{monthlyInstallment.toLocaleString()}</span>
                     </div>
                     <input
+                      id="sip-monthly-installment"
+                      aria-label="Monthly SIP Installment Amount in Rupees"
                       type="range"
                       min="500"
                       max="100000"
@@ -139,6 +141,8 @@ export default function MutualFundsPage() {
                       <span className="text-primary">{expectedRate}% p.a.</span>
                     </div>
                     <input
+                      id="sip-expected-rate"
+                      aria-label="Expected Annual Return Rate Percentage"
                       type="range"
                       min="1"
                       max="30"
@@ -160,6 +164,8 @@ export default function MutualFundsPage() {
                       <span className="text-primary">{years} Years</span>
                     </div>
                     <input
+                      id="sip-time-period"
+                      aria-label="Investment Time Period in Years"
                       type="range"
                       min="1"
                       max="40"

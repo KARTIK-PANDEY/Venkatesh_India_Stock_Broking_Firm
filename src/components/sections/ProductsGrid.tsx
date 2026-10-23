@@ -120,21 +120,18 @@ export default function ProductsGrid() {
   initial={false}
   className="flex"
 >
-              <Link
-                href={product.href}
-                aria-labelledby={`product-title-${idx}`}
-                aria-describedby={`product-desc-${idx}`}
-                className="group relative flex flex-col w-full bg-background/50 backdrop-blur-xl p-8 rounded-3xl border border-border/50 shadow-lg shadow-primary/5 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-2 overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              <div
+                className="group relative flex flex-col w-full bg-background/50 backdrop-blur-xl p-8 rounded-3xl border border-border/50 shadow-lg shadow-primary/5 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-2 overflow-hidden"
               >
                 {/* Hover Glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                <span className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 block pointer-events-none" />
 
                 {/* Top Accent Line */}
-                <div className="absolute top-0 left-0 w-0 h-1 bg-gradient-to-r from-primary to-accent transition-all duration-500 group-hover:w-full" />
+                <span className="absolute top-0 left-0 w-0 h-1 bg-gradient-to-r from-primary to-accent transition-all duration-500 group-hover:w-full block" />
 
                 {/* Icon (decorative) */}
                 <div
-                  className="mb-8 inline-flex p-4 rounded-2xl bg-muted/50 text-foreground border border-border/50 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-500 shadow-sm"
+                  className="mb-8 inline-flex p-4 rounded-2xl bg-muted/50 text-foreground border border-border/50 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-500 shadow-sm w-fit"
                   aria-hidden="true"
                 >
                   <product.icon
@@ -144,22 +141,27 @@ export default function ProductsGrid() {
                   />
                 </div>
 
-                {/* Product Heading */}
+                {/* Product Heading with semantic Link inside */}
                 <h3
                   id={`product-title-${idx}`}
                   className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors"
                 >
-                  {product.title}
+                  <Link
+                    href={product.href}
+                    aria-describedby={`product-desc-${idx}`}
+                    className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg after:absolute after:inset-0"
+                  >
+                    {product.title}
+                  </Link>
                 </h3>
 
                 {/* Product Description */}
-                {/* Product Description */}
-<p
-  id={`product-desc-${idx}`}
-  className="text-foreground/80 dark:text-foreground/85 leading-relaxed mb-8 flex-1 font-medium"
->
-  {product.description}
-</p>
+                <p
+                  id={`product-desc-${idx}`}
+                  className="text-foreground/80 dark:text-foreground/85 leading-relaxed mb-8 flex-1 font-medium"
+                >
+                  {product.description}
+                </p>
 
                 {/* Decorative CTA */}
                 <div
@@ -169,7 +171,7 @@ export default function ProductsGrid() {
                   Learn More
                   <ArrowRight className="w-4 h-4"  aria-hidden="true"/>
                 </div>
-              </Link>
+              </div>
             </motion.li>
           ))}
         </motion.ul>
