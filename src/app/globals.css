@@ -61,7 +61,7 @@
 
   --accent: oklch(0.65 0.2 200);
   /* Cyan/Teal Accent */
-  --accent-foreground: oklch(0.98 0 0);
+  --accent-foreground: oklch(0.12 0.02 260);
 
   --destructive: oklch(0.57 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
@@ -422,18 +422,13 @@ body {
 
 /* Improve contrast for captions and helper text */
 caption,
-small,
-.text-xs,
-.text-sm {
+small {
   color: var(--muted-foreground);
 }
 
 /* Ensure text on dark cards is readable */
-.dark .text-muted-foreground,
 .dark caption,
-.dark small,
-.dark .text-xs,
-.dark .text-sm {
+.dark small {
   color: oklch(0.82 0.02 260);
 }
 
@@ -446,26 +441,6 @@ textarea::placeholder {
 .dark input::placeholder,
 .dark textarea::placeholder {
   color: oklch(0.75 0.02 260);
-}
-
-/* Improve footer and secondary navigation links */
-footer a,
-footer p,
-footer span {
-  color: var(--muted-foreground);
-}
-
-.dark footer a,
-.dark footer p,
-.dark footer span {
-  color: oklch(0.82 0.02 260);
-}
-
-/* Badge text on colored backgrounds */
-.bg-primary,
-.bg-accent,
-.bg-destructive {
-  color: var(--primary-foreground);
 }
 /* =======================================================
    WCAG 1.3.4 / GIGW 5.2.10 — Orientation Support

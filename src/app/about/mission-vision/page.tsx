@@ -5,7 +5,7 @@ export default function MissionVisionPage() {
   return (
     <div className="bg-background">
       {/* Header */}
-      <div className="bg-background py-16 md:py-24 text-white">
+      <div className="bg-gradient-to-br from-brand-navy via-brand-blue to-primary text-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <nav className="text-accent text-sm font-bold uppercase tracking-widest mb-4">
             Home &gt; About Us &gt; Mission &amp; Vision

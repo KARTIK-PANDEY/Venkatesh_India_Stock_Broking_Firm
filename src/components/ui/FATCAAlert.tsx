@@ -50,7 +50,7 @@ export default function FATCAAlert() {
           </button>
 
           <div className="flex gap-4 items-start pr-6 mt-1">
-            <div className="p-3 bg-amber-500/10 text-amber-600 rounded-2xl shrink-0" aria-hidden="true">
+            <div className="p-3 bg-amber-500/10 text-amber-800 dark:text-amber-300 rounded-2xl shrink-0" aria-hidden="true">
               <ShieldAlert className="w-6 h-6 animate-pulse"  aria-hidden="true"/>
             </div>
             <div>
@@ -70,7 +70,7 @@ export default function FATCAAlert() {
               rel="noopener noreferrer"
               className={cn(
                 buttonVariants({ variant: "outline", size: "sm" }),
-                "w-full rounded-xl text-xs font-bold gap-2 py-2.5 h-auto justify-start border-border/60 hover:bg-amber-500/10 hover:text-amber-600 hover:border-amber-500/30 transition-all"
+                "w-full rounded-xl text-xs font-bold gap-2 py-2.5 h-auto justify-start border-border/60 hover:bg-amber-500/10 hover:text-amber-800 dark:hover:text-amber-300 hover:border-amber-500/30 transition-all"
               )}
             >
               <Download className="w-3.5 h-3.5" aria-hidden="true" />
@@ -83,7 +83,7 @@ export default function FATCAAlert() {
               rel="noopener noreferrer"
               className={cn(
                 buttonVariants({ variant: "outline", size: "sm" }),
-                "w-full rounded-xl text-xs font-bold gap-2 py-2.5 h-auto justify-start border-border/60 hover:bg-amber-500/10 hover:text-amber-600 hover:border-amber-500/30 transition-all"
+                "w-full rounded-xl text-xs font-bold gap-2 py-2.5 h-auto justify-start border-border/60 hover:bg-amber-500/10 hover:text-amber-800 dark:hover:text-amber-300 hover:border-amber-500/30 transition-all"
               )}
             >
               <Download className="w-3.5 h-3.5" aria-hidden="true" />

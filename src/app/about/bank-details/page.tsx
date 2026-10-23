@@ -5,7 +5,7 @@ export default function BankDetailsPage() {
   return (
     <div className="bg-background">
       {/* Header */}
-      <div className="bg-background py-16 md:py-24 text-white">
+      <div className="bg-gradient-to-br from-brand-navy via-brand-blue to-primary text-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <nav aria-label="Breadcrumb" className="text-accent text-sm font-bold uppercase tracking-widest mb-4">
             <ol className="flex items-center gap-2 list-none p-0 m-0">

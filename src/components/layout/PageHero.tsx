@@ -60,7 +60,7 @@ export default function PageHero({ title, subtitle, breadcrumbs }: PageHeroProps
                           {item.label}
                         </Link>
                       ) : (
-                        <span className="text-white/80 font-semibold">{item.label}</span>
+                        <span className="text-white font-semibold">{item.label}</span>
                       )}
                     </li>
                   );
@@ -76,7 +76,7 @@ export default function PageHero({ title, subtitle, breadcrumbs }: PageHeroProps
 
           {/* Subtitle */}
           {subtitle && (
-            <p className="text-white/80 text-base md:text-lg lg:text-xl font-medium max-w-2xl leading-relaxed">
+            <p className="text-white text-base md:text-lg lg:text-xl font-medium max-w-2xl leading-relaxed">
               {subtitle}
             </p>
           )}

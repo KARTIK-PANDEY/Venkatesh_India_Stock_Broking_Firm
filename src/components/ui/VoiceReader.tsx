@@ -189,6 +189,9 @@ export default function VoiceReader() {
     // 4. Assemble the speech sequence
     const speechSequence: string[] = [];
     if (isHomePage) {
+      speechSequence.push(
+    "Welcome to Shri Venkatesh Stock Broker Services India Private Limited website."
+  ); 
       if (logoText) speechSequence.push(`${logoText}.`);
       if (headerText) speechSequence.push(headerText); // ... Header Actions: Login, Open Account.
       speechSequence.push(`${COMPANY_INFO.name}.`);          // company name after Open Account
@@ -371,8 +374,8 @@ export default function VoiceReader() {
               isPaused
                 ? "Resume reading page content"
                 : hasSelection
-                ? "Listen to selected text"
-                : "Read current page content aloud"
+                ? "Listen to Selection"
+                : "Listen to Page"
             }
             aria-pressed={isPlaying}
           >

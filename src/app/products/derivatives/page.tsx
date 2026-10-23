@@ -11,7 +11,7 @@ export default function DerivativesTradingPage() {
   return (
     <div className="bg-background">
       {/* Product Hero */}
-      <div className="bg-background py-16 md:py-24 text-white relative overflow-hidden">
+      <div className="bg-gradient-to-br from-brand-navy via-brand-blue to-primary text-white py-16 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none" 
              style={{ backgroundImage: 'radial-gradient(white 1px, transparent 1px)', backgroundSize: '32px 32px' }}>
         </div>
@@ -93,7 +93,7 @@ export default function DerivativesTradingPage() {
                       </div>
                     </div>
                  </div>
-                 <div className="w-full md:w-64 aspect-square bg-background rounded-2xl flex items-center justify-center p-8 text-center text-white">
+                 <div className="w-full md:w-64 aspect-square bg-gradient-to-br from-brand-navy to-primary rounded-2xl flex items-center justify-center p-8 text-center text-white">
                     <div>
                       <p className="text-3xl font-display mb-2">High Leverage</p>
                       <p className="text-xs opacity-70 uppercase tracking-widest font-bold">As per SEBI norms</p>
@@ -105,7 +105,7 @@ export default function DerivativesTradingPage() {
 
           {/* Right: Sidebar & Risk Warning */}
           <div className="space-y-8">
-            <div className="bg-background rounded-3xl p-8 text-white shadow-xl">
+            <div className="bg-gradient-to-br from-brand-navy to-primary rounded-3xl p-8 text-white shadow-xl">
               <h3 className="text-xl font-display mb-6">Ready to Hedge?</h3>
               <p className="text-accent text-sm mb-8 leading-relaxed">
                 Derivatives require knowledge and discipline. Open your account today and get access to our expert derivatives desk.

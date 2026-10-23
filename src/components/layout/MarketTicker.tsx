@@ -54,7 +54,7 @@ export default function MarketTicker() {
               <span className="text-foreground font-mono text-xs">{item.value}</span>
               <span className={cn(
                 "text-[11px] font-semibold font-mono flex items-center gap-0.5",
-                item.up ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"
+                item.up ? "text-green-700 dark:text-green-400" : "text-red-600 dark:text-red-400"
               )}>
                 <span>{item.up ? "▲" : "▼"}</span>
                 <span>{item.change} ({item.percent})</span>

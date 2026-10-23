@@ -141,7 +141,7 @@ export default function WelcomeSection() {
         "px-3.5 py-2 rounded-xl text-xs font-bold transition-all",
         activeWidget === idx
           ? item.up
-            ? "bg-green-600 text-white shadow-md shadow-green-600/10"
+            ? "bg-green-700 text-white shadow-md shadow-green-700/10"
             : "bg-red-600 text-white shadow-md shadow-red-600/10"
           : "bg-muted border border-border/55 text-muted-foreground hover:bg-muted/70 hover:text-foreground"
       )}
@@ -167,8 +167,8 @@ export default function WelcomeSection() {
                     className={cn(
                       "inline-flex items-center gap-1 text-sm font-bold font-mono px-3 py-1 rounded-full border",
                       currentWidget.up
-                        ? "text-green-600 bg-green-500/10 border-green-500/20"
-                        : "text-red-600 bg-red-500/10 border-red-500/20"
+                        ? "text-green-700 dark:text-green-400 bg-green-500/10 border-green-500/20"
+                        : "text-red-600 dark:text-red-400 bg-red-500/10 border-red-500/20"
                     )}
                   >
                     {currentWidget.up ? "▲" : "▼"} {currentWidget.change} ({currentWidget.percent})

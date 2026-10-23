@@ -19,7 +19,7 @@ export default function OpenAccountPage() {
   return (
     <div className="bg-background">
       {/* Header */}
-      <div className="bg-background py-16 md:py-24 text-white">
+      <div className="bg-gradient-to-br from-brand-navy via-brand-blue to-primary text-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-display leading-tight mb-4 text-center">Open Your Trading & Demat Account</h1>
           <p className="text-accent text-lg max-w-2xl mx-auto text-center italic">

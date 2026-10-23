@@ -111,7 +111,7 @@ export default function ComplaintDataPage() {
       <div className="container mx-auto px-4 max-w-7xl py-16 md:py-24 space-y-12">
 
         {/* Compliance Notice */}
-        <div className="bg-blue-50 border-l-4 border-primary rounded-r-3xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="bg-blue-50 dark:bg-muted/60 border-l-4 border-primary rounded-r-3xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex gap-4">
             <Info className="w-6 h-6 text-primary shrink-0 mt-0.5"  aria-hidden="true"/>
             <div>
@@ -134,7 +134,7 @@ export default function ComplaintDataPage() {
               className={cn(
                 "px-6 py-2.5 rounded-full text-xs font-bold transition-all uppercase tracking-wider",
                 activeTab === "broker"
-                  ? "bg-primary text-white shadow-md"
+                  ? "bg-primary text-primary-foreground shadow-md"
                   : "text-muted-foreground hover:text-foreground hover:bg-background/40"
               )}
             >
@@ -145,7 +145,7 @@ export default function ComplaintDataPage() {
               className={cn(
                 "px-6 py-2.5 rounded-full text-xs font-bold transition-all uppercase tracking-wider",
                 activeTab === "dp"
-                  ? "bg-primary text-white shadow-md"
+                  ? "bg-primary text-primary-foreground shadow-md"
                   : "text-muted-foreground hover:text-foreground hover:bg-background/40"
               )}
             >
@@ -179,8 +179,8 @@ export default function ComplaintDataPage() {
                       <th className="px-6 py-4">Received from Clients</th>
                       <th className="px-6 py-4">Received from SCORES</th>
                       <th className="px-6 py-4 text-foreground">Total Received</th>
-                      <th className="px-6 py-4 text-green-600">Resolved*</th>
-                      <th className="px-6 py-4 text-red-600">Pending**</th>
+                      <th className="px-6 py-4 text-green-700 dark:text-green-400">Resolved*</th>
+                      <th className="px-6 py-4 text-red-600 dark:text-red-400">Pending**</th>
                       <th className="px-6 py-4">Avg. Resolution Time</th>
                     </tr>
                   </thead>
@@ -191,8 +191,8 @@ export default function ComplaintDataPage() {
                         <td className="px-6 py-5">{row.receivedClients}</td>
                         <td className="px-6 py-5">{row.receivedScores}</td>
                         <td className="px-6 py-5 font-bold text-foreground">{row.total}</td>
-                        <td className="px-6 py-5 font-bold text-green-600">{row.resolved}</td>
-                        <td className="px-6 py-5 font-bold text-red-600">{row.pending}</td>
+                        <td className="px-6 py-5 font-bold text-green-700 dark:text-green-400">{row.resolved}</td>
+                        <td className="px-6 py-5 font-bold text-red-600 dark:text-red-400">{row.pending}</td>
                         <td className="px-6 py-5 text-muted-foreground font-medium">{row.time}</td>
                       </tr>
                     ))}
@@ -223,8 +223,8 @@ export default function ComplaintDataPage() {
                       <th className="px-4 py-4 text-center">Carried Forward</th>
                       <th className="px-4 py-4 text-center">Received during Month</th>
                       <th className="px-4 py-4 text-center">Total Pending</th>
-                      <th className="px-4 py-4 text-center text-green-600">Resolved*</th>
-                      <th className="px-4 py-4 text-center text-red-600" colSpan={2}>Pending end of Month**</th>
+                      <th className="px-4 py-4 text-center text-green-700 dark:text-green-400">Resolved*</th>
+                      <th className="px-4 py-4 text-center text-red-600 dark:text-red-400" colSpan={2}>Pending end of Month**</th>
                       <th className="px-6 py-4 text-center">Avg Resolution Time^</th>
                     </tr>
                     <tr className="bg-muted/40 text-[9px] font-bold text-muted-foreground uppercase border-b border-border/40">
@@ -242,7 +242,7 @@ export default function ComplaintDataPage() {
                         <td className="px-4 py-4 text-center">{row.carriedForward}</td>
                         <td className="px-4 py-4 text-center">{row.received}</td>
                         <td className="px-4 py-4 text-center">{row.totalPending}</td>
-                        <td className="px-4 py-4 text-center text-green-600">{row.resolved}</td>
+                        <td className="px-4 py-4 text-center text-green-700 dark:text-green-400">{row.resolved}</td>
                         <td className="px-4 py-4 text-center border-l border-border/30">{row.pendingLess3M}</td>
                         <td className="px-4 py-4 text-center">{row.pendingMore3M}</td>
                         <td className="px-6 py-4 text-center text-muted-foreground font-medium">{row.avgTime} days</td>
@@ -269,8 +269,8 @@ export default function ComplaintDataPage() {
                       <th className="px-6 py-4">Month</th>
                       <th className="px-6 py-4">Carried Forward</th>
                       <th className="px-6 py-4">Received</th>
-                      <th className="px-6 py-4 text-green-600">Resolved*</th>
-                      <th className="px-6 py-4 text-red-600">Pending**</th>
+                      <th className="px-6 py-4 text-green-700 dark:text-green-400">Resolved*</th>
+                      <th className="px-6 py-4 text-red-600 dark:text-red-400">Pending**</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border/30 text-xs font-semibold">
@@ -280,8 +280,8 @@ export default function ComplaintDataPage() {
                         <td className="px-6 py-4 text-foreground">{row.month}</td>
                         <td className="px-6 py-4">{row.carriedForward}</td>
                         <td className="px-6 py-4">{row.received}</td>
-                        <td className="px-6 py-4 text-green-600">{row.resolved}</td>
-                        <td className="px-6 py-4 text-red-600">{row.pending}</td>
+                        <td className="px-6 py-4 text-green-700 dark:text-green-400">{row.resolved}</td>
+                        <td className="px-6 py-4 text-red-600 dark:text-red-400">{row.pending}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -305,8 +305,8 @@ export default function ComplaintDataPage() {
                       <th className="px-6 py-4">Year</th>
                       <th className="px-6 py-4">Carried Forward</th>
                       <th className="px-6 py-4">Received during Year</th>
-                      <th className="px-6 py-4 text-green-600">Resolved during Year</th>
-                      <th className="px-6 py-4 text-red-600">Pending at end of Year</th>
+                      <th className="px-6 py-4 text-green-700 dark:text-green-400">Resolved during Year</th>
+                      <th className="px-6 py-4 text-red-600 dark:text-red-400">Pending at end of Year</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border/30 text-xs font-semibold">
@@ -316,8 +316,8 @@ export default function ComplaintDataPage() {
                         <td className="px-6 py-4 text-foreground">{row.year}</td>
                         <td className="px-6 py-4">{row.carriedForward}</td>
                         <td className="px-6 py-4">{row.received}</td>
-                        <td className="px-6 py-4 text-green-600">{row.resolved}</td>
-                        <td className="px-6 py-4 text-red-600">{row.pending}</td>
+                        <td className="px-6 py-4 text-green-700 dark:text-green-400">{row.resolved}</td>
+                        <td className="px-6 py-4 text-red-600 dark:text-red-400">{row.pending}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -345,7 +345,7 @@ export default function ComplaintDataPage() {
             <a
               href="https://scores.sebi.gov.in"
               target="_blank"
-              className={cn(buttonVariants(), "rounded-full gap-2 text-white")}
+              className={cn(buttonVariants(), "rounded-full gap-2")}
             >
               Register Complaint on SCORES
             </a>

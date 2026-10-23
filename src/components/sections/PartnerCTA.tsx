@@ -16,7 +16,7 @@ export default function PartnerCTA() {
             <div>
               <h2 id="partner-cta-heading" className="text-3xl md:text-5xl font-display font-bold leading-tight mb-8 text-white">
                 Grow Your Business as a{" "}
-                <span className="text-white/70 italic">Venkatesh India</span>{" "}
+                <span className="text-white font-semibold italic">Venkatesh India</span>{" "}
                 Partner
               </h2>
               <ul className="space-y-4 mb-10 list-none p-0 m-0">
@@ -27,7 +27,7 @@ export default function PartnerCTA() {
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <CheckCircle2 className="w-6 h-6 text-white shrink-0" aria-hidden="true" />
-                    <span className="text-lg md:text-xl font-medium text-white/90">{item}</span>
+                    <span className="text-lg md:text-xl font-medium text-white">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -38,7 +38,7 @@ export default function PartnerCTA() {
                 href="/partner-with-us"
                 className={cn(
                   buttonVariants({ size: "lg" }),
-                  "bg-white text-primary hover:bg-white/90 h-14 px-10 rounded-full text-lg font-bold shadow-xl transition-all hover:scale-105 active:scale-95"
+                  "bg-white text-brand-navy hover:bg-slate-100 h-14 px-10 rounded-full text-lg font-bold shadow-xl transition-all hover:scale-105 active:scale-95"
                 )}
               >
                 Become a Partner →

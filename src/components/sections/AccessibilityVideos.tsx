@@ -328,7 +328,7 @@ export default function AccessibilityVideos() {
                 <h4 className="text-xs font-bold uppercase tracking-wider text-primary flex items-center gap-1.5">
                   <BookOpen className="w-3.5 h-3.5" aria-hidden="true" /> Visual & Content Summary
                 </h4>
-                <p className="text-xs text-foreground/80 leading-relaxed font-medium">
+                <p className="text-xs text-foreground leading-relaxed font-medium">
                   {activeVideo.summary}
                 </p>
               </div>
@@ -339,7 +339,7 @@ export default function AccessibilityVideos() {
                   onClick={() => setShowTranscript(!showTranscript)}
                   className="flex items-center gap-2 text-xs font-bold text-primary hover:underline cursor-pointer"
                   aria-expanded={showTranscript}
-                  aria-controls="video-transcript-panel"
+                  aria-controls={showTranscript ? "video-transcript-panel" : undefined}
                 >
                   <FileText className="w-4 h-4" aria-hidden="true" />
                   {showTranscript ? "Hide Text Transcript" : "View Full Text Transcript"}
@@ -464,7 +464,7 @@ export default function AccessibilityVideos() {
                           {video.title}
                         </span>
                         <span className={`text-[11px] leading-relaxed line-clamp-2 block ${
-                          isActive ? "text-white/80" : "text-muted-foreground"
+                          isActive ? "text-primary-foreground font-medium" : "text-muted-foreground"
                         }`}>
                           {video.description}
                         </span>

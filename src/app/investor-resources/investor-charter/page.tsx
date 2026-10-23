@@ -10,7 +10,7 @@ export default function InvestorCharterPage() {
   return (
     <div className="bg-background">
       {/* Page Header */}
-      <div className="bg-background py-16 md:py-24 text-white">
+      <div className="bg-gradient-to-br from-brand-navy via-brand-blue to-primary text-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
             <div>
@@ -86,7 +86,7 @@ export default function InvestorCharterPage() {
             <div className="overflow-x-auto rounded-2xl border border-border/50 shadow-sm">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="bg-background text-white text-sm uppercase tracking-wider">
+                  <tr className="bg-muted text-foreground text-sm uppercase tracking-wider font-bold">
                     <th className="px-6 py-4 font-bold">Service Category</th>
                     <th className="px-6 py-4 font-bold">Timeline / Standard</th>
                   </tr>

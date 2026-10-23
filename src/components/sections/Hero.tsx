@@ -95,7 +95,7 @@ export default function Hero() {
             
             <motion.p
   variants={itemVariants}
-  className="text-lg md:text-xl text-foreground/80 dark:text-foreground/85 leading-relaxed mb-10 max-w-2xl font-medium"
+  className="text-lg md:text-xl text-foreground leading-relaxed mb-10 max-w-2xl font-medium"
 >
   Join thousands of investors from retail to HNI leveraging our 15+ years of market expertise. Fast execution, robust technology, and transparent pricing.
 </motion.p>
@@ -127,7 +127,7 @@ export default function Hero() {
                     <badge.icon className="w-5 h-5" />
                   </div>
                   <span className="text-foreground font-bold text-lg leading-tight">{badge.text}</span>
-                  <span className="text-xs font-semibold text-foreground/75 dark:text-foreground/80 uppercase tracking-wider">
+                  <span className="text-xs font-semibold text-foreground uppercase tracking-wider">
   {badge.sub}
 </span>
                 </li>
@@ -156,7 +156,7 @@ export default function Hero() {
 </p>
                   <div className="text-3xl font-display font-bold text-foreground">₹24,59,200.50</div>
                 </div>
-                <div className="flex items-center gap-1 text-emerald-500 bg-emerald-500/10 px-3 py-1.5 rounded-full text-sm font-bold border border-emerald-500/20">
+                <div className="flex items-center gap-1 text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-3 py-1.5 rounded-full text-sm font-bold border border-emerald-500/20">
                   <TrendingUp className="w-4 h-4"  aria-hidden="true"/>
                   +12.4%
                 </div>
@@ -201,7 +201,7 @@ export default function Hero() {
                   <TrendingUp className="w-6 h-6 mb-2"  aria-hidden="true"/>
                   <div>
                     <div className="font-bold text-sm">Quick Trade</div>
-                    <div className="text-xs opacity-80 mt-1">Execute instantly</div>
+                    <div className="text-xs mt-1 text-primary-foreground font-medium">Execute instantly</div>
                   </div>
                 </div>
               </div>
@@ -233,7 +233,7 @@ export default function Hero() {
                   <div className="text-xs font-bold text-foreground/80 dark:text-foreground/85">
   NIFTY 50
 </div>
-                  <div className="text-sm font-bold text-foreground">22,514.65 <span className="text-emerald-500">+0.8%</span></div>
+                  <div className="text-sm font-bold text-foreground">22,514.65 <span className="text-emerald-700 dark:text-emerald-400">+0.8%</span></div>
                 </div>
               </div>
             </motion.div>

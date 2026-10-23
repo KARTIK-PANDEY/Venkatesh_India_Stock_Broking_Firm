@@ -148,7 +148,7 @@ function SearchContent() {
                   )}
                 >
                   <span>{category}</span>
-                  <span className={cn("text-[10px] px-1.5 py-0.5 rounded-full font-mono", isSelected ? "bg-white/20 text-white" : "bg-background text-muted-foreground")}>
+                  <span className={cn("text-[10px] px-1.5 py-0.5 rounded-full font-mono", isSelected ? "bg-white text-brand-navy font-bold" : "bg-background text-muted-foreground")}>
                     {count}
                   </span>
                 </button>

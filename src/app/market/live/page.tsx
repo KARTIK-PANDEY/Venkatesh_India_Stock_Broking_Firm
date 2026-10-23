@@ -97,11 +97,11 @@ export default function LiveMarketWatchPage() {
 
               <div className="flex items-center gap-2 mt-4">
                 {ind.up ? (
-                  <TrendingUp className="w-4 h-4 text-emerald-500 shrink-0"  aria-hidden="true"/>
+                  <TrendingUp className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0"  aria-hidden="true"/>
                 ) : (
-                  <TrendingDown className="w-4 h-4 text-red-500 shrink-0"  aria-hidden="true"/>
+                  <TrendingDown className="w-4 h-4 text-red-600 dark:text-red-400 shrink-0"  aria-hidden="true"/>
                 )}
-                <span className={`text-sm font-bold ${ind.up ? "text-emerald-500" : "text-red-500"}`}>
+                <span className={`text-sm font-bold ${ind.up ? "text-emerald-700 dark:text-emerald-400" : "text-red-600 dark:text-red-400"}`}>
                   {ind.change > 0 ? "+" : ""}{ind.change} ({ind.change > 0 ? "+" : ""}{ind.pctChange}%)
                 </span>
               </div>
@@ -123,7 +123,7 @@ export default function LiveMarketWatchPage() {
                 <button
                   onClick={() => setActiveTab("gainers")}
                   className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
-                    activeTab === "gainers" ? "bg-green-600 text-white" : "bg-muted/40 text-muted-foreground border border-border/50"
+                    activeTab === "gainers" ? "bg-green-700 text-white" : "bg-muted/40 text-muted-foreground border border-border/50"
                   }`}
                 >
                   Top Gainers
@@ -154,10 +154,10 @@ export default function LiveMarketWatchPage() {
                     <tr key={idx} className="hover:bg-muted/30 transition-colors">
                       <td className="px-6 py-4 font-bold text-foreground">{stock.symbol}</td>
                       <td className="px-6 py-4 font-mono">{stock.price.toLocaleString()}</td>
-                      <td className={`px-6 py-4 font-mono font-bold ${activeTab === "gainers" ? "text-emerald-500" : "text-red-500"}`}>
+                      <td className={`px-6 py-4 font-mono font-bold ${activeTab === "gainers" ? "text-emerald-700 dark:text-emerald-400" : "text-red-600 dark:text-red-400"}`}>
                         {stock.change > 0 ? "+" : ""}{stock.change}
                       </td>
-                      <td className={`px-6 py-4 font-mono font-bold ${activeTab === "gainers" ? "text-emerald-500" : "text-red-500"}`}>
+                      <td className={`px-6 py-4 font-mono font-bold ${activeTab === "gainers" ? "text-emerald-700 dark:text-emerald-400" : "text-red-600 dark:text-red-400"}`}>
                         {stock.pctChange > 0 ? "+" : ""}{stock.pctChange}%
                       </td>
                     </tr>

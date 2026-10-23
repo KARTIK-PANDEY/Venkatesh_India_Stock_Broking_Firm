@@ -100,7 +100,7 @@ export default function Header() {
                       <>
                         <NavigationMenuTrigger
                           className={cn(
-                            "bg-transparent text-xs lg:text-[13px] font-semibold text-foreground/80",
+                            "bg-transparent text-xs lg:text-[13px] font-semibold text-foreground",
                             "hover:bg-primary/10 hover:text-primary",
                             "focus:bg-primary/10 focus:text-primary",
                             "data-[state=open]:bg-primary/10 data-[state=open]:text-primary",
@@ -202,7 +202,7 @@ export default function Header() {
 
             {/* Login dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="inline-flex items-center gap-1 rounded-md px-2.5 py-1.5 text-xs font-semibold text-foreground/80 hover:bg-primary/10 hover:text-primary transition-colors outline-none cursor-pointer h-8">
+              <DropdownMenuTrigger className="inline-flex items-center gap-1 rounded-md px-2.5 py-1.5 text-xs font-semibold text-foreground hover:bg-primary/10 hover:text-primary transition-colors outline-none cursor-pointer h-8">
                 <LogIn className="size-3.5 opacity-70" aria-hidden="true" />
                 <span>Login</span>
                 <ChevronDown className="size-3 opacity-50" aria-hidden="true" />
@@ -217,7 +217,7 @@ export default function Header() {
                       href={link.href}
                       target={link.target}
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between py-2 px-2.5 font-medium text-xs w-full text-foreground/85 hover:text-primary"
+                      className="flex items-center justify-between py-2 px-2.5 font-medium text-xs w-full text-foreground hover:text-primary"
                     >
                       <span>{link.label}</span>
                       <ExternalLink aria-hidden="true" className="size-3 text-muted-foreground opacity-60" />
@@ -246,7 +246,7 @@ export default function Header() {
                 type="search"
                 placeholder="Search"
                 autoComplete="off"
-                className="bg-transparent border-none outline-none text-xs w-16 focus:w-28 transition-all px-1 text-foreground placeholder:text-muted-foreground/70"
+                className="bg-transparent border-none outline-none text-xs w-16 focus:w-28 transition-all px-1 text-foreground placeholder:text-muted-foreground"
               />
               <button
                 type="submit"
@@ -351,7 +351,7 @@ export default function Header() {
                       type="search"
                       placeholder="Search pages, reports, forms..."
                       autoComplete="off"
-                      className="bg-transparent border-none outline-none text-xs w-full text-foreground placeholder:text-muted-foreground/70"
+                      className="bg-transparent border-none outline-none text-xs w-full text-foreground placeholder:text-muted-foreground"
                     />
                     <button
                       type="submit"

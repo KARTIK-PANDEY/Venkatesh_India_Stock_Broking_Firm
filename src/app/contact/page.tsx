@@ -74,7 +74,7 @@ export default function ContactPage() {
   return (
     <div className="bg-background font-body">
       {/* Hero Header */}
-      <div className="bg-background py-16 md:py-24 text-white">
+      <div className="bg-gradient-to-br from-brand-navy via-brand-blue to-primary text-white py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
           <nav className="text-accent text-sm font-bold uppercase tracking-widest mb-4">
             Home &gt; Contact Us
@@ -111,13 +111,13 @@ export default function ContactPage() {
                   <Mail className="w-8 h-8 text-primary mb-4" aria-hidden="true" />
                   <h3 className="font-bold text-foreground mb-2">Email Us</h3>
                   <p className="text-sm text-muted-foreground mb-1">
-                    <a href={`mailto:${COMPANY_INFO.email}`} aria-label={`Email us at ${COMPANY_INFO.email}`} className="hover:underline">{COMPANY_INFO.email}</a>
+                    <a href={`mailto:${COMPANY_INFO.email}`} aria-label={`Email us at ${COMPANY_INFO.email}`} className="inline-flex items-center min-h-[24px] hover:underline">{COMPANY_INFO.email}</a>
                   </p>
                   <p className="text-sm text-muted-foreground mb-1">
-                    <a href={`mailto:${COMPANY_INFO.email2}`} aria-label={`Email us at ${COMPANY_INFO.email2}`} className="hover:underline">{COMPANY_INFO.email2}</a>
+                    <a href={`mailto:${COMPANY_INFO.email2}`} aria-label={`Email us at ${COMPANY_INFO.email2}`} className="inline-flex items-center min-h-[24px] hover:underline">{COMPANY_INFO.email2}</a>
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    Grievance: <a href={`mailto:${COMPANY_INFO.grievance.email1}`} aria-label={`Email grievance desk at ${COMPANY_INFO.grievance.email1}`} className="hover:underline">{COMPANY_INFO.grievance.email1}</a>
+                    Grievance: <a href={`mailto:${COMPANY_INFO.grievance.email1}`} aria-label={`Email grievance desk at ${COMPANY_INFO.grievance.email1}`} className="inline-flex items-center min-h-[24px] hover:underline">{COMPANY_INFO.grievance.email1}</a>
                   </p>
                 </div>
                 <div className="p-6 bg-muted/40 rounded-2xl border border-border/50 transition-all hover:shadow-md">
@@ -130,7 +130,7 @@ export default function ContactPage() {
             </div>
 
             {/* Compliance Section */}
-            <div className="p-8 bg-background text-white rounded-3xl shadow-xl relative overflow-hidden">
+            <div className="p-8 bg-muted/40 border border-border/50 text-foreground rounded-3xl shadow-sm relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-background/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
               <h3 className="text-xl font-display mb-6 flex items-center gap-2 text-primary">
                 <ShieldCheck className="w-6 h-6" aria-hidden="true" /> Compliance & Management
@@ -172,12 +172,12 @@ export default function ContactPage() {
                       <h3 className="font-bold">{branch.city} Branch</h3>
                     </div>
                     <p className="text-xs text-muted-foreground leading-relaxed mb-3">{branch.address}</p>
-                    <div className="flex flex-col gap-1 text-xs font-bold text-primary">
-                      <a href={`tel:${branch.phone}`} aria-label={`Call ${branch.city} branch at ${branch.phone}`} className="flex items-center gap-1 hover:underline">
+                    <div className="flex flex-col gap-1.5 text-xs font-bold text-primary">
+                      <a href={`tel:${branch.phone}`} aria-label={`Call ${branch.city} branch at ${branch.phone}`} className="inline-flex items-center gap-1 min-h-[24px] hover:underline">
                         <Phone className="w-3 h-3" aria-hidden="true" /> {branch.phone}
                       </a>
                       {branch.email && (
-                        <a href={`mailto:${branch.email}`} aria-label={`Email ${branch.city} branch at ${branch.email}`} className="flex items-center gap-1 hover:underline">
+                        <a href={`mailto:${branch.email}`} aria-label={`Email ${branch.city} branch at ${branch.email}`} className="inline-flex items-center gap-1 min-h-[24px] hover:underline">
                           <Mail className="w-3 h-3" aria-hidden="true" /> {branch.email}
                         </a>
                       )}

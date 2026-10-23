@@ -67,13 +67,13 @@ export default function MutualFundsPage() {
                   </p>
                   <ul className="space-y-2 text-xs font-bold text-primary uppercase tracking-wider">
                     <li className="flex items-center gap-2 text-foreground font-semibold">
-                      <Check className="w-4 h-4 text-emerald-500 shrink-0"  aria-hidden="true"/> Rupee cost averaging
+                      <Check className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0"  aria-hidden="true"/> Rupee cost averaging
                     </li>
                     <li className="flex items-center gap-2 text-foreground font-semibold">
-                      <Check className="w-4 h-4 text-emerald-500 shrink-0"  aria-hidden="true"/> Disciplined savings habit
+                      <Check className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0"  aria-hidden="true"/> Disciplined savings habit
                     </li>
                     <li className="flex items-center gap-2 text-foreground font-semibold">
-                      <Check className="w-4 h-4 text-emerald-500 shrink-0"  aria-hidden="true"/> Power of compounding
+                      <Check className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0"  aria-hidden="true"/> Power of compounding
                     </li>
                   </ul>
                 </div>
@@ -85,13 +85,13 @@ export default function MutualFundsPage() {
                   </p>
                   <ul className="space-y-2 text-xs font-bold text-primary uppercase tracking-wider">
                     <li className="flex items-center gap-2 text-foreground font-semibold">
-                      <Check className="w-4 h-4 text-emerald-500 shrink-0"  aria-hidden="true"/> Ideal for one-time wealth block
+                      <Check className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0"  aria-hidden="true"/> Ideal for one-time wealth block
                     </li>
                     <li className="flex items-center gap-2 text-foreground font-semibold">
-                      <Check className="w-4 h-4 text-emerald-500 shrink-0"  aria-hidden="true"/> Complete asset control
+                      <Check className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0"  aria-hidden="true"/> Complete asset control
                     </li>
                     <li className="flex items-center gap-2 text-foreground font-semibold">
-                      <Check className="w-4 h-4 text-emerald-500 shrink-0"  aria-hidden="true"/> Custom withdrawal options (SWP)
+                      <Check className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0"  aria-hidden="true"/> Custom withdrawal options (SWP)
                     </li>
                   </ul>
                 </div>
@@ -190,7 +190,7 @@ export default function MutualFundsPage() {
                     </div>
                     <div className="flex justify-between items-center text-xs font-semibold text-muted-foreground">
                       <span>Estimated Return Profit:</span>
-                      <span className="font-bold text-sm text-green-600">₹{Math.round(estimatedReturns).toLocaleString()}</span>
+                      <span className="font-bold text-sm text-green-700 dark:text-green-400">₹{Math.round(estimatedReturns).toLocaleString()}</span>
                     </div>
                     <div className="h-px bg-border my-2"></div>
                     <div className="flex justify-between items-center">

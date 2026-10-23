@@ -88,11 +88,11 @@ export default function CurrencyReportPage() {
                   </p>
                 <div className="flex items-center gap-2 mt-3">
                   {curr.up ? (
-                    <TrendingUp className="w-4 h-4 text-emerald-500 shrink-0"  aria-hidden="true"/>
+                    <TrendingUp className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0"  aria-hidden="true"/>
                   ) : (
-                    <TrendingDown className="w-4 h-4 text-red-500 shrink-0"  aria-hidden="true"/>
+                    <TrendingDown className="w-4 h-4 text-red-600 dark:text-red-400 shrink-0"  aria-hidden="true"/>
                   )}
-                  <span className={`text-xs font-bold ${curr.up ? "text-emerald-500" : "text-red-500"}`}>
+                  <span className={`text-xs font-bold ${curr.up ? "text-emerald-700 dark:text-emerald-400" : "text-red-600 dark:text-red-400"}`}>
                     {curr.change > 0 ? "+" : ""}{curr.change.toFixed(4)} ({curr.change > 0 ? "+" : ""}{curr.pctChange}%)
                   </span>
                 </div>

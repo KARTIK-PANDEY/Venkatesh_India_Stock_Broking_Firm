@@ -54,7 +54,7 @@ const STEPS = [
       { label: "Circular", value: "SEBI/HO/OIAE/OIAE_IAD-1/P/CIR/2023/131" },
     ],
     turnaround: "As per ODR timelines",
-    color: "border-foreground bg-background text-white",
+    color: "border-primary/30 bg-muted/50 text-foreground",
     btn: { text: "Go to SmartODR", href: "https://smartodr.in" }
   },
 ];
@@ -63,7 +63,7 @@ export default function EscalationMatrixPage() {
   return (
     <div className="bg-background">
       {/* Page Header */}
-      <div className="bg-background py-16 md:py-24 text-white">
+      <div className="bg-gradient-to-br from-brand-navy via-brand-blue to-primary text-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <nav className="text-accent text-sm font-bold uppercase tracking-widest mb-4">
             Home &gt; Investor Resources &gt; Escalation Matrix

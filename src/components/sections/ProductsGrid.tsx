@@ -158,7 +158,7 @@ export default function ProductsGrid() {
                 {/* Product Description */}
                 <p
                   id={`product-desc-${idx}`}
-                  className="text-foreground/80 dark:text-foreground/85 leading-relaxed mb-8 flex-1 font-medium"
+                  className="text-foreground leading-relaxed mb-8 flex-1 font-medium"
                 >
                   {product.description}
                 </p>

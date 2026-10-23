@@ -110,11 +110,11 @@ export default function Footer() {
     aria-hidden="true"
   />
 
-  <div className="flex flex-col">
+  <div className="flex flex-col gap-1 py-0.5">
     <a
       href={`mailto:${COMPANY_INFO.email}`}
       aria-label={`Send email to ${COMPANY_INFO.email}`}
-      className="hover:text-primary transition-colors"
+      className="inline-flex items-center min-h-[24px] hover:text-primary transition-colors"
     >
       {COMPANY_INFO.email}
     </a>
@@ -122,7 +122,7 @@ export default function Footer() {
     <a
       href={`mailto:${COMPANY_INFO.email2}`}
       aria-label={`Send email to ${COMPANY_INFO.email2}`}
-      className="hover:text-primary transition-colors"
+      className="inline-flex items-center min-h-[24px] hover:text-primary transition-colors"
     >
       {COMPANY_INFO.email2}
     </a>

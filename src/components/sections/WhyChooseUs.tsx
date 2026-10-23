@@ -81,7 +81,7 @@ export default function WhyChooseUs() {
                   <div className={cn("absolute inset-0 opacity-5", point.bg)} 
                        style={{ backgroundImage: 'radial-gradient(currentColor 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
                   <point.icon className={cn("w-32 h-32 opacity-20", point.color)} strokeWidth={1} />
-                  <div className="absolute bottom-8 right-8 bg-background text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg">
+                  <div className="absolute bottom-8 right-8 bg-brand-navy text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg border border-white/20">
                     Trust Since 2010
                   </div>
                 </div>

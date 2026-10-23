@@ -86,7 +86,7 @@ export default function FinancialNewsPage() {
               onClick={() => setActiveTab(cat)}
               className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
                 activeTab === cat
-                  ? "bg-primary text-white shadow-xs"
+                  ? "bg-primary text-primary-foreground shadow-xs"
                   : "bg-muted/40 border border-border/50 text-muted-foreground hover:bg-muted/70 hover:text-foreground"
               }`}
             >
