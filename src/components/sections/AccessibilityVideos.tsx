@@ -262,7 +262,10 @@ export default function AccessibilityVideos() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="absolute inset-0 w-full h-full cursor-pointer flex items-center justify-center"
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Play video: ${activeVideo.title}`}
+                    className="absolute inset-0 w-full h-full cursor-pointer flex items-center justify-center focus:outline-hidden focus:ring-2 focus:ring-primary"
                     onClick={() => setIsPlaying(true)}
                   >
                 
@@ -270,7 +273,8 @@ export default function AccessibilityVideos() {
 {/* eslint-disable-next-line @next/next/no-img-element */}
 <img
   src={`https://img.youtube.com/vi/${activeVideo.youtubeId}/hqdefault.jpg`}
-  alt={`Thumbnail preview for ${activeVideo.title}`}
+  alt=""
+  aria-hidden="true"
   loading="lazy"
   className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
 />
@@ -281,7 +285,7 @@ export default function AccessibilityVideos() {
                     {/* Pulsing Play Button */}
                     <div className="relative z-10 w-16 h-16 md:w-20 md:h-20 bg-primary text-primary-foreground rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
                       <Play className="w-8 h-8 md:w-10 md:h-10 fill-current translate-x-0.5" aria-hidden="true" />
-                      <span className="sr-only">Play Video</span>
+                      <span className="sr-only">{`Play video: ${activeVideo.title}`}</span>
                     </div>
                   </motion.div>
                 ) : (

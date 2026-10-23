@@ -110,7 +110,7 @@ export default function WelcomeSection() {
                 href="/about/company-overview"
                 className="inline-flex items-center gap-2 font-bold text-sm text-primary hover:text-accent transition-colors"
               >
-                Learn More About Us <ArrowUpRight className="w-4 h-4" />
+                Learn More About Us <ArrowUpRight className="w-4 h-4"  aria-hidden="true"/>
               </Link>
             </div>
           </div>
@@ -121,7 +121,7 @@ export default function WelcomeSection() {
               <div className="flex justify-between items-start mb-6">
                 <div>
                   <h3 className="font-bold text-foreground text-lg mb-1 flex items-center gap-2">
-                    <Landmark className="w-5 h-5 text-primary" /> Live Market Tracker
+                    <Landmark className="w-5 h-5 text-primary"  aria-hidden="true"/> Live Market Tracker
                   </h3>
                   <p className="text-xs text-muted-foreground">Real-time indices widget metrics.</p>
                 </div>
@@ -183,6 +183,7 @@ export default function WelcomeSection() {
   viewBox="0 0 270 150"
   preserveAspectRatio="none"
   role="img"
+  aria-label={`${currentWidget.name} market trend chart: currently at ${currentWidget.value}, ${currentWidget.up ? "up" : "down"} by ${currentWidget.change} (${currentWidget.percent})`}
   aria-labelledby="market-chart-title market-chart-desc"
 >
   {/* Accessible title & description for screen readers */}
@@ -230,7 +231,7 @@ export default function WelcomeSection() {
               </div>
 
               <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground italic leading-relaxed">
-                <TrendingUp className="w-3.5 h-3.5 text-primary shrink-0" />
+                <TrendingUp className="w-3.5 h-3.5 text-primary shrink-0"  aria-hidden="true"/>
                 <span>Rates are updated dynamically. Trade at your own risk.</span>
               </div>
             </div>

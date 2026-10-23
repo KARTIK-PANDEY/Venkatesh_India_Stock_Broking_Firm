@@ -105,7 +105,7 @@ export default function CareersPage() {
                   <div className="flex items-start justify-between gap-4 flex-wrap sm:flex-nowrap">
                     <div className="flex items-start gap-4">
                       <div className="p-3 bg-primary/10 rounded-xl text-primary mt-1 group-hover:scale-110 transition-transform">
-                        <Briefcase className="w-5 h-5" />
+                        <Briefcase className="w-5 h-5" aria-hidden="true" />
                       </div>
                       <div>
                         <h3 className="font-bold text-lg text-foreground mb-1 group-hover:text-primary transition-colors">
@@ -147,10 +147,10 @@ export default function CareersPage() {
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                <label htmlFor="career-name" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
                   Applicant Name *
                 </label>
-                <input
+                <input id="career-name"
                   type="text"
                   name="name"
                   required
@@ -163,10 +163,10 @@ export default function CareersPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                  <label htmlFor="career-qualification" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
                     Qualification *
                   </label>
-                  <input
+                  <input id="career-qualification"
                     type="text"
                     name="qualification"
                     required
@@ -177,10 +177,10 @@ export default function CareersPage() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                  <label htmlFor="career-experience" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
                     Experience *
                   </label>
-                  <select
+                  <select id="career-experience"
                     name="experience"
                     value={formData.experience}
                     onChange={handleChange}
@@ -196,10 +196,10 @@ export default function CareersPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                  <label htmlFor="career-mobile" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
                     Mobile Number *
                   </label>
-                  <input
+                  <input id="career-mobile"
                     type="tel"
                     name="mobile"
                     required
@@ -211,10 +211,10 @@ export default function CareersPage() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                  <label htmlFor="career-email" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
                     Email ID *
                   </label>
-                  <input
+                  <input id="career-email"
                     type="email"
                     name="email"
                     required
@@ -228,10 +228,10 @@ export default function CareersPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                  <label htmlFor="career-city" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
                     City *
                   </label>
-                  <input
+                  <input id="career-city"
                     type="text"
                     name="city"
                     required
@@ -242,10 +242,10 @@ export default function CareersPage() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                  <label htmlFor="career-address" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
                     Address *
                   </label>
-                  <input
+                  <input id="career-address"
                     type="text"
                     name="address"
                     required
@@ -258,10 +258,10 @@ export default function CareersPage() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                <label htmlFor="career-additional-info" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
                   Additional Information
                 </label>
-                <textarea
+                <textarea id="career-additional-info"
                   name="additionalInfo"
                   rows={3}
                   value={formData.additionalInfo}
@@ -278,7 +278,7 @@ export default function CareersPage() {
               >
                 {submitted ? "Submitting..." : (
                   <>
-                    Submit Application <Send className="w-4 h-4" />
+                    Submit Application <Send className="w-4 h-4" aria-hidden="true" />
                   </>
                 )}
               </Button>

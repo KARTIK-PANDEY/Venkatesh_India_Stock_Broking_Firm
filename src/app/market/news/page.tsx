@@ -114,9 +114,9 @@ export default function FinancialNewsPage() {
                   <button
                     onClick={() => toggleBookmark(article.title)}
                     className="text-muted-foreground hover:text-primary transition-colors focus:outline-hidden"
-                    aria-label="Bookmark article"
+                    aria-label={bookmarked.includes(article.title) ? `Remove bookmark for ${article.title}` : `Bookmark article: ${article.title}`}
                   >
-                    <Bookmark className={`w-4 h-4 ${bookmarked.includes(article.title) ? "fill-primary text-primary" : ""}`} />
+                    <Bookmark className={`w-4 h-4 ${bookmarked.includes(article.title) ? "fill-primary text-primary" : ""}`}  aria-hidden="true"/>
                   </button>
                 </div>
                 
@@ -130,11 +130,11 @@ export default function FinancialNewsPage() {
 
               <div className="pt-4 border-t border-border/30 flex items-center justify-between text-xs font-semibold text-muted-foreground">
                 <div className="flex items-center gap-3">
-                  <span className="flex items-center gap-1"><Calendar className="w-3.5 h-3.5" /> {article.date}</span>
-                  <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> {article.readTime}</span>
+                  <span className="flex items-center gap-1"><Calendar className="w-3.5 h-3.5"  aria-hidden="true"/> {article.date}</span>
+                  <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5"  aria-hidden="true"/> {article.readTime}</span>
                 </div>
                 <span className="text-primary hover:underline flex items-center gap-0.5 cursor-pointer">
-                  Read <ArrowRight className="w-3.5 h-3.5" />
+                  Read <ArrowRight className="w-3.5 h-3.5"  aria-hidden="true"/>
                 </span>
               </div>
             </motion.div>

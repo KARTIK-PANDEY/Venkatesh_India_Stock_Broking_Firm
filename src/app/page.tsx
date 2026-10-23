@@ -7,7 +7,6 @@ import AccessibilityVideos from "@/components/sections/AccessibilityVideos";
 import SebiNotices from "@/components/sections/SebiNotices";
 import GrievanceQuickAccess from "@/components/sections/GrievanceQuickAccess";
 import PartnerCTA from "@/components/sections/PartnerCTA";
-import VoiceReader from "@/components/ui/VoiceReader";
 import FATCAAlert from "@/components/ui/FATCAAlert";
 
 export const metadata = {
@@ -26,7 +25,6 @@ export default function Home() {
       <SebiNotices />
       <GrievanceQuickAccess />
       <PartnerCTA />
-      <VoiceReader />
       <FATCAAlert />
     </>
   );

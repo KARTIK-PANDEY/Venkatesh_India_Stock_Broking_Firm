@@ -59,7 +59,7 @@ export default function CurrencyReportPage() {
             <span className="text-xs font-bold text-foreground ml-1 uppercase tracking-wider">Forex Live Tick Feed</span>
           </div>
           <div className="text-xs font-semibold text-muted-foreground flex items-center gap-2">
-            <RefreshCw className="w-3.5 h-3.5 animate-spin" /> Last Tick: <span className="text-foreground">{lastUpdated}</span>
+            <RefreshCw className="w-3.5 h-3.5 animate-spin"  aria-hidden="true"/> Last Tick: <span className="text-foreground">{lastUpdated}</span>
           </div>
         </div>
 
@@ -86,9 +86,9 @@ export default function CurrencyReportPage() {
                 </h3>
                 <div className="flex items-center gap-2 mt-3">
                   {curr.up ? (
-                    <TrendingUp className="w-4 h-4 text-emerald-500 shrink-0" />
+                    <TrendingUp className="w-4 h-4 text-emerald-500 shrink-0"  aria-hidden="true"/>
                   ) : (
-                    <TrendingDown className="w-4 h-4 text-red-500 shrink-0" />
+                    <TrendingDown className="w-4 h-4 text-red-500 shrink-0"  aria-hidden="true"/>
                   )}
                   <span className={`text-xs font-bold ${curr.up ? "text-emerald-500" : "text-red-500"}`}>
                     {curr.change > 0 ? "+" : ""}{curr.change.toFixed(4)} ({curr.change > 0 ? "+" : ""}{curr.pctChange}%)

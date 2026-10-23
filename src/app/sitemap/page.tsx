@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import { Search, ExternalLink, ShieldCheck, FileText, ArrowRight } from "lucide-react";
+import { Search, ExternalLink, ShieldCheck, ArrowRight } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 
 export const metadata: Metadata = {

@@ -323,12 +323,15 @@ localStorage.setItem("a11y-text-spacing", String(textSpacing));
 
       {/* 4. Modal Preferences Panel */}
       {isOpen && (
-        <div 
-          className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setIsOpen(false);
-          }}
-        >
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+          {/* Accessible backdrop */}
+          <button
+            type="button"
+            tabIndex={-1}
+            aria-label="Close accessibility dialog backdrop"
+            className="fixed inset-0 bg-black/60 backdrop-blur-xs w-full h-full border-0 p-0 cursor-default"
+            onClick={() => setIsOpen(false)}
+          />
           {/* Modal Card */}
           <div 
             ref={modalRef}
@@ -361,9 +364,9 @@ localStorage.setItem("a11y-text-spacing", String(textSpacing));
             <div className="space-y-6">
               {/* Adjustment Group: Text Size */}
               <div className="space-y-2.5">
-                <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
+                <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
                   <Type className="w-3.5 h-3.5" aria-hidden="true" /> Text Size
-                </label>
+                </span>
                 <div className="grid grid-cols-3 gap-2" role="group" aria-label="Text size options">
                   {(["normal", "large", "xlarge"] as const).map((size) => (
                     <button
@@ -383,9 +386,9 @@ localStorage.setItem("a11y-text-spacing", String(textSpacing));
 
               {/* Adjustment Group: Letter Spacing */}
               <div className="space-y-2.5">
-                <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
+                <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
                   <AlignLeft className="w-3.5 h-3.5 rotate-90" aria-hidden="true" /> Letter Spacing
-                </label>
+                </span>
                 <div className="grid grid-cols-3 gap-2" role="group" aria-label="Letter spacing options">
                   {(["normal", "wide", "xwide"] as const).map((space) => (
                     <button
@@ -405,9 +408,9 @@ localStorage.setItem("a11y-text-spacing", String(textSpacing));
 
               {/* Adjustment Group: Line Height */}
               <div className="space-y-2.5">
-                <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
+                <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
                   <AlignLeft className="w-3.5 h-3.5" aria-hidden="true" /> Line Spacing
-                </label>
+                </span>
                 <div className="grid grid-cols-3 gap-2" role="group" aria-label="Line spacing options">
                   {(["normal", "comfortable", "spacious"] as const).map((height) => (
                     <button

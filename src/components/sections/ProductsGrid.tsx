@@ -167,7 +167,7 @@ export default function ProductsGrid() {
                   className="text-primary font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all mt-auto uppercase tracking-wider"
                 >
                   Learn More
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4"  aria-hidden="true"/>
                 </div>
               </Link>
             </motion.li>

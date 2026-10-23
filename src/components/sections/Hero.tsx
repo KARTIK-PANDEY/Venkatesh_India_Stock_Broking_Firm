@@ -157,7 +157,7 @@ export default function Hero() {
                   <div className="text-3xl font-display font-bold text-foreground">₹24,59,200.50</div>
                 </div>
                 <div className="flex items-center gap-1 text-emerald-500 bg-emerald-500/10 px-3 py-1.5 rounded-full text-sm font-bold border border-emerald-500/20">
-                  <TrendingUp className="w-4 h-4" />
+                  <TrendingUp className="w-4 h-4"  aria-hidden="true"/>
                   +12.4%
                 </div>
               </div>
@@ -183,7 +183,7 @@ export default function Hero() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.5 }}
                 >
-                  <Activity className="w-3.5 h-3.5 text-accent animate-pulse" />
+                  <Activity className="w-3.5 h-3.5 text-accent animate-pulse"  aria-hidden="true"/>
                   <span className="text-xs font-bold text-foreground">Live Market</span>
                 </motion.div>
               </div>
@@ -191,14 +191,14 @@ export default function Hero() {
               {/* Bottom Actions */}
               <div className="mt-6 grid grid-cols-2 gap-4">
                 <div className="bg-muted/30 border border-border/40 rounded-xl p-4 hover:bg-muted/50 transition-colors cursor-pointer">
-                  <BarChart3 className="w-6 h-6 text-primary mb-2" />
+                  <BarChart3 className="w-6 h-6 text-primary mb-2"  aria-hidden="true"/>
                   <div className="font-bold text-sm text-foreground">Analytics</div>
                   <div className="text-xs text-foreground/80 dark:text-foreground/85 mt-1">
   Deep insights
 </div>
                 </div>
                 <div className="bg-primary text-primary-foreground rounded-xl p-4 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 cursor-pointer flex flex-col justify-between">
-                  <TrendingUp className="w-6 h-6 mb-2" />
+                  <TrendingUp className="w-6 h-6 mb-2"  aria-hidden="true"/>
                   <div>
                     <div className="font-bold text-sm">Quick Trade</div>
                     <div className="text-xs opacity-80 mt-1">Execute instantly</div>
@@ -227,7 +227,7 @@ export default function Hero() {
 >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
-                  <TrendingUp className="w-5 h-5 text-accent" />
+                  <TrendingUp className="w-5 h-5 text-accent"  aria-hidden="true"/>
                 </div>
                 <div>
                   <div className="text-xs font-bold text-foreground/80 dark:text-foreground/85">

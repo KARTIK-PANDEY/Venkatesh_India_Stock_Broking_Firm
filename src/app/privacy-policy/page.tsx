@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
         
         {/* Core commitment */}
         <section className="bg-muted/40 p-8 rounded-3xl border border-border/50 flex gap-4 items-start">
-          <ShieldCheck className="w-8 h-8 text-primary shrink-0 mt-1" />
+          <ShieldCheck className="w-8 h-8 text-primary shrink-0 mt-1"  aria-hidden="true"/>
           <div>
             <h2 className="text-xl font-bold text-foreground mb-2">Our Data Protection Commitment</h2>
             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
           
           <section className="space-y-4 pt-10 first:pt-0">
             <h3 className="text-2xl font-display font-bold text-foreground flex items-center gap-2">
-              <Eye className="w-5 h-5 text-primary" /> 1. Information We Collect
+              <Eye className="w-5 h-5 text-primary"  aria-hidden="true"/> 1. Information We Collect
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
               To open and maintain your trading and depository accounts, and to comply with statutory mandates, we collect:
@@ -47,7 +47,7 @@ export default function PrivacyPolicyPage() {
 
           <section className="space-y-4 pt-10">
             <h3 className="text-2xl font-display font-bold text-foreground flex items-center gap-2">
-              <Lock className="w-5 h-5 text-primary" /> 2. Data Security & Encryption
+              <Lock className="w-5 h-5 text-primary"  aria-hidden="true"/> 2. Data Security & Encryption
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
               All client data is encrypted during transit and at rest. We utilize firewall protections, access control directories, and security audits to prevent unauthorized entry. Credit card details or net banking passwords are never stored on our local servers.
@@ -56,7 +56,7 @@ export default function PrivacyPolicyPage() {
 
           <section className="space-y-4 pt-10">
             <h3 className="text-2xl font-display font-bold text-foreground flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5 text-primary" /> 3. Data Disclosure Policy
+              <ShieldCheck className="w-5 h-5 text-primary"  aria-hidden="true"/> 3. Data Disclosure Policy
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
               We do not sell or lease client database records to third-party marketing companies. Personal data is disclosed only to regulatory authorities (SEBI, BSE, CDSL, Income Tax Department) as mandated under statutory provisions or by court orders.
@@ -65,7 +65,7 @@ export default function PrivacyPolicyPage() {
 
           <section className="space-y-4 pt-10">
             <h3 className="text-2xl font-display font-bold text-foreground flex items-center gap-2">
-              <RefreshCw className="w-5 h-5 text-primary" /> 4. Policy Updates
+              <RefreshCw className="w-5 h-5 text-primary"  aria-hidden="true"/> 4. Policy Updates
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
               This policy is updated periodically to reflect changes in regulatory directives from SEBI or CDSL. Investors are advised to review this page regularly. For privacy queries, please write to our compliance officer at <strong>prashitasheolikar83@gmail.com</strong>.

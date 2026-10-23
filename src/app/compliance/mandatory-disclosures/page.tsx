@@ -22,7 +22,7 @@ export default function MandatoryDisclosuresPage() {
           <div className="lg:col-span-2 space-y-8">
             <section className="space-y-4">
               <h2 className="text-2xl font-display font-bold text-foreground flex items-center gap-2">
-                <Scale className="w-6 h-6 text-primary" /> Statutory Regulatory Disclosures
+                <Scale className="w-6 h-6 text-primary"  aria-hidden="true"/> Statutory Regulatory Disclosures
               </h2>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 As a SEBI-registered intermediary, we adhere to strict standards of transparency and compliance. The following disclosures are maintained in accordance with SEBI circulars and exchange rules:
@@ -51,7 +51,7 @@ export default function MandatoryDisclosuresPage() {
             {/* SEBI Helpline */}
             <div className="p-6 bg-muted/40 border border-border/50 rounded-2xl space-y-4">
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-primary" /> SEBI Contact Information
+                <ShieldCheck className="w-5 h-5 text-primary"  aria-hidden="true"/> SEBI Contact Information
               </h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 For investor queries, guidance, or filing direct feedback:
@@ -86,8 +86,8 @@ export default function MandatoryDisclosuresPage() {
                 </span>
                 <h4 className="font-bold text-foreground text-base mt-2">{COMPANY_INFO.compliance.name}</h4>
                 <div className="text-xs font-semibold text-muted-foreground space-y-1">
-                  <p className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5" /> {COMPANY_INFO.compliance.phone}</p>
-                  <p className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5" /> {COMPANY_INFO.compliance.email}</p>
+                  <p className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5"  aria-hidden="true"/> {COMPANY_INFO.compliance.phone}</p>
+                  <p className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5"  aria-hidden="true"/> {COMPANY_INFO.compliance.email}</p>
                 </div>
               </div>
 
@@ -98,8 +98,8 @@ export default function MandatoryDisclosuresPage() {
                 </span>
                 <h4 className="font-bold text-foreground text-base mt-2">{COMPANY_INFO.ceo.name}</h4>
                 <div className="text-xs font-semibold text-muted-foreground space-y-1">
-                  <p className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5" /> {COMPANY_INFO.ceo.phone}</p>
-                  <p className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5" /> {COMPANY_INFO.ceo.email}</p>
+                  <p className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5"  aria-hidden="true"/> {COMPANY_INFO.ceo.phone}</p>
+                  <p className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5"  aria-hidden="true"/> {COMPANY_INFO.ceo.email}</p>
                 </div>
               </div>
             </div>

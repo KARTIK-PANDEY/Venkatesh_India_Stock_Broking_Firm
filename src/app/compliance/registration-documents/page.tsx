@@ -66,7 +66,7 @@ export default function RegistrationDocumentsPage() {
         {/* Section 2: Statutory Advisory Box */}
         <div className="p-8 bg-muted/30 border border-border/50 rounded-3xl space-y-4 max-w-4xl">
           <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
-            <ShieldCheck className="w-6 h-6 text-primary" /> Regulatory Display Advisory
+            <ShieldCheck className="w-6 h-6 text-primary"  aria-hidden="true"/> Regulatory Display Advisory
           </h3>
           <p className="text-sm text-muted-foreground leading-relaxed">
             In compliance with SEBI and Exchange directives, registration certificates, mandatory board displays, and grievance officer coordinates are displayed prominently at our Raipur corporate headquarters and bhilai branch offices. Investors can inspect registration certificates during normal working hours at any of our branches.

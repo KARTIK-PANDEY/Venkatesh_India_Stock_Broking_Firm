@@ -6,6 +6,7 @@ import Header from "@/components/layout/Header";
 import CompanyIntro from "@/components/layout/CompanyIntro";
 import MarketTicker from "@/components/layout/MarketTicker";
 import Footer from "@/components/layout/Footer";
+import VoiceReader from "@/components/ui/VoiceReader";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
@@ -62,6 +63,7 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
+            <VoiceReader />
           </div>
         </ThemeProvider>
       </body>

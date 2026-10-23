@@ -167,7 +167,7 @@ export default function DownloadsPage() {
         <div className="p-8 bg-muted/30 border border-border/50 rounded-3xl space-y-8">
           <div>
             <h2 className="text-2xl font-display font-bold text-foreground mb-2 flex items-center gap-2">
-              <Globe className="w-6 h-6 text-primary" /> Vernacular Client Registration Documents
+              <Globe className="w-6 h-6 text-primary"  aria-hidden="true"/> Vernacular Client Registration Documents
             </h2>
             <p className="text-muted-foreground text-sm max-w-3xl leading-relaxed">
               SEBI mandates client registration kits to be accessible in regional languages. Download the simplified registration and disclosure pack in your preferred language below:
@@ -182,7 +182,7 @@ export default function DownloadsPage() {
                 download="Vernacular_Language.zip"
                 className="p-5 bg-background border border-border/50 rounded-2xl hover:border-primary/30 transition-all hover:shadow-xs group text-center block cursor-pointer"
               >
-                <Download className="mx-auto w-5 h-5 text-primary group-hover:scale-110 transition-transform mb-3" />
+                <Download className="mx-auto w-5 h-5 text-primary group-hover:scale-110 transition-transform mb-3"  aria-hidden="true"/>
                 <h4 className="font-bold text-sm text-foreground">{lang}</h4>
                 <p className="text-[10px] text-muted-foreground mt-1">Download Kit</p>
               </a>

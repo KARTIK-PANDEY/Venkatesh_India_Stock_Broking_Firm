@@ -51,7 +51,7 @@ export default function FATCAAlert() {
 
           <div className="flex gap-4 items-start pr-6 mt-1">
             <div className="p-3 bg-amber-500/10 text-amber-600 rounded-2xl shrink-0" aria-hidden="true">
-              <ShieldAlert className="w-6 h-6 animate-pulse" />
+              <ShieldAlert className="w-6 h-6 animate-pulse"  aria-hidden="true"/>
             </div>
             <div>
               <h2 id="fatca-alert-heading" className="font-display font-bold text-foreground text-base mb-1">

@@ -124,7 +124,7 @@ export default function EscalationMatrixPage() {
                         target="_blank"
                         className={cn(buttonVariants({ variant: "outline" }), "rounded-full gap-2")}
                       >
-                        {step.btn.text} <ExternalLink className="w-4 h-4" />
+                        {step.btn.text} <ExternalLink className="w-4 h-4" aria-hidden="true" />
                       </a>
                     )}
                   </div>
@@ -133,7 +133,7 @@ export default function EscalationMatrixPage() {
 
               {idx < STEPS.length - 1 && (
                 <div className="flex justify-center py-6">
-                  <ArrowDown className="text-foreground/20 w-12 h-12" />
+                  <ArrowDown className="text-foreground/20 w-12 h-12" aria-hidden="true" />
                 </div>
               )}
             </div>
@@ -151,7 +151,7 @@ export default function EscalationMatrixPage() {
           <div className="relative overflow-hidden rounded-2xl border border-border bg-white shadow-xs max-w-2xl mx-auto group">
             <Image
               src="/escalation_matrix.jpg"
-              alt="Official Grievance Escalation Matrix Chart"
+              alt="Grievance escalation flowchart detailing resolution turnarounds: Level 1 Customer Care and Compliance (24-48 hours), Level 2 Managing Director (48-72 hours), Level 3 SEBI SCORES or SmartODR"
               width={672}
               height={400}
               className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
@@ -170,17 +170,25 @@ export default function EscalationMatrixPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex gap-4 items-center p-6 bg-background rounded-2xl border border-border/50">
-              <Phone className="w-6 h-6 text-primary" />
+              <Phone className="w-6 h-6 text-primary" aria-hidden="true" />
               <div>
                 <p className="text-xs font-bold uppercase text-muted-foreground">Direct Helpline</p>
-                <p className="font-bold">{COMPANY_INFO.phones[0]}</p>
+                <p className="font-bold">
+                  <a href={`tel:${COMPANY_INFO.phones[0]}`} aria-label={`Call Direct Helpline at ${COMPANY_INFO.phones[0]}`} className="hover:underline">
+                    {COMPANY_INFO.phones[0]}
+                  </a>
+                </p>
               </div>
             </div>
             <div className="flex gap-4 items-center p-6 bg-background rounded-2xl border border-border/50">
-              <Mail className="w-6 h-6 text-primary" />
+              <Mail className="w-6 h-6 text-primary" aria-hidden="true" />
               <div>
                 <p className="text-xs font-bold uppercase text-muted-foreground">Compliance Email</p>
-                <p className="font-bold">{COMPANY_INFO.compliance.email}</p>
+                <p className="font-bold">
+                  <a href={`mailto:${COMPANY_INFO.compliance.email}`} aria-label={`Email compliance department at ${COMPANY_INFO.compliance.email}`} className="hover:underline">
+                    {COMPANY_INFO.compliance.email}
+                  </a>
+                </p>
               </div>
             </div>
           </div>

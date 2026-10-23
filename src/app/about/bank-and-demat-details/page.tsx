@@ -44,7 +44,7 @@ export default function BankAndDematDetailsPage() {
         
         {/* Important security notice */}
         <div className="bg-amber-500/10 border border-amber-500/30 p-6 md:p-8 rounded-3xl flex gap-4 items-start shadow-xs max-w-4xl mx-auto">
-          <ShieldAlert className="w-8 h-8 text-amber-600 shrink-0 mt-0.5" />
+          <ShieldAlert className="w-8 h-8 text-amber-600 shrink-0 mt-0.5"  aria-hidden="true"/>
           <div className="space-y-2">
             <h3 className="font-display font-bold text-foreground text-base uppercase tracking-wider">Upstreaming Client Nodal Bank Accounts (USCNBA)</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
@@ -195,7 +195,7 @@ export default function BankAndDematDetailsPage() {
             href="/contact"
             className="bg-primary hover:bg-primary-hover text-white font-bold text-xs py-3 px-6 rounded-full inline-flex items-center gap-2 tracking-wide uppercase transition-colors shrink-0"
           >
-            Locate Our Office <ExternalLink className="w-4 h-4" />
+            Locate Our Office <ExternalLink className="w-4 h-4"  aria-hidden="true"/>
           </a>
         </div>
 

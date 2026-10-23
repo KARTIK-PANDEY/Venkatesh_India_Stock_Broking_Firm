@@ -20,7 +20,7 @@ export default function RiskDisclosurePage() {
         {/* Warning Panel */}
         <div className="p-8 bg-red-50 dark:bg-red-950/20 border-l-4 border-red-600 rounded-r-3xl space-y-6">
           <div className="flex items-center gap-3">
-            <AlertTriangle className="w-8 h-8 text-red-600 shrink-0 animate-bounce" />
+            <AlertTriangle className="w-8 h-8 text-red-600 shrink-0 animate-bounce"  aria-hidden="true"/>
             <h2 className="text-2xl font-display font-bold text-red-900 dark:text-red-400">
               Risk Disclosure Document: Equity F&O Segment
             </h2>
@@ -55,7 +55,7 @@ export default function RiskDisclosurePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="p-6 bg-muted/40 border border-border/50 rounded-2xl space-y-4">
             <h3 className="font-bold text-foreground text-lg flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5 text-primary" /> Risk Management (RMS) Policy
+              <ShieldCheck className="w-5 h-5 text-primary"  aria-hidden="true"/> Risk Management (RMS) Policy
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
               At Shri Venkatesh Stock Broker Services, we enforce strict Risk Management checks. Clients trading in derivatives are required to provide 100% upfront margins (SPAN + Exposure) prior to initiating position buys or sells. Leverage is provided in compliance with exchange guidelines.
@@ -64,7 +64,7 @@ export default function RiskDisclosurePage() {
 
           <div className="p-6 bg-muted/40 border border-border/50 rounded-2xl space-y-4">
             <h3 className="font-bold text-foreground text-lg flex items-center gap-2">
-              <BookOpen className="w-5 h-5 text-primary" /> Investor Advisory
+              <BookOpen className="w-5 h-5 text-primary"  aria-hidden="true"/> Investor Advisory
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
               We urge investors to carefully consider their risk tolerance, capital adequacy, and derivatives knowledge. Futures and options are highly leveraged derivative products that can lead to losses exceeding your initial capital if market positions move adversely.
@@ -78,7 +78,7 @@ export default function RiskDisclosurePage() {
             href="/open-account"
             className={cn(buttonVariants(), "rounded-full h-12 font-bold px-8 inline-flex items-center gap-1.5")}
           >
-            Acknowledge & Continue Account Opening <ArrowRight className="w-4 h-4" />
+            Acknowledge & Continue Account Opening <ArrowRight className="w-4 h-4"  aria-hidden="true"/>
           </Link>
         </div>
 

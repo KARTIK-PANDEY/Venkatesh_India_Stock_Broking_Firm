@@ -28,6 +28,7 @@ function SearchContent() {
   const [activeCategory, setActiveCategory] = useState<string>("All");
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSearchQuery(initialQuery);
   }, [initialQuery]);
 

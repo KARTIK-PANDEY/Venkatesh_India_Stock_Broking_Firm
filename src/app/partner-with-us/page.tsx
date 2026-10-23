@@ -40,7 +40,7 @@ export default function PartnerWithUsPage() {
               { title: "Full Back-Office Support", desc: "Dedicated relationship manager, settlement support, and compliance assistance." },
             ].map((item, i) => (
               <div key={i} className="bg-muted/40 border border-border/50 rounded-2xl p-6 hover:border-primary/40 hover:shadow-md transition-all">
-                <CheckCircle2 className="w-6 h-6 text-primary mb-4" />
+                <CheckCircle2 className="w-6 h-6 text-primary mb-4"  aria-hidden="true"/>
                 <h3 className="font-bold text-foreground mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
               </div>
@@ -60,7 +60,7 @@ export default function PartnerWithUsPage() {
               "No adverse regulatory history or criminal record",
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0 mt-0.5"  aria-hidden="true"/>
                 <span>{item}</span>
               </div>
             ))}
@@ -94,15 +94,15 @@ export default function PartnerWithUsPage() {
               <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">Ready to Join the Network?</h2>
               <p className="text-white/80 text-sm">Reach out to our partnership team — we respond within 24 hours.</p>
               <div className="mt-4 space-y-1 text-sm text-white/90 font-medium">
-                <p className="flex items-center gap-2"><Phone className="w-4 h-4" /> {COMPANY_INFO.phones[0]}</p>
-                <p className="flex items-center gap-2"><Mail className="w-4 h-4" /> {COMPANY_INFO.email}</p>
+                <p className="flex items-center gap-2"><Phone className="w-4 h-4"  aria-hidden="true"/> {COMPANY_INFO.phones[0]}</p>
+                <p className="flex items-center gap-2"><Mail className="w-4 h-4"  aria-hidden="true"/> {COMPANY_INFO.email}</p>
               </div>
             </div>
             <Link
               href="/open-account"
               className={cn(buttonVariants(), "bg-white text-primary hover:bg-white/90 rounded-full h-12 px-8 font-bold shrink-0 gap-2")}
             >
-              Apply Now <ArrowRight className="w-4 h-4" />
+              Apply Now <ArrowRight className="w-4 h-4"  aria-hidden="true"/>
             </Link>
           </div>
         </section>

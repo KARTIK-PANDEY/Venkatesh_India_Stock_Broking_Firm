@@ -31,7 +31,7 @@ export default function GroupCompaniesPage() {
               {/* Icon + Name */}
               <div className="flex gap-5 items-start mb-6">
                 <div className="shrink-0 p-4 rounded-2xl bg-background text-primary shadow-sm group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  <Building2 className="w-7 h-7" />
+                  <Building2 className="w-7 h-7"  aria-hidden="true"/>
                 </div>
                 <div>
                   <h2 className="text-xl md:text-2xl font-bold text-foreground leading-tight mb-1">
@@ -45,7 +45,7 @@ export default function GroupCompaniesPage() {
                       className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:underline"
                     >
                       {company.website.replace("https://", "")}
-                      <ExternalLink className="w-3 h-3" />
+                      <ExternalLink className="w-3 h-3"  aria-hidden="true"/>
                     </a>
                   )}
                 </div>
@@ -59,11 +59,11 @@ export default function GroupCompaniesPage() {
               {/* Meta badges */}
               <div className="space-y-3 pt-5 border-t border-border/50">
                 <div className="flex items-center gap-3 text-muted-foreground">
-                  <Briefcase className="w-4 h-4 text-primary shrink-0" />
+                  <Briefcase className="w-4 h-4 text-primary shrink-0"  aria-hidden="true"/>
                   <span className="text-sm font-medium">{company.activity}</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <ShieldCheck className="w-4 h-4 text-green-600 shrink-0" />
+                  <ShieldCheck className="w-4 h-4 text-green-600 shrink-0"  aria-hidden="true"/>
                   <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
                     {company.registration}
                   </span>

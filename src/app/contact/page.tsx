@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Clock, Send, ShieldCheck, User, Building2, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { COMPANY_INFO, BRANCHES } from "@/lib/constants";
+import { AccessibleCaptcha } from "@/components/ui/AccessibleCaptcha";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
@@ -13,6 +14,9 @@ export default function ContactPage() {
   const [message, setMessage] = useState("");
   
   const [mobileError, setMobileError] = useState("");
+  const [captchaInput, setCaptchaInput] = useState("");
+  const [captchaCode, setCaptchaCode] = useState("");
+  const [captchaError, setCaptchaError] = useState("");
   const [success, setSuccess] = useState(false);
 
   const handleMobileChange = (val: string) => {
@@ -44,6 +48,13 @@ export default function ContactPage() {
       return;
     }
 
+    // Accessible CAPTCHA validation
+    if (!captchaInput.trim() || captchaInput.trim().toUpperCase() !== captchaCode.trim().toUpperCase()) {
+      setCaptchaError("Incorrect verification code. Please check the image or use the audio button to listen to the code.");
+      return;
+    }
+    setCaptchaError("");
+
     setSuccess(true);
     // Reset form states
     setName("");
@@ -52,6 +63,8 @@ export default function ContactPage() {
     setSubject("");
     setMessage("");
     setMobileError("");
+    setCaptchaInput("");
+    setCaptchaError("");
 
     setTimeout(() => {
       setSuccess(false);
@@ -82,33 +95,33 @@ export default function ContactPage() {
               <h2 className="text-3xl font-display text-foreground mb-8">Contact Information</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="p-6 bg-muted/40 rounded-2xl border border-border/50 transition-all hover:shadow-md">
-                  <MapPin className="w-8 h-8 text-primary mb-4" />
+                  <MapPin className="w-8 h-8 text-primary mb-4" aria-hidden="true" />
                   <h3 className="font-bold text-foreground mb-2">Registered Office</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {COMPANY_INFO.address}
                   </p>
                 </div>
                 <div className="p-6 bg-muted/40 rounded-2xl border border-border/50 transition-all hover:shadow-md">
-                  <Phone className="w-8 h-8 text-primary mb-4" />
+                  <Phone className="w-8 h-8 text-primary mb-4" aria-hidden="true" />
                   <h3 className="font-bold text-foreground mb-2">Call Us</h3>
                   <p className="text-sm text-muted-foreground mb-1">Office: {COMPANY_INFO.phones[0]}</p>
                   <p className="text-sm text-muted-foreground">Office: {COMPANY_INFO.phones[1]}</p>
                 </div>
                 <div className="p-6 bg-muted/40 rounded-2xl border border-border/50 transition-all hover:shadow-md">
-                  <Mail className="w-8 h-8 text-primary mb-4" />
+                  <Mail className="w-8 h-8 text-primary mb-4" aria-hidden="true" />
                   <h3 className="font-bold text-foreground mb-2">Email Us</h3>
                   <p className="text-sm text-muted-foreground mb-1">
-                    <a href={`mailto:${COMPANY_INFO.email}`} className="hover:underline">{COMPANY_INFO.email}</a>
+                    <a href={`mailto:${COMPANY_INFO.email}`} aria-label={`Email us at ${COMPANY_INFO.email}`} className="hover:underline">{COMPANY_INFO.email}</a>
                   </p>
                   <p className="text-sm text-muted-foreground mb-1">
-                    <a href={`mailto:${COMPANY_INFO.email2}`} className="hover:underline">{COMPANY_INFO.email2}</a>
+                    <a href={`mailto:${COMPANY_INFO.email2}`} aria-label={`Email us at ${COMPANY_INFO.email2}`} className="hover:underline">{COMPANY_INFO.email2}</a>
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    Grievance: <a href={`mailto:${COMPANY_INFO.grievance.email1}`} className="hover:underline">{COMPANY_INFO.grievance.email1}</a>
+                    Grievance: <a href={`mailto:${COMPANY_INFO.grievance.email1}`} aria-label={`Email grievance desk at ${COMPANY_INFO.grievance.email1}`} className="hover:underline">{COMPANY_INFO.grievance.email1}</a>
                   </p>
                 </div>
                 <div className="p-6 bg-muted/40 rounded-2xl border border-border/50 transition-all hover:shadow-md">
-                  <Clock className="w-8 h-8 text-primary mb-4" />
+                  <Clock className="w-8 h-8 text-primary mb-4" aria-hidden="true" />
                   <h3 className="font-bold text-foreground mb-2">Office Hours</h3>
                   <p className="text-sm text-muted-foreground">Mon-Fri: 9:00 AM – 6:30 PM</p>
                   <p className="text-sm text-muted-foreground">Sat: 9:00 AM – 4:00 PM</p>
@@ -120,12 +133,12 @@ export default function ContactPage() {
             <div className="p-8 bg-background text-white rounded-3xl shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-background/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
               <h3 className="text-xl font-display mb-6 flex items-center gap-2 text-primary">
-                <ShieldCheck className="w-6 h-6" /> Compliance & Management
+                <ShieldCheck className="w-6 h-6" aria-hidden="true" /> Compliance & Management
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <User className="w-5 h-5 text-accent" />
+                    <User className="w-5 h-5 text-accent" aria-hidden="true" />
                     <div>
                       <p className="text-[10px] uppercase font-bold text-accent">Compliance Officer</p>
                       <p className="font-bold text-foreground mb-3">{COMPANY_INFO.compliance.name}</p>
@@ -136,7 +149,7 @@ export default function ContactPage() {
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <User className="w-5 h-5 text-accent" />
+                    <User className="w-5 h-5 text-accent" aria-hidden="true" />
                     <div>
                       <p className="text-[10px] uppercase font-bold text-accent">CEO / Managing Director</p>
                       <p className="font-bold text-foreground mb-3">{COMPANY_INFO.ceo.name}</p>
@@ -155,17 +168,17 @@ export default function ContactPage() {
                 {BRANCHES.map((branch, i) => (
                   <div key={i} className="p-6 bg-background border border-border/50 rounded-xl shadow-sm hover:border-primary transition-colors">
                     <div className="flex items-center gap-2 mb-3 text-foreground">
-                      <Building2 className="w-5 h-5" />
+                      <Building2 className="w-5 h-5" aria-hidden="true" />
                       <h4 className="font-bold">{branch.city} Branch</h4>
                     </div>
                     <p className="text-xs text-muted-foreground leading-relaxed mb-3">{branch.address}</p>
                     <div className="flex flex-col gap-1 text-xs font-bold text-primary">
-                      <a href={`tel:${branch.phone}`} className="flex items-center gap-1 hover:underline">
-                        <Phone className="w-3 h-3" /> {branch.phone}
+                      <a href={`tel:${branch.phone}`} aria-label={`Call ${branch.city} branch at ${branch.phone}`} className="flex items-center gap-1 hover:underline">
+                        <Phone className="w-3 h-3" aria-hidden="true" /> {branch.phone}
                       </a>
                       {branch.email && (
-                        <a href={`mailto:${branch.email}`} className="flex items-center gap-1 hover:underline">
-                          <Mail className="w-3 h-3" /> {branch.email}
+                        <a href={`mailto:${branch.email}`} aria-label={`Email ${branch.city} branch at ${branch.email}`} className="flex items-center gap-1 hover:underline">
+                          <Mail className="w-3 h-3" aria-hidden="true" /> {branch.email}
                         </a>
                       )}
                     </div>
@@ -182,7 +195,7 @@ export default function ContactPage() {
 
             {success ? (
               <div className="p-6 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl space-y-3 text-center">
-                <CheckCircle2 className="w-12 h-12 text-emerald-500 mx-auto" />
+                <CheckCircle2 className="w-12 h-12 text-emerald-500 mx-auto" aria-hidden="true" />
                 <h3 className="text-lg font-bold text-foreground">Message Sent!</h3>
                 <p className="text-sm text-muted-foreground">Thank you for reaching out. We will get back to you shortly.</p>
               </div>
@@ -296,12 +309,23 @@ export default function ContactPage() {
                     ></textarea>
                   </div>
 
+                  <AccessibleCaptcha
+                    idPrefix="contact"
+                    value={captchaInput}
+                    onChange={(val) => {
+                      setCaptchaInput(val);
+                      if (captchaError) setCaptchaError("");
+                    }}
+                    onCodeChange={(code) => setCaptchaCode(code)}
+                    error={captchaError}
+                  />
+
                   <Button 
                     type="submit" 
-                    disabled={!!mobileError || !mobile || !name || !email || !subject || !message}
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-14 rounded-full text-lg font-bold shadow-lg group transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={!!mobileError || !mobile || !name || !email || !subject || !message || !captchaInput.trim()}
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-14 rounded-full text-lg font-bold shadow-lg group transition-all disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                   >
-                    Send Message <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    Send Message <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" aria-hidden="true" />
                   </Button>
 
                   <p className="text-center text-[10px] text-muted-foreground italic">

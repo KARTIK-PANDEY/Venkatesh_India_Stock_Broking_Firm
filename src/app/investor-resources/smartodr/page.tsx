@@ -69,7 +69,7 @@ export default function SmartOdrPage() {
                 target="_blank"
                 className={cn(buttonVariants(), "w-full h-13 rounded-full font-bold text-sm justify-center items-center flex gap-2 text-white")}
               >
-                Investor Registration <ExternalLink className="w-4 h-4" />
+                Investor Registration <ExternalLink className="w-4 h-4"  aria-hidden="true"/>
               </a>
             </div>
 
@@ -84,7 +84,7 @@ export default function SmartOdrPage() {
                 target="_blank"
                 className={cn(buttonVariants({ variant: "outline" }), "w-full h-12 rounded-full font-bold text-sm justify-center items-center flex gap-2")}
               >
-                Go to Partner Dashboard <ExternalLink className="w-4 h-4" />
+                Go to Partner Dashboard <ExternalLink className="w-4 h-4"  aria-hidden="true"/>
               </a>
             </div>
           </div>

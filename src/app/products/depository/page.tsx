@@ -110,7 +110,7 @@ export default function DepositoryServicesPage() {
                 href="/open-account"
                 className={cn(buttonVariants(), "w-full h-13 rounded-full font-bold text-sm justify-center items-center flex gap-2 text-white")}
               >
-                Open Demat Account <ArrowRight className="w-4 h-4" />
+                Open Demat Account <ArrowRight className="w-4 h-4"  aria-hidden="true"/>
               </Link>
             </div>
 

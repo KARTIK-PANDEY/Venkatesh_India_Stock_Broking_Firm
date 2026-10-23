@@ -51,7 +51,7 @@ export default function EquityTradingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="p-8 bg-muted/40 rounded-2xl border border-border/50">
                   <div className="w-12 h-12 bg-background rounded-xl flex items-center justify-center text-primary mb-6 shadow-sm">
-                    <BarChart3 className="w-6 h-6" />
+                    <BarChart3 className="w-6 h-6"  aria-hidden="true"/>
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-4">Cash / Delivery</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6">
@@ -65,7 +65,7 @@ export default function EquityTradingPage() {
                 </div>
                 <div className="p-8 bg-muted rounded-2xl border border-primary/20">
                   <div className="w-12 h-12 bg-background rounded-xl flex items-center justify-center text-primary mb-6 shadow-sm">
-                    <Zap className="w-6 h-6" />
+                    <Zap className="w-6 h-6"  aria-hidden="true"/>
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-4">Intraday Trading</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6">
@@ -114,7 +114,7 @@ export default function EquityTradingPage() {
                 href="/open-account"
                 className={cn(buttonVariants(), "w-full h-14 rounded-full font-bold text-lg justify-center")}
               >
-                Open An Account <ArrowRight className="ml-2 w-5 h-5" />
+                Open An Account <ArrowRight className="ml-2 w-5 h-5"  aria-hidden="true"/>
               </Link>
             </div>
 

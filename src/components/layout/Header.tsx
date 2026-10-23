@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, ChevronDown, ChevronRight, ExternalLink, LogIn, Search, X } from "lucide-react";
+import { Menu, ChevronDown, ChevronRight, ExternalLink, LogIn, Search } from "lucide-react";
 import { cn, getFileUrl } from "@/lib/utils";
 import { NAV_LINKS, LOGIN_LINKS } from "@/lib/constants";
 import { buttonVariants } from "@/components/ui/button";
@@ -77,11 +77,11 @@ export default function Header() {
         <div className="h-full flex items-center justify-between max-w-7xl mx-auto gap-2 lg:gap-4">
 
           {/* ── Logo ──────────────────────────────────────────────── */}
-          <Link href="/" className="flex items-center group shrink-0" aria-label="Home page">
+          <Link href="/" className="flex items-center group shrink-0" aria-label="Shri Venkatesh Stock Broker Services India Pvt Ltd Logo">
             <div className="h-7.5 w-28 min-[380px]:h-8 min-[380px]:w-32 sm:h-8.5 sm:w-36 lg:h-9 lg:w-40 rounded overflow-hidden group-hover:opacity-90 transition-opacity shrink-0 flex items-center">
               <Image
                 src="/logo.jpg"
-                alt="Shri Venkatesh Stock Broker Services India Pvt. Ltd. company logo"
+                alt="Shri Venkatesh Stock Broker Services India Pvt Ltd Logo"
                 width={160}
                 height={40}
                 className="object-contain w-full h-full max-h-full"
@@ -203,9 +203,9 @@ export default function Header() {
             {/* Login dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="inline-flex items-center gap-1 rounded-md px-2.5 py-1.5 text-xs font-semibold text-foreground/80 hover:bg-primary/10 hover:text-primary transition-colors outline-none cursor-pointer h-8">
-                <LogIn className="size-3.5 opacity-70" />
+                <LogIn className="size-3.5 opacity-70" aria-hidden="true" />
                 <span>Login</span>
-                <ChevronDown className="size-3 opacity-50" />
+                <ChevronDown className="size-3 opacity-50" aria-hidden="true" />
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="end"
@@ -304,16 +304,23 @@ export default function Header() {
                 {/* Mobile Sheet Header */}
                 <SheetHeader className="p-3.5 border-b border-border/50">
                   <div className="flex items-center gap-2.5">
-                    <div className="h-7 w-24 rounded overflow-hidden shrink-0 flex items-center">
-                      <Image
-                        src="/logo.jpg"
-                        alt="Shri Venkatesh Stock Broker logo"
-                        width={90}
-                        height={30}
-                        className="object-contain w-full h-full"
-                        priority
-                      />
-                    </div>
+                    <Link
+                      href="/"
+                      className="flex items-center group shrink-0"
+                      aria-label="Shri Venkatesh Stock Broker Services India Pvt Ltd Logo"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      <div className="h-7 w-24 rounded overflow-hidden shrink-0 flex items-center">
+                        <Image
+                          src="/logo.jpg"
+                          alt="Shri Venkatesh Stock Broker Services India Pvt Ltd Logo"
+                          width={90}
+                          height={30}
+                          className="object-contain w-full h-full"
+                          priority
+                        />
+                      </div>
+                    </Link>
                     <SheetTitle className="leading-tight text-left">
                       <span className="text-[10px] font-semibold text-muted-foreground block leading-tight">
                         Shri Venkatesh Stock Broker
@@ -363,7 +370,6 @@ export default function Header() {
                   <nav aria-label="Mobile Navigation">
                     <ul className="space-y-1 list-none p-0 m-0">
                       {NAV_LINKS.map((link) => {
-                        const hasChildren = Boolean(link.children || (link.isMegaMenu && "categories" in link));
                         const isExpanded = openSections[link.label] ?? false;
 
                         if (link.isMegaMenu && "categories" in link) {
@@ -380,6 +386,7 @@ export default function Header() {
                                     "size-3.5 text-muted-foreground transition-transform duration-200",
                                     isExpanded && "rotate-90 text-primary"
                                   )}
+                                  aria-hidden="true"
                                 />
                               </button>
                               {isExpanded && (
@@ -429,6 +436,7 @@ export default function Header() {
                                     "size-3.5 text-muted-foreground transition-transform duration-200",
                                     isExpanded && "rotate-90 text-primary"
                                   )}
+                                  aria-hidden="true"
                                 />
                               </button>
                               {isExpanded && (

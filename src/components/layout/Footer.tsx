@@ -37,7 +37,7 @@ export default function Footer() {
                 <div className="h-16 w-52 rounded-lg overflow-hidden group-hover:scale-[1.02] transition-transform shrink-0">
                   <Image
                     src="/logo.jpg"
-                    alt="Shri Venkatesh Stock Broker Services India Pvt. Ltd. company logo"
+                    alt="Graphic Shri Venkatesh Stock Broker Services India Pvt Ltd logo"
                     width={208}
                     height={64}
                     className="object-contain w-full h-full"
@@ -102,7 +102,7 @@ export default function Footer() {
                 </li>
                 <li className="flex gap-3 text-muted-foreground group">
                   <Phone className="w-5 h-5 shrink-0 text-primary group-hover:scale-110 transition-transform" aria-hidden="true" />
-                  <a href={`tel:${COMPANY_INFO.phones[0]}`} className="hover:text-primary transition-colors">{COMPANY_INFO.phones[0]}</a>
+                  <a href={`tel:${COMPANY_INFO.phones[0]}`} aria-label={`Call us at ${COMPANY_INFO.phones[0]}`} className="hover:text-primary transition-colors">{COMPANY_INFO.phones[0]}</a>
                 </li>
                 <li className="flex gap-3 text-muted-foreground group">
   <Mail

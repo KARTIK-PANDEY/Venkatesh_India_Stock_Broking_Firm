@@ -29,7 +29,7 @@ export default function InvestorCharterPage() {
                 rel="noopener noreferrer"
                 className={cn(buttonVariants({ variant: "default" }), "rounded-full px-6 h-11 text-xs shadow-lg gap-2 font-bold")}
               >
-                <Download className="w-4 h-4" /> SEBI Investor Charter
+                <Download className="w-4 h-4"  aria-hidden="true"/> SEBI Investor Charter
               </a>
               <a
                 href={getFileUrl("/Investor_Charter_STOCK_BROKER-BSe-m.pdf")}
@@ -37,7 +37,7 @@ export default function InvestorCharterPage() {
                 rel="noopener noreferrer"
                 className={cn(buttonVariants({ variant: "outline" }), "rounded-full px-6 h-11 text-xs shadow-lg gap-2 font-bold border-white/20 hover:bg-white/10 text-white")}
               >
-                <Download className="w-4 h-4" /> Stock Broker Charter (BSE)
+                <Download className="w-4 h-4"  aria-hidden="true"/> Stock Broker Charter (BSE)
               </a>
               <a
                 href="http://cp-in-10.whb.tempwebhost.net/~venkakgl/investorchart2.php"
@@ -45,13 +45,13 @@ export default function InvestorCharterPage() {
                 rel="noopener noreferrer"
                 className={cn(buttonVariants({ variant: "outline" }), "rounded-full px-6 h-11 text-xs shadow-lg gap-2 font-bold border-white/20 hover:bg-white/10 text-white")}
               >
-                <Download className="w-4 h-4" /> Charter for SVSBS
+                <Download className="w-4 h-4"  aria-hidden="true"/> Charter for SVSBS
               </a>
               <a
                 href="/investor-resources/complaint-data?tab=dp"
                 className={cn(buttonVariants({ variant: "outline" }), "rounded-full px-6 h-11 text-xs shadow-lg gap-2 font-bold border-white/20 hover:bg-white/10 text-white")}
               >
-                <Download className="w-4 h-4" /> DP Charter (Annexure C)
+                <Download className="w-4 h-4"  aria-hidden="true"/> DP Charter (Annexure C)
               </a>
             </div>
           </div>
@@ -65,7 +65,7 @@ export default function InvestorCharterPage() {
           {/* Section A: Vision */}
           <section className="bg-muted/40 p-8 md:p-12 rounded-3xl border border-border/50">
             <div className="flex items-center gap-3 mb-6">
-              <ShieldCheck className="w-8 h-8 text-foreground" />
+              <ShieldCheck className="w-8 h-8 text-foreground"  aria-hidden="true"/>
               <h2 className="text-2xl md:text-3xl font-display text-foreground uppercase tracking-wide">
                 A. Vision of the Organization
               </h2>
@@ -78,7 +78,7 @@ export default function InvestorCharterPage() {
           {/* Section B: Services & Timelines */}
           <section>
             <div className="flex items-center gap-3 mb-8">
-              <Clock className="w-8 h-8 text-primary" />
+              <Clock className="w-8 h-8 text-primary"  aria-hidden="true"/>
               <h2 className="text-2xl md:text-3xl font-display text-foreground uppercase tracking-wide">
                 B. Services Provided to Investors & Timelines
               </h2>
@@ -113,7 +113,7 @@ export default function InvestorCharterPage() {
           {/* Section C: Rights of Investors */}
           <section>
             <div className="flex items-center gap-3 mb-8">
-              <CheckCircle2 className="w-8 h-8 text-green-600" />
+              <CheckCircle2 className="w-8 h-8 text-green-600"  aria-hidden="true"/>
               <h2 className="text-2xl md:text-3xl font-display text-foreground uppercase tracking-wide">
                 C. Rights of Investors
               </h2>
@@ -128,7 +128,7 @@ export default function InvestorCharterPage() {
                 "Right to participate in eVoting for companies held"
               ].map((item, i) => (
                 <div key={i} className="flex gap-3 items-start p-4 bg-background border border-border/50 rounded-xl shadow-sm">
-                  <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0"  aria-hidden="true"/>
                   <span className="text-foreground font-medium">{item}</span>
                 </div>
               ))}
@@ -177,7 +177,7 @@ export default function InvestorCharterPage() {
           {/* Section F: Grievance Redressal */}
           <section className="border-t border-border/50 pt-16">
             <div className="flex items-center gap-3 mb-8">
-              <AlertCircle className="w-8 h-8 text-primary" />
+              <AlertCircle className="w-8 h-8 text-primary"  aria-hidden="true"/>
               <h2 className="text-2xl md:text-3xl font-display text-foreground uppercase tracking-wide">
                 F. Grievance Redressal Mechanism
               </h2>

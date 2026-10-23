@@ -60,7 +60,7 @@ export default function GrievancesPage() {
             {/* Helpline Section */}
             <div className="p-8 bg-muted/40 border border-border/50 rounded-3xl space-y-4">
               <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
-                <HelpCircle className="w-6 h-6 text-primary" /> SEBI Toll-Free Helpline
+                <HelpCircle className="w-6 h-6 text-primary"  aria-hidden="true"/> SEBI Toll-Free Helpline
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 For assistance, clarifications, or guidance regarding grievances and the SCORES filing process, investors can call SEBI&apos;s official Toll-Free helpline numbers:
@@ -89,7 +89,7 @@ export default function GrievancesPage() {
                 target="_blank"
                 className={cn(buttonVariants(), "w-full h-13 rounded-full font-bold text-sm justify-center items-center flex gap-2 text-white")}
               >
-                Register on SCORES <ExternalLink className="w-4 h-4" />
+                Register on SCORES <ExternalLink className="w-4 h-4"  aria-hidden="true"/>
               </a>
             </div>
 
@@ -104,7 +104,7 @@ export default function GrievancesPage() {
                 target="_blank"
                 className={cn(buttonVariants({ variant: "outline" }), "w-full h-12 rounded-full font-bold text-sm justify-center items-center flex gap-2")}
               >
-                Go to SmartODR <ExternalLink className="w-4 h-4" />
+                Go to SmartODR <ExternalLink className="w-4 h-4"  aria-hidden="true"/>
               </a>
             </div>
 

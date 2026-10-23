@@ -19,7 +19,7 @@ export default function TermsAndConditionsPage() {
         
         {/* Core disclaimer */}
         <section className="bg-muted/40 p-8 rounded-3xl border border-border/50 flex gap-4 items-start">
-          <Scale className="w-8 h-8 text-primary shrink-0 mt-1" />
+          <Scale className="w-8 h-8 text-primary shrink-0 mt-1"  aria-hidden="true"/>
           <div>
             <h2 className="text-xl font-bold text-foreground mb-2">Terms of Service Agreement</h2>
             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -33,7 +33,7 @@ export default function TermsAndConditionsPage() {
           
           <section className="space-y-4 pt-10 first:pt-0">
             <h3 className="text-2xl font-display font-bold text-foreground flex items-center gap-2">
-              <Landmark className="w-5 h-5 text-primary" /> 1. Account Opening & Onboarding
+              <Landmark className="w-5 h-5 text-primary"  aria-hidden="true"/> 1. Account Opening & Onboarding
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Trading and Demat accounts are opened subject to successful verification and document checks. The applicant must provide accurate, up-to-date, and complete credentials. We reserve the right to reject account registration applications if details do not match KRA database values.
@@ -42,7 +42,7 @@ export default function TermsAndConditionsPage() {
 
           <section className="space-y-4 pt-10">
             <h3 className="text-2xl font-display font-bold text-foreground flex items-center gap-2">
-              <ShieldAlert className="w-5 h-5 text-primary" /> 2. Trading Terminals & Risk Disclosure
+              <ShieldAlert className="w-5 h-5 text-primary"  aria-hidden="true"/> 2. Trading Terminals & Risk Disclosure
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Trading in stock and derivative markets involves financial risk. Order execution is dependent on BSE and CDSL network availability and systemic links. We are not liable for losses caused by technical errors, network delays, or system failures on exchange platforms.
@@ -51,7 +51,7 @@ export default function TermsAndConditionsPage() {
 
           <section className="space-y-4 pt-10">
             <h3 className="text-2xl font-display font-bold text-foreground flex items-center gap-2">
-              <Award className="w-5 h-5 text-primary" /> 3. Brokerage Charges & Settlements
+              <Award className="w-5 h-5 text-primary"  aria-hidden="true"/> 3. Brokerage Charges & Settlements
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Brokerage charges are levied in accordance with our tariff schedules approved by the client during onboarding. Fees, transaction taxes, GST, and SEBI charges are deducted directly from the client ledger balance. Weekly/Monthly settlements are executed as per SEBI payout calendars.
@@ -60,7 +60,7 @@ export default function TermsAndConditionsPage() {
 
           <section className="space-y-4 pt-10">
             <h3 className="text-2xl font-display font-bold text-foreground flex items-center gap-2">
-              <Scale className="w-5 h-5 text-primary" /> 4. Jurisdiction & Disputes
+              <Scale className="w-5 h-5 text-primary"  aria-hidden="true"/> 4. Jurisdiction & Disputes
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
               These terms are governed by SEBI rules and Indian securities laws. Disputes arising out of trading transactions or DP activities are subject to online dispute resolution via <strong>SmartODR</strong> or the exclusive jurisdiction of the courts in Raipur, Chhattisgarh.

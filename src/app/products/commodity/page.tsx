@@ -68,7 +68,7 @@ export default function CommodityTradingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex gap-4">
                   <div className="shrink-0 w-10 h-10 rounded-full bg-background flex items-center justify-center text-primary shadow-sm">
-                    <TrendingUp className="w-5 h-5" />
+                    <TrendingUp className="w-5 h-5"  aria-hidden="true"/>
                   </div>
                   <div>
                     <h4 className="font-bold text-foreground mb-1">Daily Commodity Reports</h4>
@@ -77,7 +77,7 @@ export default function CommodityTradingPage() {
                 </div>
                 <div className="flex gap-4">
                   <div className="shrink-0 w-10 h-10 rounded-full bg-background flex items-center justify-center text-primary shadow-sm">
-                    <LineChart className="w-5 h-5" />
+                    <LineChart className="w-5 h-5"  aria-hidden="true"/>
                   </div>
                   <div>
                     <h4 className="font-bold text-foreground mb-1">Low Latency Execution</h4>
@@ -99,13 +99,13 @@ export default function CommodityTradingPage() {
                 href="/open-account"
                 className={cn(buttonVariants(), "w-full h-14 rounded-full font-bold text-lg justify-center gap-2")}
               >
-                Open An Account <ArrowRight className="w-5 h-5" />
+                Open An Account <ArrowRight className="w-5 h-5"  aria-hidden="true"/>
               </Link>
             </div>
 
             <div className="bg-orange-50 border-2 border-orange-100 rounded-3xl p-8">
               <div className="flex items-center gap-2 mb-4">
-                <ShieldAlert className="w-5 h-5 text-orange-600" />
+                <ShieldAlert className="w-5 h-5 text-orange-600"  aria-hidden="true"/>
                 <h3 className="text-orange-800 font-bold uppercase tracking-wider text-xs">COMMODITY RISK DISCLOSURE</h3>
               </div>
               <p className="text-sm text-orange-700 leading-relaxed italic">

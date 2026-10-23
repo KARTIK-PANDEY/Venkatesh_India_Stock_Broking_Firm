@@ -206,7 +206,7 @@ export default function PoliciesPage() {
 
                   <div className="flex items-start gap-3 mb-3">
                     <div className="p-3 bg-primary/10 rounded-2xl text-primary shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                      <FileText className="w-5 h-5" />
+                      <FileText className="w-5 h-5"  aria-hidden="true"/>
                     </div>
                     <h3 className="font-bold text-foreground text-base leading-snug group-hover:text-primary transition-colors pt-1.5">
                       {policy.title}
@@ -225,9 +225,9 @@ export default function PoliciesPage() {
                   className="mt-auto pt-4 border-t border-border/30 flex items-center justify-between text-xs font-bold text-primary hover:underline group/btn"
                 >
                   <span className="flex items-center gap-1.5">
-                    Download Policy <Download className="w-3.5 h-3.5 group-hover/btn:translate-y-0.5 transition-transform" />
+                    Download Policy <Download className="w-3.5 h-3.5 group-hover/btn:translate-y-0.5 transition-transform"  aria-hidden="true"/>
                   </span>
-                  <ArrowUpRight className="w-4 h-4 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
+                  <ArrowUpRight className="w-4 h-4 opacity-0 group-hover/btn:opacity-100 transition-opacity"  aria-hidden="true"/>
                 </a>
               </motion.div>
             ))}
@@ -244,7 +244,7 @@ export default function PoliciesPage() {
         <div className="p-8 bg-brand-navy rounded-[2rem] text-white relative overflow-hidden shadow-lg max-w-4xl mx-auto flex flex-col md:flex-row gap-6 items-start">
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
           <div className="p-4 bg-white/10 rounded-2xl shrink-0">
-            <Shield className="w-8 h-8 text-accent" />
+            <Shield className="w-8 h-8 text-accent"  aria-hidden="true"/>
           </div>
           <div>
             <h3 className="text-xl font-display font-bold mb-2">Statutory Market Commitments</h3>

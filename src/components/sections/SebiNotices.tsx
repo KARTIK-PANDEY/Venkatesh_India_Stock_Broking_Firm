@@ -17,7 +17,7 @@ export default function SebiNotices() {
         <div className="bg-muted/40 border-l-4 border-primary rounded-r-2xl p-8 md:p-12 shadow-xs" role="region" aria-labelledby="sebi-notices-heading">
           <div className="flex items-center gap-3 mb-8">
             <div className="bg-primary text-primary-foreground p-2 rounded-full shrink-0" aria-hidden="true">
-              <Info className="w-5 h-5" />
+              <Info className="w-5 h-5"  aria-hidden="true"/>
             </div>
             <h2 id="sebi-notices-heading" className="text-2xl md:text-3xl font-display font-bold text-foreground">
               Important Information for Investors

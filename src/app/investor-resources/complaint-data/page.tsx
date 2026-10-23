@@ -113,7 +113,7 @@ export default function ComplaintDataPage() {
         {/* Compliance Notice */}
         <div className="bg-blue-50 border-l-4 border-primary rounded-r-3xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex gap-4">
-            <Info className="w-6 h-6 text-primary shrink-0 mt-0.5" />
+            <Info className="w-6 h-6 text-primary shrink-0 mt-0.5"  aria-hidden="true"/>
             <div>
               <p className="text-foreground font-bold text-sm uppercase tracking-wider">SEBI Disclosure Notice</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
@@ -167,7 +167,7 @@ export default function ComplaintDataPage() {
                   onClick={() => window.print()}
                   className="hidden sm:flex items-center rounded-full border border-border/60 bg-background px-4 py-2 text-xs font-bold text-muted-foreground hover:bg-muted transition-colors uppercase tracking-wider"
                 >
-                  <Download className="mr-2 w-3.5 h-3.5" /> Export Page
+                  <Download className="mr-2 w-3.5 h-3.5"  aria-hidden="true"/> Export Page
                 </button>
               </div>
 
@@ -257,7 +257,7 @@ export default function ComplaintDataPage() {
             <div className="bg-background rounded-3xl border border-border/50 shadow-xs overflow-hidden">
               <div className="p-6 border-b border-border/50 bg-muted/20">
                 <h3 className="text-sm font-bold text-foreground uppercase tracking-wider flex items-center gap-2">
-                  <Award className="w-5 h-5 text-primary" /> Trend of Monthly Disposal of Complaints (DP)
+                  <Award className="w-5 h-5 text-primary"  aria-hidden="true"/> Trend of Monthly Disposal of Complaints (DP)
                 </h3>
               </div>
 
@@ -293,7 +293,7 @@ export default function ComplaintDataPage() {
             <div className="bg-background rounded-3xl border border-border/50 shadow-xs overflow-hidden">
               <div className="p-6 border-b border-border/50 bg-muted/20">
                 <h3 className="text-sm font-bold text-foreground uppercase tracking-wider flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-primary" /> Trend of Annual Disposal of Complaints (DP)
+                  <ShieldCheck className="w-5 h-5 text-primary"  aria-hidden="true"/> Trend of Annual Disposal of Complaints (DP)
                 </h3>
               </div>
 

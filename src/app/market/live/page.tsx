@@ -75,7 +75,7 @@ export default function LiveMarketWatchPage() {
             <span className="text-xs font-bold text-foreground ml-1 uppercase tracking-wider">Market Data Live Feed</span>
           </div>
           <div className="text-xs font-semibold text-muted-foreground flex items-center gap-2">
-            <RefreshCw className="w-3.5 h-3.5 animate-spin" /> Last Tick: <span className="text-foreground">{lastUpdated}</span>
+            <RefreshCw className="w-3.5 h-3.5 animate-spin"  aria-hidden="true"/> Last Tick: <span className="text-foreground">{lastUpdated}</span>
           </div>
         </div>
 
@@ -95,9 +95,9 @@ export default function LiveMarketWatchPage() {
 
               <div className="flex items-center gap-2 mt-4">
                 {ind.up ? (
-                  <TrendingUp className="w-4 h-4 text-emerald-500 shrink-0" />
+                  <TrendingUp className="w-4 h-4 text-emerald-500 shrink-0"  aria-hidden="true"/>
                 ) : (
-                  <TrendingDown className="w-4 h-4 text-red-500 shrink-0" />
+                  <TrendingDown className="w-4 h-4 text-red-500 shrink-0"  aria-hidden="true"/>
                 )}
                 <span className={`text-sm font-bold ${ind.up ? "text-emerald-500" : "text-red-500"}`}>
                   {ind.change > 0 ? "+" : ""}{ind.change} ({ind.change > 0 ? "+" : ""}{ind.pctChange}%)
@@ -114,7 +114,7 @@ export default function LiveMarketWatchPage() {
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center justify-between border-b border-border/40 pb-4">
               <h3 className="text-2xl font-display font-bold text-foreground flex items-center gap-2">
-                <BarChart2 className="w-6 h-6 text-primary" /> Market Heat Watch
+                <BarChart2 className="w-6 h-6 text-primary"  aria-hidden="true"/> Market Heat Watch
               </h3>
               <div className="flex gap-2">
                 <button
@@ -176,7 +176,15 @@ export default function LiveMarketWatchPage() {
               <div className="absolute top-4 left-4 bg-muted/50 border border-border/50 rounded px-2.5 py-1 text-[10px] font-bold text-primary">
                 NIFTY 50 · 24H
               </div>
-              <svg className="w-full h-full" viewBox="0 0 300 150">
+              <svg 
+                className="w-full h-full" 
+                viewBox="0 0 300 150"
+                role="img"
+                aria-label="Nifty 50 intraday trajectory chart showing 24-hour upward index performance"
+                aria-labelledby="nifty-chart-title nifty-chart-desc"
+              >
+                <title id="nifty-chart-title">Nifty 50 Intraday Trajectory Chart</title>
+                <desc id="nifty-chart-desc">Interactive visual trend line chart representing the 24-hour intraday trajectory for Nifty 50 index.</desc>
                 <defs>
                   <linearGradient id="chartGlow" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="var(--color-primary)" stopOpacity="0.3" />
@@ -196,8 +204,8 @@ export default function LiveMarketWatchPage() {
                 />
               </svg>
               {/* Highlight Dot */}
-              <div className="absolute top-[20px] right-[4px] h-3 w-3 bg-primary rounded-full animate-ping"></div>
-              <div className="absolute top-[20px] right-[4px] h-3 w-3 bg-primary rounded-full"></div>
+              <div className="absolute top-[20px] right-[4px] h-3 w-3 bg-primary rounded-full animate-ping" aria-hidden="true"></div>
+              <div className="absolute top-[20px] right-[4px] h-3 w-3 bg-primary rounded-full" aria-hidden="true"></div>
             </div>
 
             <div className="text-xs text-muted-foreground leading-relaxed italic">

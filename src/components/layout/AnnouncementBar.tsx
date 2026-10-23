@@ -50,7 +50,7 @@ export default function AnnouncementBar({
         className="absolute right-2 sm:right-3 p-1 hover:bg-white/20 rounded-full transition-colors focus:outline-none cursor-pointer"
         aria-label="Dismiss announcement"
       >
-        <X className="size-3.5" />
+        <X className="size-3.5" aria-hidden="true" />
       </button>
     </div>
   );

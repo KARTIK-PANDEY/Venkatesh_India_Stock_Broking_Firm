@@ -68,7 +68,7 @@ export default function WhyChooseUs() {
                 <ul className="space-y-3">
                   {["Expert analysis", "Transparent pricing", "Unmatched reliability"].map((item, i) => (
                     <li key={i} className="flex items-center gap-2 text-foreground font-semibold">
-                      <CheckCircle2 className="w-5 h-5 text-green-600" />
+                      <CheckCircle2 className="w-5 h-5 text-green-600"  aria-hidden="true"/>
                       {item}
                     </li>
                   ))}

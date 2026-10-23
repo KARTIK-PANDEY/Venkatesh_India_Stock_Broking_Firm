@@ -51,7 +51,7 @@ export default function DerivativesTradingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="p-8 bg-muted/40 rounded-2xl border border-border/50 transition-all hover:border-primary">
                   <div className="w-12 h-12 bg-background rounded-xl flex items-center justify-center text-primary mb-6 shadow-sm">
-                    <Zap className="w-6 h-6" />
+                    <Zap className="w-6 h-6"  aria-hidden="true"/>
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-4">Futures Trading</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -60,7 +60,7 @@ export default function DerivativesTradingPage() {
                 </div>
                 <div className="p-8 bg-muted/40 rounded-2xl border border-border/50 transition-all hover:border-primary">
                   <div className="w-12 h-12 bg-background rounded-xl flex items-center justify-center text-primary mb-6 shadow-sm">
-                    <Target className="w-6 h-6" />
+                    <Target className="w-6 h-6"  aria-hidden="true"/>
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-4">Options Trading</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -76,7 +76,7 @@ export default function DerivativesTradingPage() {
                  <div className="flex-1 space-y-6">
                     <div className="flex gap-4">
                       <div className="shrink-0 w-10 h-10 rounded-full bg-background flex items-center justify-center text-primary shadow-sm">
-                        <MonitorSmartphone className="w-5 h-5" />
+                        <MonitorSmartphone className="w-5 h-5"  aria-hidden="true"/>
                       </div>
                       <div>
                         <h4 className="font-bold text-foreground mb-1">Desktop Trading Terminal</h4>
@@ -85,7 +85,7 @@ export default function DerivativesTradingPage() {
                     </div>
                     <div className="flex gap-4">
                       <div className="shrink-0 w-10 h-10 rounded-full bg-background flex items-center justify-center text-primary shadow-sm">
-                        <LineChart className="w-5 h-5" />
+                        <LineChart className="w-5 h-5"  aria-hidden="true"/>
                       </div>
                       <div>
                         <h4 className="font-bold text-foreground mb-1">Advanced Options Chain</h4>
@@ -114,13 +114,13 @@ export default function DerivativesTradingPage() {
                 href="/open-account"
                 className={cn(buttonVariants(), "w-full h-14 rounded-full font-bold text-lg justify-center gap-2")}
               >
-                Open An Account <ArrowRight className="w-5 h-5" />
+                Open An Account <ArrowRight className="w-5 h-5"  aria-hidden="true"/>
               </Link>
             </div>
 
             <div className="bg-red-50 border-2 border-red-100 rounded-3xl p-8">
               <div className="flex items-center gap-2 mb-4">
-                <ShieldAlert className="w-5 h-5 text-red-600" />
+                <ShieldAlert className="w-5 h-5 text-red-600"  aria-hidden="true"/>
                 <h3 className="text-red-800 font-bold uppercase tracking-wider text-xs">MANDATORY DISCLOSURE</h3>
               </div>
               <p className="text-sm text-red-700 leading-relaxed italic mb-4">

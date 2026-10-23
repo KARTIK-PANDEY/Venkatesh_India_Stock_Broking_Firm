@@ -67,13 +67,13 @@ export default function MutualFundsPage() {
                   </p>
                   <ul className="space-y-2 text-xs font-bold text-primary uppercase tracking-wider">
                     <li className="flex items-center gap-2 text-foreground font-semibold">
-                      <Check className="w-4 h-4 text-emerald-500 shrink-0" /> Rupee cost averaging
+                      <Check className="w-4 h-4 text-emerald-500 shrink-0"  aria-hidden="true"/> Rupee cost averaging
                     </li>
                     <li className="flex items-center gap-2 text-foreground font-semibold">
-                      <Check className="w-4 h-4 text-emerald-500 shrink-0" /> Disciplined savings habit
+                      <Check className="w-4 h-4 text-emerald-500 shrink-0"  aria-hidden="true"/> Disciplined savings habit
                     </li>
                     <li className="flex items-center gap-2 text-foreground font-semibold">
-                      <Check className="w-4 h-4 text-emerald-500 shrink-0" /> Power of compounding
+                      <Check className="w-4 h-4 text-emerald-500 shrink-0"  aria-hidden="true"/> Power of compounding
                     </li>
                   </ul>
                 </div>
@@ -85,13 +85,13 @@ export default function MutualFundsPage() {
                   </p>
                   <ul className="space-y-2 text-xs font-bold text-primary uppercase tracking-wider">
                     <li className="flex items-center gap-2 text-foreground font-semibold">
-                      <Check className="w-4 h-4 text-emerald-500 shrink-0" /> Ideal for one-time wealth block
+                      <Check className="w-4 h-4 text-emerald-500 shrink-0"  aria-hidden="true"/> Ideal for one-time wealth block
                     </li>
                     <li className="flex items-center gap-2 text-foreground font-semibold">
-                      <Check className="w-4 h-4 text-emerald-500 shrink-0" /> Complete asset control
+                      <Check className="w-4 h-4 text-emerald-500 shrink-0"  aria-hidden="true"/> Complete asset control
                     </li>
                     <li className="flex items-center gap-2 text-foreground font-semibold">
-                      <Check className="w-4 h-4 text-emerald-500 shrink-0" /> Custom withdrawal options (SWP)
+                      <Check className="w-4 h-4 text-emerald-500 shrink-0"  aria-hidden="true"/> Custom withdrawal options (SWP)
                     </li>
                   </ul>
                 </div>
@@ -101,7 +101,7 @@ export default function MutualFundsPage() {
             {/* Interactive SIP Calculator */}
             <section className="bg-muted/40 border border-border/50 rounded-3xl p-8 md:p-10 space-y-8">
               <div className="flex items-center gap-3">
-                <BarChart3 className="w-8 h-8 text-primary" />
+                <BarChart3 className="w-8 h-8 text-primary"  aria-hidden="true"/>
                 <h3 className="text-2xl font-display font-bold text-foreground">Interactive SIP Calculator</h3>
               </div>
               <p className="text-muted-foreground text-sm">
@@ -214,7 +214,7 @@ export default function MutualFundsPage() {
                 target="_blank"
                 className={cn(buttonVariants(), "w-full h-13 rounded-full font-bold text-sm justify-center items-center flex gap-2 text-white")}
               >
-                Log In to Disa MF Portal <ArrowRight className="w-4 h-4" />
+                Log In to Disa MF Portal <ArrowRight className="w-4 h-4"  aria-hidden="true"/>
               </a>
             </div>
 

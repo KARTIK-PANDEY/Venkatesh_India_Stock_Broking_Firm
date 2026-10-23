@@ -40,7 +40,7 @@ export default function ManagementPage() {
 
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
-                <Award className="w-5 h-5 text-primary" />
+                <Award className="w-5 h-5 text-primary" aria-hidden="true" />
                 <span className="text-xs font-bold text-primary uppercase tracking-[0.2em]">Managing Director</span>
               </div>
               <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">Sanjiv Rathi</h2>
@@ -60,7 +60,7 @@ export default function ManagementPage() {
               </div>
 
               <div className="mt-10 p-8 bg-muted/40 border border-border/50 rounded-3xl italic relative">
-                <Quote className="absolute top-4 left-4 w-8 h-8 text-primary opacity-20" />
+                <Quote className="absolute top-4 left-4 w-8 h-8 text-primary opacity-20"  aria-hidden="true"/>
                 <p className="text-foreground text-lg leading-relaxed pl-4">
                   &quot;Our goal is not just to facilitate trades, but to empower every individual with the right
                   knowledge and tools to build a secure financial future. Trust is our most valuable asset.&quot;

@@ -63,7 +63,7 @@ export default function IpoPage() {
             {/* ASBA Explanation */}
             <section className="bg-muted/40 border border-border/50 rounded-3xl p-8 md:p-10">
               <div className="flex items-center gap-3 mb-6">
-                <Info className="w-8 h-8 text-primary shrink-0" />
+                <Info className="w-8 h-8 text-primary shrink-0"  aria-hidden="true"/>
                 <h3 className="text-2xl font-display font-bold text-foreground">ASBA (Application Supported by Blocked Amount)</h3>
               </div>
               <p className="text-muted-foreground text-base leading-relaxed mb-6">
@@ -77,7 +77,7 @@ export default function IpoPage() {
                 ].map((item, i) => (
                   <div key={i} className="bg-background border border-border/40 p-5 rounded-2xl">
                     <h4 className="font-bold text-sm text-foreground mb-2 flex items-center gap-1.5">
-                      <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0" /> {item.title}
+                      <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0"  aria-hidden="true"/> {item.title}
                     </h4>
                     <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
                   </div>
@@ -135,7 +135,7 @@ export default function IpoPage() {
                           href="/open-account"
                           className={cn(buttonVariants(), "h-11 rounded-full text-sm font-bold px-6 flex items-center justify-center gap-1.5")}
                         >
-                          Apply Now <ArrowRight className="w-4 h-4" />
+                          Apply Now <ArrowRight className="w-4 h-4"  aria-hidden="true"/>
                         </Link>
                       ) : (
                         <button
@@ -164,7 +164,7 @@ export default function IpoPage() {
                 href="/open-account"
                 className={cn(buttonVariants(), "w-full h-13 rounded-full font-bold text-sm justify-center items-center flex gap-2 text-white")}
               >
-                Open Demat Account <ArrowRight className="w-4 h-4" />
+                Open Demat Account <ArrowRight className="w-4 h-4"  aria-hidden="true"/>
               </Link>
             </div>
 
