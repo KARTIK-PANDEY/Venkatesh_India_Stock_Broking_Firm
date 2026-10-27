@@ -77,7 +77,7 @@ export default function IpoPage() {
                 ].map((item, i) => (
                   <div key={i} className="bg-background border border-border/40 p-5 rounded-2xl">
                     <h4 className="font-bold text-sm text-foreground mb-2 flex items-center gap-1.5">
-                      <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0"  aria-hidden="true"/> {item.title}
+                      <CheckCircle2 className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0"  aria-hidden="true"/> {item.title}
                     </h4>
                     <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
                   </div>
@@ -102,7 +102,7 @@ export default function IpoPage() {
                         <h3 className="font-bold text-lg text-foreground">{ipo.company}</h3>
                         <span className={cn(
                           "text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border",
-                          ipo.status === "Open" && "bg-green-50 text-green-700 border-green-200 dark:bg-green-950/20 dark:text-green-400 dark:border-green-800",
+                          ipo.status === "Open" && "bg-emerald-50 text-emerald-800 border-emerald-200 dark:bg-emerald-950/20 dark:text-emerald-300 dark:border-emerald-800",
                           ipo.status === "Upcoming" && "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/20 dark:text-blue-400 dark:border-blue-800",
                           ipo.status === "Closed" && "bg-muted text-muted-foreground border-border/60"
                         )}>
@@ -111,19 +111,19 @@ export default function IpoPage() {
                       </div>
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-2 mt-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                         <div>
-                          <p className="text-[10px] text-muted-foreground/60 mb-0.5">Price Band</p>
+                          <p className="text-[10px] text-muted-foreground mb-0.5">Price Band</p>
                           <p className="text-foreground text-sm font-bold normal-case">{ipo.priceBand}</p>
                         </div>
                         <div>
-                          <p className="text-[10px] text-muted-foreground/60 mb-0.5">Issue Dates</p>
+                          <p className="text-[10px] text-muted-foreground mb-0.5">Issue Dates</p>
                           <p className="text-foreground text-sm font-bold normal-case">{ipo.dates}</p>
                         </div>
                         <div>
-                          <p className="text-[10px] text-muted-foreground/60 mb-0.5">Min Lot Size</p>
+                          <p className="text-[10px] text-muted-foreground mb-0.5">Min Lot Size</p>
                           <p className="text-foreground text-sm font-bold normal-case">{ipo.lotSize}</p>
                         </div>
                         <div>
-                          <p className="text-[10px] text-muted-foreground/60 mb-0.5">Issue Size</p>
+                          <p className="text-[10px] text-muted-foreground mb-0.5">Issue Size</p>
                           <p className="text-foreground text-sm font-bold normal-case">{ipo.size}</p>
                         </div>
                       </div>
@@ -157,7 +157,7 @@ export default function IpoPage() {
             <div className="bg-brand-navy rounded-3xl p-8 text-white shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
               <h3 className="text-xl font-display mb-6">Invest in upcoming IPOs</h3>
-              <p className="text-white/80 text-sm mb-8 leading-relaxed">
+              <p className="text-white text-sm mb-8 leading-relaxed">
                 Applying for an IPO is seamless through ASBA with your demat account linked to us.
               </p>
               <Link

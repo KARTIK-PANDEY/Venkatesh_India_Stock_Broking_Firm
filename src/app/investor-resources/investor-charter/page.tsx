@@ -113,7 +113,7 @@ export default function InvestorCharterPage() {
           {/* Section C: Rights of Investors */}
           <section>
             <div className="flex items-center gap-3 mb-8">
-              <CheckCircle2 className="w-8 h-8 text-green-600"  aria-hidden="true"/>
+              <CheckCircle2 className="w-8 h-8 text-emerald-700 dark:text-emerald-400"  aria-hidden="true"/>
               <h2 className="text-2xl md:text-3xl font-display text-foreground uppercase tracking-wide">
                 C. Rights of Investors
               </h2>
@@ -128,7 +128,7 @@ export default function InvestorCharterPage() {
                 "Right to participate in eVoting for companies held"
               ].map((item, i) => (
                 <div key={i} className="flex gap-3 items-start p-4 bg-background border border-border/50 rounded-xl shadow-sm">
-                  <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0"  aria-hidden="true"/>
+                  <CheckCircle2 className="w-5 h-5 text-emerald-700 dark:text-emerald-400 shrink-0"  aria-hidden="true"/>
                   <span className="text-foreground font-medium">{item}</span>
                 </div>
               ))}
@@ -137,8 +137,8 @@ export default function InvestorCharterPage() {
 
           {/* Section D & E: Dos and Don'ts */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <section className="bg-green-50 p-8 rounded-3xl border border-green-200">
-              <h3 className="text-2xl font-display text-green-800 mb-6 uppercase tracking-wide">D. Dos for Investors</h3>
+            <section className="bg-emerald-50 dark:bg-emerald-950/30 p-8 rounded-3xl border border-emerald-200 dark:border-emerald-800/40">
+              <h3 className="text-2xl font-display text-emerald-900 dark:text-emerald-200 mb-6 uppercase tracking-wide">D. Dos for Investors</h3>
               <ul className="space-y-4">
                 {[
                   "Read all documents before signing",
@@ -148,15 +148,15 @@ export default function InvestorCharterPage() {
                   "Retain all relevant documents of transactions",
                   "Approach proper authority for grievances"
                 ].map((item, i) => (
-                  <li key={i} className="flex gap-3 text-sm font-medium text-green-700">
-                    <span className="shrink-0 text-green-600">✓</span> {item}
+                  <li key={i} className="flex gap-3 text-sm font-medium text-emerald-800 dark:text-emerald-300">
+                    <span className="shrink-0 text-emerald-700 dark:text-emerald-400">✓</span> {item}
                   </li>
                 ))}
               </ul>
             </section>
 
-            <section className="bg-red-50 p-8 rounded-3xl border border-red-200">
-              <h3 className="text-2xl font-display text-red-800 mb-6 uppercase tracking-wide">E. Don&apos;ts for Investors</h3>
+            <section className="bg-red-50 dark:bg-red-950/30 p-8 rounded-3xl border border-red-200 dark:border-red-800/40">
+              <h3 className="text-2xl font-display text-red-900 dark:text-red-200 mb-6 uppercase tracking-wide">E. Don&apos;ts for Investors</h3>
               <ul className="space-y-4">
                 {[
                   "Don't deal with unregistered brokers",
@@ -166,8 +166,8 @@ export default function InvestorCharterPage() {
                   "Don't fall for guaranteed return schemes",
                   "Don't ignore exchange notifications"
                 ].map((item, i) => (
-                  <li key={i} className="flex gap-3 text-sm font-medium text-red-700">
-                    <span className="shrink-0 text-red-600">✗</span> {item}
+                  <li key={i} className="flex gap-3 text-sm font-medium text-red-800 dark:text-red-300">
+                    <span className="shrink-0 text-red-700 dark:text-red-400">✗</span> {item}
                   </li>
                 ))}
               </ul>

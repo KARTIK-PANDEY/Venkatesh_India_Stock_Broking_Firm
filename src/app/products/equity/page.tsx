@@ -118,9 +118,9 @@ export default function EquityTradingPage() {
               </Link>
             </div>
 
-            <div className="bg-red-50 border-2 border-red-100 rounded-3xl p-8">
-              <h3 className="text-red-800 font-bold mb-4 uppercase tracking-wider text-xs">MANDATORY RISK WARNING</h3>
-              <p className="text-sm text-red-700 leading-relaxed italic">
+            <div className="bg-red-50 dark:bg-red-950/30 border-2 border-red-200 dark:border-red-800/40 rounded-3xl p-8">
+              <h3 className="text-red-900 dark:text-red-200 font-bold mb-4 uppercase tracking-wider text-xs">MANDATORY RISK WARNING</h3>
+              <p className="text-sm text-red-800 dark:text-red-300 leading-relaxed italic">
                 &quot;Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Derivatives trading involves substantial risk and is not suitable for all investors. Ensure you understand the risks involved before trading.&quot;
               </p>
             </div>

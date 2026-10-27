@@ -14,9 +14,9 @@ export default function CoreValuesPage() {
       {/* Hero */}
       <div className="bg-gradient-to-br from-primary to-accent py-20 md:py-28 text-white">
         <div className="container mx-auto px-4 max-w-5xl">
-          <p className="text-white/60 text-xs font-bold uppercase tracking-[0.25em] mb-4">About Us</p>
+          <p className="text-white text-xs font-bold uppercase tracking-[0.25em] mb-4">About Us</p>
           <h1 className="text-4xl md:text-6xl font-display font-bold leading-tight mb-4">Core Values</h1>
-          <p className="text-white/80 text-lg max-w-2xl">
+          <p className="text-white text-lg max-w-2xl">
             The principles that drive every decision we make and every relationship we build.
           </p>
         </div>

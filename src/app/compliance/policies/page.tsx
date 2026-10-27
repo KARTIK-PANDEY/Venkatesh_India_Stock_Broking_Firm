@@ -248,7 +248,7 @@ export default function PoliciesPage() {
           </div>
           <div>
             <h3 className="text-xl font-display font-bold mb-2">Statutory Market Commitments</h3>
-            <p className="text-sm text-white/80 leading-relaxed max-w-2xl">
+            <p className="text-sm text-white leading-relaxed max-w-2xl">
               Shri Venkatesh Stock Broker Services India Pvt. Ltd. maintains absolute compliance with anti-money laundering (AML) protocols, conflict resolution guides, and SEBI directives. We continuously review account listings and transaction logs to report suspicious movements immediately to Financial Intelligence Unit India (FIU-IND).
             </p>
           </div>

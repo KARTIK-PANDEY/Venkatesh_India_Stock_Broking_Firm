@@ -51,9 +51,9 @@ export default function CommodityTradingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
                   { title: "Bullion", items: "Gold, Silver, Gold Mini", color: "text-primary bg-muted" },
-                  { title: "Base Metals", items: "Copper, Zinc, Aluminum, Lead, Nickel", color: "text-blue-600 bg-blue-50" },
+                  { title: "Base Metals", items: "Copper, Zinc, Aluminum, Lead, Nickel", color: "text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-muted/60" },
                   { title: "Energy", items: "Crude Oil, Natural Gas", color: "text-foreground bg-muted" },
-                  { title: "Agri Commodities", items: "Castor, Cotton, Chana, Jeera, Soybean", color: "text-green-600 bg-green-50" },
+                  { title: "Agri Commodities", items: "Castor, Cotton, Chana, Jeera, Soybean", color: "text-emerald-700 dark:text-emerald-400 bg-green-50 dark:bg-muted/60" },
                 ].map((segment, i) => (
                   <div key={i} className="p-8 rounded-3xl border border-border/50 transition-all hover:shadow-sm">
                     <h3 className={`text-xl font-bold mb-3 ${segment.color.split(' ')[0]}`}>{segment.title}</h3>
@@ -103,12 +103,12 @@ export default function CommodityTradingPage() {
               </Link>
             </div>
 
-            <div className="bg-orange-50 border-2 border-orange-100 rounded-3xl p-8">
+            <div className="bg-amber-50 dark:bg-amber-950/30 border-2 border-amber-200 dark:border-amber-800/40 rounded-3xl p-8">
               <div className="flex items-center gap-2 mb-4">
-                <ShieldAlert className="w-5 h-5 text-orange-600"  aria-hidden="true"/>
-                <h3 className="text-orange-800 font-bold uppercase tracking-wider text-xs">COMMODITY RISK DISCLOSURE</h3>
+                <ShieldAlert className="w-5 h-5 text-amber-700 dark:text-amber-400"  aria-hidden="true"/>
+                <h3 className="text-amber-900 dark:text-amber-200 font-bold uppercase tracking-wider text-xs">COMMODITY RISK DISCLOSURE</h3>
               </div>
-              <p className="text-sm text-orange-700 leading-relaxed italic">
+              <p className="text-sm text-amber-800 dark:text-amber-300 leading-relaxed italic">
                 &quot;Commodity trading involves significant risk of loss and is not suitable for all investors. The high degree of leverage that is often obtainable in commodity trading can work against you as well as for you.&quot;
               </p>
             </div>

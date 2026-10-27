@@ -40,7 +40,7 @@ export default function MissionVisionPage() {
           {/* Vision */}
           <div className="flex flex-col lg:flex-row-reverse gap-12 items-center">
             <div className="lg:w-1/2">
-              <div className="inline-flex p-4 rounded-3xl bg-blue-50 text-primary mb-6">
+              <div className="inline-flex p-4 rounded-3xl bg-blue-50 dark:bg-muted/60 text-primary mb-6">
                 <Eye className="w-10 h-10"  aria-hidden="true"/>
               </div>
               <h2 className="text-3xl md:text-5xl font-display text-foreground mb-6">Our Vision</h2>
@@ -57,7 +57,7 @@ export default function MissionVisionPage() {
           {/* Core Values */}
           <section className="pt-16 border-t border-border/50">
             <div className="text-center mb-16">
-              <div className="inline-flex p-4 rounded-3xl bg-purple-50 text-purple-600 mb-6">
+              <div className="inline-flex p-4 rounded-3xl bg-purple-50 dark:bg-muted/60 text-purple-700 dark:text-purple-400 mb-6">
                 <Gem className="w-10 h-10"  aria-hidden="true"/>
               </div>
               <h2 className="text-3xl md:text-5xl font-display text-foreground mb-4">Core Values</h2>

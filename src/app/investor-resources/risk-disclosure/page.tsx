@@ -20,7 +20,7 @@ export default function RiskDisclosurePage() {
         {/* Warning Panel */}
         <div className="p-8 bg-red-50 dark:bg-red-950/20 border-l-4 border-red-600 rounded-r-3xl space-y-6">
           <div className="flex items-center gap-3">
-            <AlertTriangle className="w-8 h-8 text-red-600 shrink-0 animate-bounce"  aria-hidden="true"/>
+            <AlertTriangle className="w-8 h-8 text-red-600 dark:text-red-400 shrink-0 animate-bounce"  aria-hidden="true"/>
             <h2 className="text-2xl font-display font-bold text-red-900 dark:text-red-400">
               Risk Disclosure Document: Equity F&O Segment
             </h2>
@@ -38,10 +38,10 @@ export default function RiskDisclosurePage() {
               "Those making net profits, incurred 15% to 50% of such profits as transaction costs."
             ].map((pt, idx) => (
               <div key={idx} className="flex gap-4 p-4 bg-background border border-red-500/10 dark:border-red-900/30 rounded-2xl">
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-red-600/10 text-red-600 font-bold text-sm shrink-0">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-red-600/10 text-red-700 dark:text-red-400 font-bold text-sm shrink-0">
                   {idx + 1}
                 </span>
-                <p className="text-sm text-foreground/90 font-medium pt-0.5 leading-relaxed">{pt}</p>
+                <p className="text-sm text-foreground font-medium pt-0.5 leading-relaxed">{pt}</p>
               </div>
             ))}
           </div>

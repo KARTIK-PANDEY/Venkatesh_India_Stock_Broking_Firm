@@ -13,9 +13,9 @@ export default function GroupCompaniesPage() {
       {/* Header */}
       <div className="bg-gradient-to-br from-primary to-accent py-20 md:py-28 text-white">
         <div className="container mx-auto px-4 max-w-5xl">
-          <p className="text-white/60 text-xs font-bold uppercase tracking-[0.25em] mb-4">About Us</p>
+          <p className="text-white text-xs font-bold uppercase tracking-[0.25em] mb-4">About Us</p>
           <h1 className="text-4xl md:text-6xl font-display font-bold leading-tight mb-4">Group Companies</h1>
-          <p className="text-white/80 text-lg italic">
+          <p className="text-white text-lg italic">
             A focused financial group delivering trusted services to investors across India.
           </p>
         </div>
@@ -63,7 +63,7 @@ export default function GroupCompaniesPage() {
                   <span className="text-sm font-medium">{company.activity}</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <ShieldCheck className="w-4 h-4 text-green-600 shrink-0"  aria-hidden="true"/>
+                  <ShieldCheck className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0"  aria-hidden="true"/>
                   <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
                     {company.registration}
                   </span>
@@ -78,7 +78,7 @@ export default function GroupCompaniesPage() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
           <div className="relative z-10">
             <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-3">Unified Strength</h2>
-            <p className="text-white/80 text-base leading-relaxed max-w-2xl mx-auto">
+            <p className="text-white text-base leading-relaxed max-w-2xl mx-auto">
               Together, the Venkatesh India group and Disa Financial Services deliver a comprehensive suite of financial services — from equity trading and depository services to wealth management and financial planning.
             </p>
             <Link

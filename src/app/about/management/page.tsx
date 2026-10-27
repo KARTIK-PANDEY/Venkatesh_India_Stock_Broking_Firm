@@ -12,9 +12,9 @@ export default function ManagementPage() {
       {/* Hero */}
       <div className="bg-gradient-to-br from-primary to-accent py-20 md:py-28 text-white">
         <div className="container mx-auto px-4 max-w-5xl">
-          <p className="text-white/60 text-xs font-bold uppercase tracking-[0.25em] mb-4">About Us</p>
+          <p className="text-white text-xs font-bold uppercase tracking-[0.25em] mb-4">About Us</p>
           <h1 className="text-4xl md:text-6xl font-display font-bold leading-tight mb-4">Top Management</h1>
-          <p className="text-white/80 text-lg italic">Led by experience, driven by integrity.</p>
+          <p className="text-white text-lg italic">Led by experience, driven by integrity.</p>
         </div>
       </div>
 

@@ -15,11 +15,11 @@ export default function PartnerWithUsPage() {
       {/* Hero */}
       <div className="bg-gradient-to-br from-primary to-accent py-20 md:py-28 text-white">
         <div className="container mx-auto px-4 max-w-5xl">
-          <p className="text-white/60 text-xs font-bold uppercase tracking-[0.25em] mb-4">Business Opportunity</p>
+          <p className="text-white text-xs font-bold uppercase tracking-[0.25em] mb-4">Business Opportunity</p>
           <h1 className="text-4xl md:text-6xl font-display font-bold leading-tight mb-4">
             Partner With Us
           </h1>
-          <p className="text-white/80 text-lg max-w-2xl">
+          <p className="text-white text-lg max-w-2xl">
             Join the Venkatesh India network as a Sub-Broker or Authorised Person and build a rewarding business backed by 15+ years of market expertise.
           </p>
         </div>
@@ -60,7 +60,7 @@ export default function PartnerWithUsPage() {
               "No adverse regulatory history or criminal record",
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0 mt-0.5"  aria-hidden="true"/>
+                <CheckCircle2 className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0 mt-0.5"  aria-hidden="true"/>
                 <span>{item}</span>
               </div>
             ))}
@@ -92,8 +92,8 @@ export default function PartnerWithUsPage() {
           <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center justify-between">
             <div>
               <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">Ready to Join the Network?</h2>
-              <p className="text-white/80 text-sm">Reach out to our partnership team — we respond within 24 hours.</p>
-              <div className="mt-4 space-y-1 text-sm text-white/90 font-medium">
+              <p className="text-white text-sm">Reach out to our partnership team — we respond within 24 hours.</p>
+              <div className="mt-4 space-y-1 text-sm text-white font-medium">
                 <p className="flex items-center gap-2"><Phone className="w-4 h-4"  aria-hidden="true"/> {COMPANY_INFO.phones[0]}</p>
                 <p className="flex items-center gap-2"><Mail className="w-4 h-4"  aria-hidden="true"/> {COMPANY_INFO.email}</p>
               </div>

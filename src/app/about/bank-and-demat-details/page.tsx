@@ -44,7 +44,7 @@ export default function BankAndDematDetailsPage() {
         
         {/* Important security notice */}
         <div className="bg-amber-500/10 border border-amber-500/30 p-6 md:p-8 rounded-3xl flex gap-4 items-start shadow-xs max-w-4xl mx-auto">
-          <ShieldAlert className="w-8 h-8 text-amber-600 shrink-0 mt-0.5"  aria-hidden="true"/>
+          <ShieldAlert className="w-8 h-8 text-amber-700 dark:text-amber-400 shrink-0 mt-0.5"  aria-hidden="true"/>
           <div className="space-y-2">
             <h2 className="font-display font-bold text-foreground text-base uppercase tracking-wider">Upstreaming Client Nodal Bank Accounts (USCNBA)</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
@@ -92,7 +92,7 @@ export default function BankAndDematDetailsPage() {
                             aria-label={`Copy Account Number ${bank.accountNumber}`}
                           >
                             {copiedText === bank.accountNumber ? (
-                              <BadgeCheck className="w-4 h-4 text-green-500" aria-hidden="true" />
+                              <BadgeCheck className="w-4 h-4 text-emerald-700 dark:text-emerald-400" aria-hidden="true" />
                             ) : (
                               <Copy className="w-4 h-4" aria-hidden="true" />
                             )}
@@ -109,7 +109,7 @@ export default function BankAndDematDetailsPage() {
                             aria-label={`Copy IFSC Code ${bank.ifscCode}`}
                           >
                             {copiedText === bank.ifscCode ? (
-                              <BadgeCheck className="w-4 h-4 text-green-500" aria-hidden="true" />
+                              <BadgeCheck className="w-4 h-4 text-emerald-700 dark:text-emerald-400" aria-hidden="true" />
                             ) : (
                               <Copy className="w-4 h-4" aria-hidden="true" />
                             )}
@@ -163,7 +163,7 @@ export default function BankAndDematDetailsPage() {
                               aria-label={`Copy Demat Account Number ${demat.accountNo}`}
                             >
                               {copiedText === demat.accountNo ? (
-                                <BadgeCheck className="w-3.5 h-3.5 text-green-500" aria-hidden="true" />
+                                <BadgeCheck className="w-3.5 h-3.5 text-emerald-700 dark:text-emerald-400" aria-hidden="true" />
                               ) : (
                                 <Copy className="w-3.5 h-3.5" aria-hidden="true" />
                               )}
@@ -193,7 +193,7 @@ export default function BankAndDematDetailsPage() {
           </div>
           <a
             href="/contact"
-            className="bg-primary hover:bg-primary-hover text-white font-bold text-xs py-3 px-6 rounded-full inline-flex items-center gap-2 tracking-wide uppercase transition-colors shrink-0"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-xs py-3 px-6 rounded-full inline-flex items-center gap-2 tracking-wide uppercase transition-colors shrink-0"
           >
             Locate Our Office <ExternalLink className="w-4 h-4"  aria-hidden="true"/>
           </a>
