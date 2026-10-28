@@ -212,7 +212,7 @@ export default function MutualFundsPage() {
             <div className="bg-brand-navy rounded-3xl p-8 text-white shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
               <h3 className="text-xl font-display mb-6">Invest in Mutual Funds</h3>
-              <p className="text-white/80 text-sm mb-8 leading-relaxed">
+              <p className="text-white text-sm mb-8 leading-relaxed">
                 Connect with our advisors to choose the best mutual funds or log in directly to manage your MF investments.
               </p>
               <a

@@ -111,7 +111,7 @@ export default function OpenAccountForm() {
                 aria-required="true" 
               />
               {mobileError ? (
-                <p id="oa-mobile-error" className="text-xs text-red-600 font-bold" aria-live="polite">
+                <p id="oa-mobile-error" className="text-xs text-red-600 dark:text-red-400 font-bold" aria-live="polite">
                   {mobileError}
                 </p>
               ) : (

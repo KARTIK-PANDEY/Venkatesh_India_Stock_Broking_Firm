@@ -26,11 +26,11 @@ export default function BankDetailsPage() {
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-4xl mx-auto space-y-12">
           
-          <section aria-labelledby="bank-security-notice" className="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-r-2xl flex gap-4 items-start shadow-sm">
-            <ShieldAlert className="w-8 h-8 text-orange-600 shrink-0" aria-hidden="true" />
+          <section aria-labelledby="bank-security-notice" className="bg-amber-50 dark:bg-amber-950/40 border-l-4 border-amber-500 p-6 rounded-r-2xl flex gap-4 items-start shadow-sm">
+            <ShieldAlert className="w-8 h-8 text-amber-700 dark:text-amber-400 shrink-0" aria-hidden="true" />
             <div>
-              <h2 id="bank-security-notice" className="font-bold text-orange-900 mb-2 uppercase text-sm tracking-wider">Important Security Notice</h2>
-              <p className="text-sm text-orange-800 leading-relaxed">
+              <h2 id="bank-security-notice" className="font-bold text-amber-950 dark:text-amber-100 mb-2 uppercase text-sm tracking-wider">Important Security Notice</h2>
+              <p className="text-sm text-amber-900 dark:text-amber-200 leading-relaxed">
                 &quot;Investors are requested to note that Shri Venkatesh Stock Broker Services India Pvt. Ltd. does not accept cash. Please transfer funds only to the official bank accounts mentioned below. Always ensure that the payment is made from your registered bank account only.&quot;
               </p>
             </div>
@@ -99,7 +99,7 @@ export default function BankDetailsPage() {
                 { title: "UPI", desc: "Available via linked accounts." }
               ].map((method, i) => (
                 <li key={i} className="flex flex-col items-center text-center p-6 bg-background rounded-2xl border border-border/50 shadow-sm">
-                  <CheckCircle2 className="w-8 h-8 text-green-600 mb-4" aria-hidden="true" />
+                  <CheckCircle2 className="w-8 h-8 text-emerald-700 dark:text-emerald-400 mb-4" aria-hidden="true" />
                   <h3 className="font-bold text-foreground mb-2">{method.title}</h3>
                   <p className="text-xs text-muted-foreground">{method.desc}</p>
                 </li>

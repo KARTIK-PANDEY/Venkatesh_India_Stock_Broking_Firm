@@ -348,7 +348,7 @@ localStorage.setItem("a11y-text-spacing", String(textSpacing));
                 </div>
                 <div>
                   <h3 id="a11y-dialog-title" className="font-display font-bold text-foreground text-lg">Accessibility Preferences</h3>
-                  <p className="text-foreground/75 dark:text-foreground/80 text-sm">Adjust formatting for easier reading</p>
+                  <p className="text-muted-foreground text-sm">Adjust formatting for easier reading</p>
                 </div>
               </div>
               <button
@@ -375,7 +375,7 @@ localStorage.setItem("a11y-text-spacing", String(textSpacing));
                       aria-pressed={fontSize === size}
                       className={`py-2 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${fontSize === size
                         ? "bg-primary border-primary text-primary-foreground shadow-xs"
-                        : "bg-muted/30 border-border/50 text-foreground/80 hover:bg-muted"
+                        : "bg-muted/30 border-border/50 text-foreground hover:bg-muted"
                         }`}
                     >
                       {size === "normal" ? "Normal" : size === "large" ? "Large" : "Extra Large"}
@@ -397,7 +397,7 @@ localStorage.setItem("a11y-text-spacing", String(textSpacing));
                       aria-pressed={letterSpacing === space}
                       className={`py-2 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${letterSpacing === space
                         ? "bg-primary border-primary text-primary-foreground shadow-xs"
-                        : "bg-muted/30 border-border/50 text-foreground/80 hover:bg-muted"
+                        : "bg-muted/30 border-border/50 text-foreground hover:bg-muted"
                         }`}
                     >
                       {space === "normal" ? "Normal" : space === "wide" ? "Wide" : "Extra Wide"}
@@ -419,7 +419,7 @@ localStorage.setItem("a11y-text-spacing", String(textSpacing));
                       aria-pressed={lineHeight === height}
                       className={`py-2 px-3 text-xs font-bold rounded-xl border transition-all cursor-pointer ${lineHeight === height
                         ? "bg-primary border-primary text-primary-foreground shadow-xs"
-                        : "bg-muted/30 border-border/50 text-foreground/80 hover:bg-muted"
+                        : "bg-muted/30 border-border/50 text-foreground hover:bg-muted"
                         }`}
                     >
                       {height === "normal" ? "Normal" : height === "comfortable" ? "Comfortable" : "Spacious"}
@@ -601,7 +601,7 @@ localStorage.setItem("a11y-text-spacing", String(textSpacing));
             <div className="flex items-center justify-between border-t border-border/40 pt-5 mt-6">
               <button
                 onClick={handleReset}
-                className="flex items-center gap-1 text-xs font-bold text-red-600 hover:text-red-500 transition-colors cursor-pointer"
+                className="flex items-center gap-1 text-xs font-bold text-red-600 dark:text-red-400 hover:text-red-500 dark:hover:text-red-300 transition-colors cursor-pointer"
               >
                 <RotateCcw className="w-3.5 h-3.5" aria-hidden="true" />
                 Reset Defaults

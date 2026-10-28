@@ -180,7 +180,7 @@ export function AccessibleCaptcha({
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         {/* Visual CAPTCHA Canvas */}
         <div className="flex items-center gap-2">
-          <div className="rounded-lg overflow-hidden border border-border shadow-xs bg-slate-100 shrink-0">
+          <div className="rounded-lg overflow-hidden border border-border shadow-xs bg-slate-100 dark:bg-muted/60 shrink-0">
             <canvas
               ref={canvasRef}
               width={160}
@@ -260,7 +260,7 @@ export function AccessibleCaptcha({
           Enter the characters shown above or use the audio button to listen to the code.
         </p>
         {error && (
-          <p id={errorId} className="text-xs text-red-600 font-bold" aria-live="polite">
+          <p id={errorId} className="text-xs text-red-600 dark:text-red-400 font-bold" aria-live="polite">
             {error}
           </p>
         )}

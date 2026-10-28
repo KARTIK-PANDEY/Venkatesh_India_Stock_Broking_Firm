@@ -96,7 +96,7 @@ export default function DerivativesTradingPage() {
                  <div className="w-full md:w-64 aspect-square bg-gradient-to-br from-brand-navy to-primary rounded-2xl flex items-center justify-center p-8 text-center text-white">
                     <div>
                       <p className="text-3xl font-display mb-2">High Leverage</p>
-                      <p className="text-xs opacity-70 uppercase tracking-widest font-bold">As per SEBI norms</p>
+                      <p className="text-xs text-white uppercase tracking-widest font-bold">As per SEBI norms</p>
                     </div>
                  </div>
               </div>
@@ -118,15 +118,15 @@ export default function DerivativesTradingPage() {
               </Link>
             </div>
 
-            <div className="bg-red-50 border-2 border-red-100 rounded-3xl p-8">
+            <div className="bg-red-50 dark:bg-red-950/30 border-2 border-red-200 dark:border-red-800/40 rounded-3xl p-8">
               <div className="flex items-center gap-2 mb-4">
-                <ShieldAlert className="w-5 h-5 text-red-600"  aria-hidden="true"/>
-                <h3 className="text-red-800 font-bold uppercase tracking-wider text-xs">MANDATORY DISCLOSURE</h3>
+                <ShieldAlert className="w-5 h-5 text-red-700 dark:text-red-400"  aria-hidden="true"/>
+                <h3 className="text-red-900 dark:text-red-200 font-bold uppercase tracking-wider text-xs">MANDATORY DISCLOSURE</h3>
               </div>
-              <p className="text-sm text-red-700 leading-relaxed italic mb-4">
+              <p className="text-sm text-red-800 dark:text-red-300 leading-relaxed italic mb-4">
                 &quot;9 out of 10 individual traders in equity Cash and F&O segment incurred net losses. On an average, loss makers registered net loss close to ₹ 50,000. Over and above the net losses incurred, loss makers expended an additional 28% of net trading losses as transaction costs.&quot;
               </p>
-              <p className="text-[10px] text-red-600 font-bold uppercase">Source: SEBI Study dated Jan 2023</p>
+              <p className="text-[10px] text-red-700 dark:text-red-400 font-bold uppercase">Source: SEBI Study dated Jan 2023</p>
             </div>
             
             <div className="p-8 bg-muted/40 rounded-3xl border border-border/50">

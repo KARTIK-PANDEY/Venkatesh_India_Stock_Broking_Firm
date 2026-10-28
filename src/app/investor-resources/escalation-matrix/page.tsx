@@ -19,7 +19,7 @@ const STEPS = [
       { label: "Phone", value: COMPANY_INFO.compliance.phone },
     ],
     turnaround: "5 working days",
-    color: "border-primary bg-blue-50 text-foreground",
+    color: "border-primary bg-blue-50 dark:bg-muted/60 text-foreground",
     btn: null
   },
   {
@@ -42,7 +42,7 @@ const STEPS = [
       { label: "Toll Free", value: "1800 266 7575" },
     ],
     turnaround: "21 days",
-    color: "border-orange-500 bg-orange-50 text-orange-900",
+    color: "border-amber-500 bg-amber-50 dark:bg-amber-950/40 text-amber-950 dark:text-amber-100",
     btn: { text: "Register on SCORES", href: "https://scores.sebi.gov.in" }
   },
   {
@@ -101,19 +101,19 @@ export default function EscalationMatrixPage() {
                       </span>
                       <div>
                         <h2 className="text-2xl md:text-3xl font-display uppercase tracking-wide">{step.title}</h2>
-                        <p className="text-sm font-bold opacity-80 uppercase tracking-tighter">{step.contact}</p>
+                        <p className="text-sm font-bold text-muted-foreground uppercase tracking-tighter">{step.contact}</p>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
                       {step.details.map((detail, dIdx) => (
                         <div key={dIdx}>
-                          <p className="text-xs font-bold uppercase tracking-widest opacity-60 mb-1">{detail.label}</p>
+                          <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">{detail.label}</p>
                           <p className="font-bold truncate">{detail.value}</p>
                         </div>
                       ))}
                       <div>
-                        <p className="text-xs font-bold uppercase tracking-widest opacity-60 mb-1">Response Time</p>
+                        <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">Response Time</p>
                         <p className="font-bold">{step.turnaround}</p>
                       </div>
                     </div>

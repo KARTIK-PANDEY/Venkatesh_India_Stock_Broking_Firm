@@ -55,16 +55,16 @@ export default function OpenAccountPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {REQUIREMENTS.map((req, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-green-600"  aria-hidden="true"/>
+                    <CheckCircle2 className="w-5 h-5 text-emerald-700 dark:text-emerald-400"  aria-hidden="true"/>
                     <span className="font-semibold text-foreground">{req}</span>
                   </div>
                 ))}
               </div>
             </section>
 
-            <div className="bg-orange-50 border-2 border-orange-100 rounded-3xl p-8 flex gap-4">
-              <ShieldAlert className="w-12 h-12 text-orange-600 shrink-0"  aria-hidden="true"/>
-              <div className="text-sm text-orange-800 leading-relaxed italic">
+            <div className="bg-amber-50 dark:bg-amber-950/30 border-2 border-amber-200 dark:border-amber-800/40 rounded-3xl p-8 flex gap-4">
+              <ShieldAlert className="w-12 h-12 text-amber-700 dark:text-amber-400 shrink-0"  aria-hidden="true"/>
+              <div className="text-sm text-amber-950 dark:text-amber-200 leading-relaxed italic">
                 <p className="font-bold mb-2 uppercase">SEBI Mandated Risk Disclosure:</p>
                 &quot;Investment in securities market are subject to market risks. Read all related documents carefully before investing. Please go through our Risk Disclosure document before proceeding.&quot;
               </div>

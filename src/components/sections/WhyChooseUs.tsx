@@ -6,8 +6,8 @@ const POINTS = [
     title: "Expert Market Guidance",
     description: "Our experienced desk provides timely market briefings and currency updates to help you make informed decisions in a volatile market.",
     icon: TrendingUp,
-    color: "text-blue-600",
-    bg: "bg-blue-50"
+    color: "text-blue-700 dark:text-blue-400",
+    bg: "bg-blue-50 dark:bg-muted/60"
   },
   {
     title: "Compliance-First Approach",
@@ -27,8 +27,8 @@ const POINTS = [
     title: "Eastern India's Trusted Broker",
     description: "Deeply rooted in Raipur and Chhattisgarh since 2010. Understanding local investor needs and building long-term relationships is our competitive advantage.",
     icon: Heart,
-    color: "text-red-600",
-    bg: "bg-red-50"
+    color: "text-red-700 dark:text-red-400",
+    bg: "bg-red-50 dark:bg-muted/60"
   }
 ];
 
@@ -68,7 +68,7 @@ export default function WhyChooseUs() {
                 <ul className="space-y-3">
                   {["Expert analysis", "Transparent pricing", "Unmatched reliability"].map((item, i) => (
                     <li key={i} className="flex items-center gap-2 text-foreground font-semibold">
-                      <CheckCircle2 className="w-5 h-5 text-green-600"  aria-hidden="true"/>
+                      <CheckCircle2 className="w-5 h-5 text-emerald-700 dark:text-emerald-400"  aria-hidden="true"/>
                       {item}
                     </li>
                   ))}

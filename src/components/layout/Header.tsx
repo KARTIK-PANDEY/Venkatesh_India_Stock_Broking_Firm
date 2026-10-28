@@ -125,7 +125,7 @@ export default function Header() {
                                         rel={hasTarget(child) && child.target === "_blank" ? "noopener noreferrer" : undefined}
                                         className={cn(
                                           "flex items-center justify-between rounded-md px-2 py-1.5 no-underline outline-none transition-colors",
-                                          "text-xs font-medium text-foreground/75 hover:text-primary hover:bg-primary/10"
+                                          "text-xs font-medium text-foreground hover:text-primary hover:bg-primary/10"
                                         )}
                                       >
                                         <span className="truncate">{child.label}</span>
@@ -145,7 +145,7 @@ export default function Header() {
                       <>
                         <NavigationMenuTrigger
                           className={cn(
-                            "bg-transparent text-xs lg:text-[13px] font-semibold text-foreground/80",
+                            "bg-transparent text-xs lg:text-[13px] font-semibold text-foreground",
                             "hover:bg-primary/10 hover:text-primary",
                             "focus:bg-primary/10 focus:text-primary",
                             "data-[state=open]:bg-primary/10 data-[state=open]:text-primary",
@@ -164,7 +164,7 @@ export default function Header() {
                                   rel={hasTarget(child) && child.target === "_blank" ? "noopener noreferrer" : undefined}
                                   className={cn(
                                     "flex items-center justify-between rounded-lg px-2.5 py-2 no-underline outline-none transition-colors",
-                                    "text-xs font-medium text-foreground/75 hover:text-primary hover:bg-primary/10"
+                                    "text-xs font-medium text-foreground hover:text-primary hover:bg-primary/10"
                                   )}
                                 >
                                   <span className="truncate">{child.label}</span>
@@ -182,7 +182,7 @@ export default function Header() {
                         href={link.href}
                         className={cn(
                           navigationMenuTriggerStyle(),
-                          "bg-transparent text-xs lg:text-[13px] font-semibold text-foreground/80",
+                          "bg-transparent text-xs lg:text-[13px] font-semibold text-foreground",
                           "hover:bg-primary/10 hover:text-primary",
                           "h-8 px-2.5 lg:px-3 rounded-md transition-colors"
                         )}
@@ -378,7 +378,7 @@ export default function Header() {
                               <button
                                 type="button"
                                 onClick={() => toggleSection(link.label)}
-                                className="flex items-center justify-between w-full text-xs font-semibold text-foreground/90 hover:text-primary py-2 px-2 rounded-md hover:bg-primary/5 transition-colors text-left"
+                                className="flex items-center justify-between w-full text-xs font-semibold text-foreground hover:text-primary py-2 px-2 rounded-md hover:bg-primary/5 transition-colors text-left"
                               >
                                 <span>{link.label}</span>
                                 <ChevronRight
@@ -404,7 +404,7 @@ export default function Header() {
                                               target={hasTarget(child) ? child.target : undefined}
                                               rel={hasTarget(child) && child.target === "_blank" ? "noopener noreferrer" : undefined}
                                               onClick={() => setMobileOpen(false)}
-                                              className="flex items-center justify-between text-xs text-foreground/75 hover:text-primary hover:bg-primary/10 px-2 py-1.5 rounded-md transition-colors font-medium"
+                                              className="flex items-center justify-between text-xs text-foreground hover:text-primary hover:bg-primary/10 px-2 py-1.5 rounded-md transition-colors font-medium"
                                             >
                                               <span className="truncate">{child.label}</span>
                                               {hasTarget(child) && child.target === "_blank" && (
@@ -428,7 +428,7 @@ export default function Header() {
                               <button
                                 type="button"
                                 onClick={() => toggleSection(link.label)}
-                                className="flex items-center justify-between w-full text-xs font-semibold text-foreground/90 hover:text-primary py-2 px-2 rounded-md hover:bg-primary/5 transition-colors text-left"
+                                className="flex items-center justify-between w-full text-xs font-semibold text-foreground hover:text-primary py-2 px-2 rounded-md hover:bg-primary/5 transition-colors text-left"
                               >
                                 <span>{link.label}</span>
                                 <ChevronRight
@@ -448,7 +448,7 @@ export default function Header() {
                                         target={hasTarget(child) ? child.target : undefined}
                                         rel={hasTarget(child) && child.target === "_blank" ? "noopener noreferrer" : undefined}
                                         onClick={() => setMobileOpen(false)}
-                                        className="flex items-center justify-between text-xs text-foreground/75 hover:text-primary hover:bg-primary/10 px-2 py-1.5 rounded-md transition-colors font-medium"
+                                        className="flex items-center justify-between text-xs text-foreground hover:text-primary hover:bg-primary/10 px-2 py-1.5 rounded-md transition-colors font-medium"
                                       >
                                         <span className="truncate">{child.label}</span>
                                         {hasTarget(child) && child.target === "_blank" && (
@@ -468,7 +468,7 @@ export default function Header() {
                             <Link
                               href={link.href}
                               onClick={() => setMobileOpen(false)}
-                              className="flex items-center text-xs font-semibold text-foreground/90 hover:text-primary hover:bg-primary/10 px-2 py-2 rounded-md transition-colors"
+                              className="flex items-center text-xs font-semibold text-foreground hover:text-primary hover:bg-primary/10 px-2 py-2 rounded-md transition-colors"
                             >
                               {link.label}
                             </Link>
@@ -489,7 +489,7 @@ export default function Header() {
                               href={link.href}
                               target={link.target}
                               rel="noopener noreferrer"
-                              className="flex items-center justify-between text-xs text-foreground/75 hover:text-primary hover:bg-primary/10 px-2 py-1.5 rounded-md transition-colors font-medium"
+                              className="flex items-center justify-between text-xs text-foreground hover:text-primary hover:bg-primary/10 px-2 py-1.5 rounded-md transition-colors font-medium"
                             >
                               <span>{link.label}</span>
                               <ExternalLink aria-hidden="true" className="size-3 text-muted-foreground opacity-60" />

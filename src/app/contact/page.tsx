@@ -195,7 +195,7 @@ export default function ContactPage() {
 
             {success ? (
               <div className="p-6 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl space-y-3 text-center">
-                <CheckCircle2 className="w-12 h-12 text-emerald-500 mx-auto" aria-hidden="true" />
+                <CheckCircle2 className="w-12 h-12 text-emerald-700 dark:text-emerald-400 mx-auto" aria-hidden="true" />
                 <h3 className="text-lg font-bold text-foreground">Message Sent!</h3>
                 <p className="text-sm text-muted-foreground">Thank you for reaching out. We will get back to you shortly.</p>
               </div>
@@ -265,7 +265,7 @@ export default function ContactPage() {
                         }`} 
                       />
                       {mobileError ? (
-                        <p id="mobile-error" className="text-xs text-red-600 font-bold" aria-live="polite">{mobileError}</p>
+                        <p id="mobile-error" className="text-xs text-red-600 dark:text-red-400 font-bold" aria-live="polite">{mobileError}</p>
                       ) : (
                         <p id="mobile-hint" className="text-[11px] text-muted-foreground">Please enter a valid 10-digit mobile number</p>
                       )}

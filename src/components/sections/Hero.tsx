@@ -151,7 +151,7 @@ export default function Hero() {
               {/* Header */}
               <div className="flex justify-between items-center mb-8">
                 <div>
-                  <p className="text-foreground/80 dark:text-foreground/85 font-semibold text-sm uppercase tracking-wide">
+                  <p className="text-muted-foreground font-semibold text-sm uppercase tracking-wide">
   Portfolio Value
 </p>
                   <div className="text-3xl font-display font-bold text-foreground">₹24,59,200.50</div>
@@ -193,7 +193,7 @@ export default function Hero() {
                 <div className="bg-muted/30 border border-border/40 rounded-xl p-4 hover:bg-muted/50 transition-colors cursor-pointer">
                   <BarChart3 className="w-6 h-6 text-primary mb-2"  aria-hidden="true"/>
                   <div className="font-bold text-sm text-foreground">Analytics</div>
-                  <div className="text-xs text-foreground/80 dark:text-foreground/85 mt-1">
+                  <div className="text-xs text-muted-foreground mt-1">
   Deep insights
 </div>
                 </div>
@@ -230,7 +230,7 @@ export default function Hero() {
                   <TrendingUp className="w-5 h-5 text-accent"  aria-hidden="true"/>
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-foreground/80 dark:text-foreground/85">
+                  <div className="text-xs font-bold text-muted-foreground">
   NIFTY 50
 </div>
                   <div className="text-sm font-bold text-foreground">22,514.65 <span className="text-emerald-700 dark:text-emerald-400">+0.8%</span></div>
