@@ -8,6 +8,7 @@ import SebiNotices from "@/components/sections/SebiNotices";
 import GrievanceQuickAccess from "@/components/sections/GrievanceQuickAccess";
 import PartnerCTA from "@/components/sections/PartnerCTA";
 import FATCAAlert from "@/components/ui/FATCAAlert";
+import StatutoryModalSequence from "@/components/ui/StatutoryModalSequence";
 
 export const metadata = {
   title: "Shri Venkatesh Stock Broker Services India Pvt. Ltd. | SEBI Registered Broker Raipur",
@@ -16,6 +17,7 @@ export const metadata = {
 export default function Home() {
   return (
     <>
+      <StatutoryModalSequence />
       <Hero />
       <StatsBar />
       <WelcomeSection />

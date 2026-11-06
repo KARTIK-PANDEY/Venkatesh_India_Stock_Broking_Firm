@@ -38,6 +38,14 @@ export function AccessibleCaptcha({
   const [screenReaderAnnouncement, setScreenReaderAnnouncement] = useState("");
   const [isClient, setIsClient] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const onCodeChangeRef = useRef(onCodeChange);
+  useEffect(() => {
+    onCodeChangeRef.current = onCodeChange;
+  });
+  const onValidateRef = useRef(onValidate);
+  useEffect(() => {
+    onValidateRef.current = onValidate;
+  });
 
   // Render canvas with distorted characters and noise
   const renderCanvas = useCallback((code: string) => {
@@ -101,20 +109,20 @@ export function AccessibleCaptcha({
   const refreshCaptcha = useCallback(() => {
     const newCode = generateRandomCode(5);
     setCaptchaCode(newCode);
-    if (onCodeChange) onCodeChange(newCode);
-    if (onValidate) onValidate(false);
+    if (onCodeChangeRef.current) onCodeChangeRef.current(newCode);
+    if (onValidateRef.current) onValidateRef.current(false);
     renderCanvas(newCode);
     setScreenReaderAnnouncement("New security verification code generated. You can listen to the audio code using the audio CAPTCHA button.");
-  }, [onCodeChange, onValidate, renderCanvas]);
+  }, [renderCanvas]);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsClient(true);
     const initialCode = generateRandomCode(5);
     setCaptchaCode(initialCode);
-    if (onCodeChange) onCodeChange(initialCode);
+    if (onCodeChangeRef.current) onCodeChangeRef.current(initialCode);
     renderCanvas(initialCode);
-  }, [onCodeChange, renderCanvas]);
+  }, [renderCanvas]);
 
   // Audio CAPTCHA using Web Speech Synthesis
   const playAudioCaptcha = () => {
@@ -161,8 +169,8 @@ export function AccessibleCaptcha({
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value.toUpperCase();
     onChange(val);
-    if (onValidate) {
-      onValidate(val.trim() === captchaCode.trim());
+    if (onValidateRef.current) {
+      onValidateRef.current(val.trim() === captchaCode.trim());
     }
   };
 
