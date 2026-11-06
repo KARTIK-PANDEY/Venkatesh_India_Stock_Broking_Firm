@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Mail, Phone, MapPin, Clock, Send, ShieldCheck, User, Building2, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { COMPANY_INFO, BRANCHES } from "@/lib/constants";
@@ -31,6 +31,10 @@ export default function ContactPage() {
       setMobileError("");
     }
   };
+
+  const handleCaptchaCodeChange = useCallback((code: string) => {
+    setCaptchaCode(code);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -316,7 +320,7 @@ export default function ContactPage() {
                       setCaptchaInput(val);
                       if (captchaError) setCaptchaError("");
                     }}
-                    onCodeChange={(code) => setCaptchaCode(code)}
+                    onCodeChange={handleCaptchaCodeChange}
                     error={captchaError}
                   />
 

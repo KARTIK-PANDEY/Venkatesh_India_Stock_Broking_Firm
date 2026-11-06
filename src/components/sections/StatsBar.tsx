@@ -42,7 +42,7 @@ export default function StatsBar() {
         }, 16);
       }
     });
-  };
+  };  
 
   useEffect(() => {
     if (isInView) {
