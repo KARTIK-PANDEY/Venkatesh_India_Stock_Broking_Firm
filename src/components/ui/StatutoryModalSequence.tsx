@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { AlertTriangle, ChevronRight, ShieldCheck, Check, X } from "lucide-react";
+import { AlertTriangle, ChevronRight, ChevronLeft, ShieldCheck, Check, X } from "lucide-react";
 
 interface ModalNotice {
   id: number;
@@ -66,6 +66,12 @@ export default function StatutoryModalSequence() {
       setCurrentIndex((prev) => prev + 1);
     } else {
       handleClose();
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1);
     }
   };
 
@@ -153,30 +159,48 @@ export default function StatutoryModalSequence() {
           </div>
 
           {/* Interactive Button Row */}
-          <div className="mt-4 flex items-center justify-end gap-2">
-            {!isFinalStep ? (
-              <button
-                id="statutory-next-btn"
-                ref={nextButtonRef}
-                type="button"
-                onClick={handleNext}
-                className="inline-flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-xs sm:text-sm py-2 px-5 rounded-lg shadow-md shadow-emerald-900/20 transition-all cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-emerald-500/50"
-              >
-                <span>Next</span>
-                <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />
-              </button>
-            ) : (
-              <button
-                id="statutory-close-btn"
-                ref={nextButtonRef}
-                type="button"
-                onClick={handleClose}
-                className="inline-flex items-center justify-center gap-1.5 bg-slate-900 hover:bg-black active:bg-slate-950 text-white dark:bg-slate-800 dark:hover:bg-slate-700 font-bold text-xs sm:text-sm py-2 px-5 rounded-lg shadow-md transition-all cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-slate-500/50"
-              >
-                <Check className="w-3.5 h-3.5" aria-hidden="true" />
-                <span>Close &amp; Enter Site</span>
-              </button>
-            )}
+          <div className="mt-4 flex items-center justify-between gap-2">
+            <div>
+              {currentIndex > 0 ? (
+                <button
+                  id="statutory-prev-btn"
+                  type="button"
+                  onClick={handlePrev}
+                  className="inline-flex items-center justify-center gap-1 bg-muted/80 hover:bg-muted text-foreground font-semibold text-xs sm:text-sm py-2 px-3.5 rounded-lg border border-border/70 transition-all cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-primary/40"
+                >
+                  <ChevronLeft className="w-3.5 h-3.5" aria-hidden="true" />
+                  <span>Previous</span>
+                </button>
+              ) : (
+                <div />
+              )}
+            </div>
+
+            <div className="flex items-center gap-2">
+              {!isFinalStep ? (
+                <button
+                  id="statutory-next-btn"
+                  ref={nextButtonRef}
+                  type="button"
+                  onClick={handleNext}
+                  className="inline-flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-xs sm:text-sm py-2 px-5 rounded-lg shadow-md shadow-emerald-900/20 transition-all cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-emerald-500/50"
+                >
+                  <span>Next</span>
+                  <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />
+                </button>
+              ) : (
+                <button
+                  id="statutory-close-btn"
+                  ref={nextButtonRef}
+                  type="button"
+                  onClick={handleClose}
+                  className="inline-flex items-center justify-center gap-1.5 bg-slate-900 hover:bg-black active:bg-slate-950 text-white dark:bg-slate-800 dark:hover:bg-slate-700 font-bold text-xs sm:text-sm py-2 px-5 rounded-lg shadow-md transition-all cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-slate-500/50"
+                >
+                  <Check className="w-3.5 h-3.5" aria-hidden="true" />
+                  <span>Close &amp; Enter Site</span>
+                </button>
+              )}
+            </div>
           </div>
 
           {/* Consistent Footer Broker Branding */}
