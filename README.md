@@ -74,7 +74,7 @@ Venkatesh_India_Stock_Broking_Firm/
 │   │   │   └── depository/             # CDSL depository services
 │   │   │
 │   │   ├── market/
-│   │   │   ├── live/                   # Live market overview
+│   │   │   ├── live/                   # Live market overview & indices
 │   │   │   ├── currency/               # Currency market updates
 │   │   │   └── news/                   # Market news & insights
 │   │   │
@@ -84,7 +84,7 @@ Venkatesh_India_Stock_Broking_Firm/
 │   │   │   ├── escalation-matrix/      # 4-level grievance escalation path
 │   │   │   ├── grievances/             # SCORES grievance filing
 │   │   │   ├── smartodr/               # SmartODR dispute resolution
-│   │   │   ├── complaint-data/         # Monthly complaint statistics
+│   │   │   ├── complaint-data/         # Monthly & annual complaint statistics (updated to Oct 2026)
 │   │   │   └── downloads/              # Forms, circulars & PDF downloads
 │   │   │
 │   │   ├── compliance/
@@ -124,7 +124,7 @@ Venkatesh_India_Stock_Broking_Firm/
 │   │   │   └── PartnerCTA.tsx          # "Become a Partner" CTA section
 │   │   │
 │   │   ├── ui/
-│   │   │   ├── StatutoryModalSequence.tsx # Top-right sequential investor alert card
+│   │   │   ├── StatutoryModalSequence.tsx # Top-right sequential investor alert card (Previous/Next/Close)
 │   │   │   ├── FATCAAlert.tsx          # Dismissible FATCA self-certification alert card
 │   │   │   ├── VoiceReader.tsx         # Web Speech API page & selection screen reader
 │   │   │   ├── AccessibleCaptcha.tsx   # Visual canvas + Audio Web Speech CAPTCHA
@@ -174,7 +174,7 @@ Venkatesh_India_Stock_Broking_Firm/
 | `/investor-resources/investor-charter` | SEBI Investor Charter compliance |
 | `/investor-resources/risk-disclosure` | Standard risk disclosure document |
 | `/investor-resources/escalation-matrix` | 4-level grievance escalation (Company → BSE → SEBI SCORES → SmartODR) |
-| `/investor-resources/complaint-data` | Monthly complaint statistics |
+| `/investor-resources/complaint-data` | Monthly & annual complaint statistics (updated to October 2026) |
 | `/investor-resources/grievances` | SCORES grievance filing |
 | `/investor-resources/smartodr` | SmartODR dispute resolution |
 | `/investor-resources/downloads` | Forms, circulars & compliance PDFs |
@@ -280,8 +280,11 @@ npx tsc --noEmit
 # ESLint check
 npm run lint
 
-# Build & start production server
-npm run build
+# Clean cache & create production build
+# (On Windows PowerShell)
+if (Test-Path .next) { Remove-Item -Recurse -Force .next }; npm run build
+
+# Start production server
 npm run start
 ```
 
@@ -310,7 +313,7 @@ This website is built to meet SEBI's mandatory disclosure requirements for regis
 
 - ✅ **Investor Charter** — displayed as per SEBI circular
 - ✅ **Escalation Matrix** — 4-level grievance path (Broker → BSE → SEBI SCORES → SmartODR)
-- ✅ **Complaint Data** — monthly statistics table
+- ✅ **Complaint Data** — monthly & annual statistics tables (updated through October 2026)
 - ✅ **Risk Disclosure** — standard risk disclosure for equity/derivatives
 - ✅ **SEBI SCORES & SmartODR** links prominently displayed
 - ✅ **Sequential Investor Notices** — CDSL SMS alert, One-Time KYC, and ASBA IPO advisories on homepage load

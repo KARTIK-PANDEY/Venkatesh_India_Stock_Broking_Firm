@@ -8,12 +8,12 @@ import { cn } from "@/lib/utils";
 
 // Mock Stock Broker complaints data
 const MOCK_COMPLAINT_DATA = [
-  { month: "March 2026", receivedClients: 0, receivedScores: 0, total: 0, resolved: 0, pending: 0, time: "N/A" },
-  { month: "February 2026", receivedClients: 0, receivedScores: 0, total: 0, resolved: 0, pending: 0, time: "N/A" },
-  { month: "January 2026", receivedClients: 0, receivedScores: 0, total: 0, resolved: 0, pending: 0, time: "N/A" },
-  { month: "December 2025", receivedClients: 0, receivedScores: 0, total: 0, resolved: 0, pending: 0, time: "N/A" },
-  { month: "November 2025", receivedClients: 0, receivedScores: 0, total: 0, resolved: 0, pending: 0, time: "N/A" },
-  { month: "October 2025", receivedClients: 0, receivedScores: 0, total: 0, resolved: 0, pending: 0, time: "N/A" },
+  { month: "October 2026", receivedClients: 0, receivedScores: 0, total: 0, resolved: 0, pending: 0, time: "N/A" },
+  { month: "September 2026", receivedClients: 0, receivedScores: 0, total: 0, resolved: 0, pending: 0, time: "N/A" },
+  { month: "August 2026", receivedClients: 0, receivedScores: 0, total: 0, resolved: 0, pending: 0, time: "N/A" },
+  { month: "July 2026", receivedClients: 0, receivedScores: 0, total: 0, resolved: 0, pending: 0, time: "N/A" },
+  { month: "June 2026", receivedClients: 0, receivedScores: 0, total: 0, resolved: 0, pending: 0, time: "N/A" },
+  { month: "May 2026", receivedClients: 0, receivedScores: 0, total: 0, resolved: 0, pending: 0, time: "N/A" },
 ];
 
 // DP (Depository Participant) Monthly Complaints Data - Table 1
@@ -67,6 +67,10 @@ const DP_MONTHLY_TREND = [
   { sn: 38, month: "April 2026", carriedForward: 0, received: 0, resolved: 0, pending: 0 },
   { sn: 39, month: "May 2026", carriedForward: 0, received: 0, resolved: 0, pending: 0 },
   { sn: 40, month: "June 2026", carriedForward: 0, received: 0, resolved: 0, pending: 0 },
+  { sn: 41, month: "July 2026", carriedForward: 0, received: 0, resolved: 0, pending: 0 },
+  { sn: 42, month: "August 2026", carriedForward: 0, received: 0, resolved: 0, pending: 0 },
+  { sn: 43, month: "September 2026", carriedForward: 0, received: 0, resolved: 0, pending: 0 },
+  { sn: 44, month: "October 2026", carriedForward: 0, received: 0, resolved: 0, pending: 0 },
 ];
 
 // DP Trend of Annual Disposal of Complaints - Table 3
@@ -80,12 +84,11 @@ const DP_ANNUAL_TREND = [
   { sn: 7, year: "2023-24", carriedForward: 0, received: 0, resolved: 0, pending: 0 },
   { sn: 8, year: "2024-25", carriedForward: 0, received: 0, resolved: 0, pending: 0 },
   { sn: 9, year: "2025-26", carriedForward: 0, received: 0, resolved: 0, pending: 0 },
-  { sn: 10, year: "2026-27", carriedForward: 0, received: 0, resolved: 0, pending: 0 },
 ];
 
 export default function ComplaintDataPage() {
   const [activeTab, setActiveTab] = useState("broker");
-  const lastUpdated = "July 3, 2026";
+  const lastUpdated = "October 31, 2026";
 
   useEffect(() => {
     // Read the query parameters on the client side
